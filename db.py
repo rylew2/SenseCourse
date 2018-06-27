@@ -30,7 +30,7 @@ def install(DATABASE):
                 "Selfenhancement, Selftranscendence)")
 
     ##Test account
-    cur.execute("INSERT INTO login (username, password, admin) VALUES ('123@123', '123123', 1)")
+    cur.execute("INSERT INTO login (username, password, admin) VALUES ('123@123', '$5$rounds=535000$1k4zaNm9iWnuEkbY$J.QXUVZBP2tEZ.rMTL8Vq02wHy.cnvu2K6ooBm704/5', 1)") #Password = 123123
     cur.execute("INSERT INTO user(username,hours,personal) VALUES ('123@123', 100, 'Hello World I am awesome and how are you? Are you awesome? I am sad all the time?')")
 
 
