@@ -1,8 +1,7 @@
 from flask import Blueprint, render_template, session, abort, request, jsonify
 from db import *
 from validate_email import validate_email
-from passlib.hash import sha256_crypt
-
+import hashlib
 
 app_authenticate = Blueprint('app_authenticate',__name__)
 
@@ -36,7 +35,7 @@ def register():
     myrow = cur.fetchone()
     
     if myrow is None: #NO LOGINS EXIST with such username
-        cur.execute("INSERT INTO login (username, password, admin) VALUES (?,?,?)",[_username, sha256_crypt.encrypt(_password), 0])
+        cur.execute("INSERT INTO login (username, password, admin) VALUES (?,?,?)",[_username, hashlib.md5(_password).hexdigest(), 0])
         conn.commit()
         session['username'] = _username
         session['admin'] = False
@@ -44,7 +43,7 @@ def register():
     
     
     #1 is username #2 is password
-    if sha256_crypt.verify(_password,myrow[2]):
+    if myrow[2] == hashlib.md5(_password).hexdigest():
         session['username'] = _username
         if myrow[3]:
             session['admin'] = True
