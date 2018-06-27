@@ -1,0 +1,162 @@
+{
+    "CS-6035": {
+        "coursename": "Intro to Information Security", 
+        "rating": 3.918918918918919, 
+        "workload": 8.507692307692308
+    }, 
+    "CS-6200": {
+        "coursename": "Intro to Operating Systems", 
+        "rating": 4.520408163265306, 
+        "workload": 18.19047619047619
+    }, 
+    "CS-6210": {
+        "coursename": "Advanced Operating Systems", 
+        "rating": 4.407407407407407, 
+        "workload": 15.587301587301587
+    }, 
+    "CS-6250": {
+        "coursename": "Computer Networks", 
+        "rating": 3.6857142857142855, 
+        "workload": 7.795698924731183
+    }, 
+    "CS-6262": {
+        "coursename": "Network Security", 
+        "rating": 3.0701754385964914, 
+        "workload": 10.842105263157896
+    }, 
+    "CS-6263": {
+        "coursename": "Cyber-Physical Systems", 
+        "rating": 2.6875, 
+        "workload": 5.75
+    }, 
+    "CS-6290": {
+        "coursename": "High Performance Computer Architecture", 
+        "rating": 4, 
+        "workload": 12.375
+    }, 
+    "CS-6291": {
+        "coursename": "Embedded System Optimization", 
+        "rating": 4, 
+        "workload": 8.333333333333334
+    }, 
+    "CS-6300": {
+        "coursename": "Software Development Process", 
+        "rating": 3.6914893617021276, 
+        "workload": 8.896774193548387
+    }, 
+    "CS-6310": {
+        "coursename": "Software Architecture & Design", 
+        "rating": 3.7254901960784315, 
+        "workload": 14.951219512195122
+    }, 
+    "CS-6340": {
+        "coursename": "Software Analysis & Test", 
+        "rating": 3.176470588235294, 
+        "workload": 11.727272727272727
+    }, 
+    "CS-6400": {
+        "coursename": "Database Systems Concepts & Design", 
+        "rating": 3.25, 
+        "workload": 10.03125
+    }, 
+    "CS-6440": {
+        "coursename": "Intro to Health Informatics", 
+        "rating": 3.1739130434782608, 
+        "workload": 5.823529411764706
+    }, 
+    "CS-6460": {
+        "coursename": "Educational Technology", 
+        "rating": 4.71875, 
+        "workload": 12.428571428571429
+    }, 
+    "CS-6475": {
+        "coursename": "Computational Photography", 
+        "rating": 4.072727272727272, 
+        "workload": 12.012195121951219
+    }, 
+    "CS-6476": {
+        "coursename": "Computer Vision", 
+        "rating": 4.410714285714286, 
+        "workload": 20.38095238095238
+    }, 
+    "CS-6505": {
+        "coursename": "Computability, Complexity & Algorithms", 
+        "rating": 2.977272727272727, 
+        "workload": 22.571428571428573
+    }, 
+    "CS-6601": {
+        "coursename": "Artificial Intelligence", 
+        "rating": 4.148148148148148, 
+        "workload": 22.896551724137932
+    }, 
+    "CS-6750": {
+        "coursename": "Human-Computer Interaction", 
+        "rating": 4.578947368421052, 
+        "workload": 10.078947368421053
+    }, 
+    "CS-7637": {
+        "coursename": "Knowledge-Based AI: Cognitive Systems", 
+        "rating": 3.675, 
+        "workload": 13.097222222222221
+    }, 
+    "CS-7641": {
+        "coursename": "Machine Learning", 
+        "rating": 4.219178082191781, 
+        "workload": 20.683823529411764
+    }, 
+    "CS-7642": {
+        "coursename": "Reinforcement Learning", 
+        "rating": 4.296296296296297, 
+        "workload": 20.806451612903224
+    }, 
+    "CS-7646": {
+        "coursename": "Machine Learning for Trading", 
+        "rating": 4.296610169491525, 
+        "workload": 10.540740740740741
+    }, 
+    "CS-8803-001": {
+        "coursename": "AI for Robotics", 
+        "rating": 3.791044776119403, 
+        "workload": 12.116504854368932
+    }, 
+    "CS-8803-004": {
+        "coursename": "Embedded Software", 
+        "rating": 3.7, 
+        "workload": 15.818181818181818
+    }, 
+    "CS-8803-008": {
+        "coursename": "Compilers", 
+        "rating": 3.909090909090909, 
+        "workload": 27.5
+    }, 
+    "CS-8803-009": {
+        "coursename": "Cyber-Physical Design & Analytics", 
+        "rating": 2.625, 
+        "workload": 11.125
+    }, 
+    "CS-8803-GA": {
+        "coursename": "Graduate Algorithms", 
+        "rating": 4.5, 
+        "workload": 21.5
+    }, 
+    "CSE-6040": {
+        "coursename": "Computing for Data Analytics", 
+        "rating": 4.5, 
+        "workload": 9.166666666666666
+    }, 
+    "CSE-6220": {
+        "coursename": "Intro to High-Performance Computing", 
+        "rating": 4.703703703703703, 
+        "workload": 19.63157894736842
+    }, 
+    "CSE-6242": {
+        "coursename": "Data & Visual Analytics", 
+        "rating": 3.074074074074074, 
+        "workload": 12.74766355140187
+    }, 
+    "CSE-6250": {
+        "coursename": "Big Data for Health Informatics", 
+        "rating": 3.590909090909091, 
+        "workload": 33.81818181818182
+    }
+}

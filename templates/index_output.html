@@ -1,0 +1,195 @@
+{% extends 'template.html' %}
+{% block content %}
+
+<style>
+    h1{
+        color: orange;
+        font-size:32px;
+    }
+
+
+</style>
+
+<div class="container" style="padding-top:2em;padding-bottom:2em;">
+    <h1 id="message">Here are the classes you should take:</h1>
+    <h2>You need to take {{classes|length}} classes</h2>
+    <table class="table is-striped">
+        <thead>
+        <tr>
+            <th>ClassID</th>
+            <th>Classname</th>
+            <th>Rating</th>
+            <th>Hours</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for class in classes %}
+        <tr>
+            <td>{{class[0]}}</td>
+            <td>{{class[1]}}</td>
+            <td>{{class[2]}}</td>
+            <td>{{class[3]}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+
+
+    <h1>Classes are picked based on: </h1>
+    <div class="columns">
+        <div class="column">
+            <div class="card">
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-content">
+                            <p class="title is-4">Specialization</p>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        {{spec}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-content">
+                            <p class="title is-4">Hours</p>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        {{hours}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-content">
+                            <p class="title is-4">Text</p>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        {{text}}...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-content">
+            <div class="media">
+                <div class="media-content">
+                    <p class="title is-4">Personalities</p>
+                    <p class="subtitle is-6">@IBM Watson</p>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="columns">
+                    <div class="column"><strong>Challenge: </strong>
+                        <progress class="progress is-info" value="{{ personality[0] }}" max="1"></progress>
+                    </div>
+                    <div class="column"><strong>Closeness: </strong>
+                        <progress class="progress is-info" value="{{ personality[1] }}" max="1"></progress>
+                    </div>
+                    <div class="column"><strong>Curiosity: </strong>
+                        <progress class="progress is-info" value="{{ personality[2] }}" max="1"></progress>
+                    </div>
+                </div>
+
+                <div class="columns">
+                    <div class="column"><strong>Excitement: </strong>
+                        <progress class="progress is-info" value="{{ personality[3] }}" max="1"></progress>
+                    </div>
+                    <div class="column"><strong>Harmony: </strong>
+                        <progress class="progress is-info" value="{{ personality[4] }}" max="1"></progress>
+                    </div>
+                    <div class="column"><strong>Ideal: </strong>
+                        <progress class="progress is-info" value="{{ personality[5] }}" max="1"></progress>
+                    </div>
+                </div>
+
+                <div class="columns">
+                    <div class="column"><strong>Liberty: </strong>
+                        <progress class="progress is-info" value="{{ personality[6] }}" max="1"></progress>
+                    </div>
+                    <div class="column"><strong>Love: </strong>
+                        <progress class="progress is-info" value="{{ personality[7] }}" max="1"></progress>
+                    </div>
+                    <div class="column"><strong>Practicality: </strong>
+                        <progress class="progress is-info" value="{{ personality[8] }}" max="1"></progress>
+                    </div>
+                </div>
+
+                <div class="columns">
+                    <div class="column"><strong>Self-expression: </strong>
+                        <progress class="progress is-info" value="{{ personality[9] }}" max="1"></progress>
+                    </div>
+                    <div class="column"><strong>Stability: </strong>
+                        <progress class="progress is-info" value="{{ personality[10] }}" max="1"></progress>
+                    </div>
+                    <div class="column"><strong>Structure: </strong>
+                        <progress class="progress is-info" value="{{ personality[11] }}" max="1"></progress>
+                    </div>
+                </div>
+
+                <div class="columns">
+                    <div class="column"><strong>Openness: </strong>
+                        <progress class="progress is-info" value="{{ personality[12] }}" max="1"></progress>
+                    </div>
+                    <div class="column"><strong>Conscientiousness: </strong>
+                        <progress class="progress is-info" value="{{ personality[13] }}" max="1"></progress>
+                    </div>
+                    <div class="column"><strong>Extraversion: </strong>
+                        <progress class="progress is-info" value="{{ personality[14] }}" max="1"></progress>
+                    </div>
+                </div>
+
+                <div class="columns">
+                    <div class="column"><strong>Agreeableness: </strong>
+                        <progress class="progress is-info" value="{{ personality[15] }}" max="1"></progress>
+                    </div>
+                    <div class="column"><strong>Emotional range: </strong>
+                        <progress class="progress is-info" value="{{ personality[16] }}" max="1"></progress>
+                    </div>
+                    <div class="column"><strong>Conservation: </strong>
+                        <progress class="progress is-info" value="{{ personality[17] }}" max="1"></progress>
+                    </div>
+                </div>
+
+                <div class="columns">
+                    <div class="column"><strong>Openness to change: </strong>
+                        <progress class="progress is-info" value="{{ personality[18] }}" max="1"></progress>
+                    </div>
+                    <div class="column"><strong>Hedonism: </strong>
+                        <progress class="progress is-info" value="{{ personality[19] }}" max="1"></progress>
+                    </div>
+                    <div class="column"><strong>Self-enhancement: </strong>
+                        <progress class="progress is-info" value="{{ personality[20] }}" max="1"></progress>
+                    </div>
+                </div>
+
+                <div class="columns">
+                    <div class="column"><strong>Self-transcendence: </strong>
+                        <progress class="progress is-info" value="{{ personality[21] }}" max="1"></progress>
+                    </div>
+                    <div class="column"></div>
+                    <div class="column"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

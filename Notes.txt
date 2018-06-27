@@ -1,0 +1,2 @@
+Run run.bat which will install application and run on server 127.0.0.1.
+Open web browser to 127.0.0.1

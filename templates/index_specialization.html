@@ -1,0 +1,76 @@
+{% extends 'template.html' %}
+{% block content %}
+
+<div class="container" style="padding-top:2em;padding-bottom:2em;">
+    <article class="message is-info">
+        <div class="message-header">
+            <p>Choose your specialization:</p>
+        </div>
+        <div class="message-body">
+            <div class="control" id="specs">
+                <label class="radio">
+                    <input type="radio" name="specialization">
+                    {{ specs[order[0]] }}
+                </label>
+                <br/>
+                <label class="radio">
+                    <input type="radio" name="specialization">
+                    {{ specs[order[1]] }}
+                </label>
+                <br/>
+                <label class="radio">
+                    <input type="radio" name="specialization">
+                    {{ specs[order[2]] }}
+                </label>
+                <br/>
+                <label class="radio">
+                    <input type="radio" name="specialization">
+                    {{ specs[order[3]] }}
+                </label>
+                <br/>
+            </div>
+            <p class="help" id="helpspecialization"></p>
+            <br/>
+            <div class="control">
+                <button class="button is-success" id="q_btn">Submit your specialization!</button>
+            </div>
+        </div>
+    </article>
+</div>
+
+
+<script>
+        $("#q_btn").click(function(e){
+            e.preventDefault();
+            var specs = $("#specs input[name='specialization']:checked").parent().text().trim();
+
+            $.post( "/specialization", { "specs": specs}, function( data) {
+
+
+            $('#helpspecialization').html('');
+
+           if(data['action'] === 'ok'){
+               window.location.href = "/";
+           }
+           else if(data['action'] === 'error'){
+              if(data['type'] === 'noselection'){
+                  $('#helpspecialization').addClass('is-danger');
+                  $('#helpspecialization').html(data['text']);
+              }
+              else if (data['type'] === 'noexist') {
+                $('#helpspecialization').addClass('is-danger');
+                $('#helpspecialization').html(data['text']);
+              }
+              else if(data['type'] === 'nosession'){
+                 window.location.href = "/";
+              }
+           }
+
+
+            });
+
+        });
+
+</script>
+
+{% endblock %}

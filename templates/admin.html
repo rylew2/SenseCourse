@@ -1,0 +1,100 @@
+{% extends 'template.html' %}
+{% block content %}
+
+<style>
+    h1{
+        font-size:32px;
+    }
+    h2 {
+        font-size:24px;
+        color:orange;
+    }
+
+    html{
+        overflow-x: scroll;
+        background: white;
+    }
+</style>
+
+<div class="container" style="padding-top:2em;padding-bottom:2em;">
+    <h1>Admin Panel</h1>
+
+    <h2>Tables</h2>
+    <table class="table is-striped">
+        <tr>
+            {% for row in tables %}
+            <td>{{ row[0]}}</td>
+            {% endfor %}
+        </tr>
+    </table>
+
+
+    <h2>Login Table (login)</h2>
+    <table class="table is-striped">
+        <thead>
+        {% for names in logins_names %}
+        <td>{{names}}</td>
+        {% endfor %}
+        </thead>
+
+        {% for row in logins %}
+        <tr>
+            {% for idx in logins_names %}
+            <td>{{row[loop.index-1]}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div class="control">
+        <button class="button is-info" id="spec_btn">Clear Specialization!</button>
+    </div>
+    <br/>
+
+    <h2>Personal Table (user)</h2>
+    <table class="table is-striped">
+        <thead>
+        {% for names in user_names %}
+        <td>{{names}}</td>
+        {% endfor %}
+        </thead>
+
+        {% for row in user %}
+        <tr>
+            {% for idx in user_names %}
+            <td>{{row[loop.index-1]}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Courses Tables (classes)</h2>
+    <table class="table is-striped">
+        <thead>
+        {% for names in classes_names %}
+        <td>{{names}}</td>
+        {% endfor %}
+        </thead>
+
+        {% for row in classes %}
+        <tr>
+            {% for idx in classes_names %}
+            <td>{{row[loop.index-1]}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+<script>
+    $("#spec_btn").click(function(e){
+            e.preventDefault();
+
+            $.post( "/delete", {}, function( data) {
+                window.location = "/admin"
+            });
+            });
+</script>
+
+{% endblock %}

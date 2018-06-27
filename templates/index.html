@@ -1,0 +1,633 @@
+{% extends 'template.html' %}
+{% block content %}
+
+<style>
+  .hero.is-dark.is-bold{
+  background:
+linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+background-color: #131313;
+background-size: 20px 20px;
+}
+  .containertimes {
+    margin: 30px auto;
+    border: 1px solid #333;
+    background: #55c1e7;
+  }
+
+  /*--extend--*/
+  .area, .fore, .mid, .bk, .containertimes {
+    width: 600px;
+    height: 288px;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+  }
+
+  .figure {
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/57786/dog-walk.svg") no-repeat;
+    width: 220px;
+    height: 266px;
+    -webkit-transform: translate3D(200px, 50px, 0);
+    transform: translate3D(200px, 50px, 0);
+    -webkit-animation: walk 0.78s steps(9) infinite;
+    animation: walk 0.78s steps(9) infinite;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+  }
+
+  .no-svg .figure {
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/57786/dog-walk.png");
+  }
+
+  .fore {
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/57786/foreground.svg");
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: bk 7s -5s linear infinite;
+    animation: bk 7s -5s linear infinite;
+  }
+
+  .no-svg .fore {
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/57786/foreground.png");
+  }
+
+  .mid {
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/57786/midground.svg");
+    -webkit-animation: bk 15s -5s linear infinite;
+    animation: bk 15s -5s linear infinite;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  .no-svg .mid {
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/57786/midground.png");
+  }
+
+  .bk {
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/57786/background.svg");
+    -webkit-animation: bk 20s -5s linear infinite;
+    animation: bk 20s -5s linear infinite;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  .no-svg .bk {
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/57786/background.png");
+  }
+
+  @-webkit-keyframes walk {
+    100% {
+      background-position: 0 -2376px;
+    }
+  }
+
+  @keyframes walk {
+    100% {
+      background-position: 0 -2376px;
+    }
+  }
+  @-webkit-keyframes bk {
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  @keyframes bk {
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .containertimes {
+      width: 100%;
+      margin-top: 0;
+    }
+
+    .figure {
+      -webkit-transform: translate3D(40%, 50px, 0);
+      transform: translate3D(40%, 50px, 0);
+    }
+  }
+
+
+  .area {
+    transform-style: preserve-3d;
+    perspective: 500px;
+    width: 400px;
+    height: 300px;
+  }
+
+  .box {
+    width: 10px;
+    height: 10px;
+  }
+
+
+
+
+  .heart-loader {
+    display: block;
+    width: 300px;
+    height: 300px;
+    overflow: visible;
+    margin-top:50px;
+    margin-bottom:50px;
+    margin-left:300px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+  }
+  .heart-loader__group {
+    -webkit-transform-origin: 0 90px;
+    transform-origin: 0 90px;
+    -webkit-animation: group-anim 7s 1s infinite;
+    animation: group-anim 7s 1s infinite;
+  }
+  .heart-loader__square {
+    stroke: #B8B8B8;
+    stroke-dasharray: 240, 240;
+    stroke-dashoffset: 240;
+    -webkit-animation: square-anim 7s 1s infinite;
+    animation: square-anim 7s 1s infinite;
+  }
+  .heart-loader__circle {
+    stroke: #B8B8B8;
+    stroke-dasharray: 188.522, 188.522;
+    stroke-dashoffset: 188.522;
+    -webkit-transform-origin: 60px 30px;
+    transform-origin: 60px 30px;
+  }
+  .heart-loader__circle.m--left {
+    -webkit-animation: left-circle-anim 7s 1s infinite;
+    animation: left-circle-anim 7s 1s infinite;
+  }
+  .heart-loader__circle.m--right {
+    -webkit-animation: right-circle-anim 7s 1s infinite;
+    animation: right-circle-anim 7s 1s infinite;
+  }
+  .heart-loader__heartPath {
+    stroke: #E21737;
+    fill: transparent;
+    stroke-dasharray: 308.522, 308.522;
+    stroke-dashoffset: 308.522;
+    -webkit-animation: heart-anim 7s 1s infinite;
+    animation: heart-anim 7s 1s infinite;
+  }
+
+  @-webkit-keyframes square-anim {
+    12% {
+      stroke-dashoffset: 0;
+    }
+    43% {
+      stroke-dashoffset: 0;
+      opacity: 1;
+    }
+    85% {
+      stroke-dashoffset: 0;
+      opacity: 0;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      opacity: 0;
+    }
+  }
+
+  @keyframes square-anim {
+    12% {
+      stroke-dashoffset: 0;
+    }
+    43% {
+      stroke-dashoffset: 0;
+      opacity: 1;
+    }
+    85% {
+      stroke-dashoffset: 0;
+      opacity: 0;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      opacity: 0;
+    }
+  }
+  @-webkit-keyframes left-circle-anim {
+    12% {
+      stroke-dashoffset: 188.522;
+    }
+    31% {
+      stroke-dashoffset: 0;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    41% {
+      stroke-dashoffset: 0;
+      -webkit-transform: translateY(-30px);
+      transform: translateY(-30px);
+    }
+    43% {
+      stroke-dashoffset: 0;
+      -webkit-transform: translateY(-30px);
+      transform: translateY(-30px);
+      opacity: 1;
+    }
+    85% {
+      stroke-dashoffset: 0;
+      -webkit-transform: translateY(-30px);
+      transform: translateY(-30px);
+      opacity: 0;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      -webkit-transform: translateY(-30px);
+      transform: translateY(-30px);
+      opacity: 0;
+    }
+  }
+  @keyframes left-circle-anim {
+    12% {
+      stroke-dashoffset: 188.522;
+    }
+    31% {
+      stroke-dashoffset: 0;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    41% {
+      stroke-dashoffset: 0;
+      -webkit-transform: translateY(-30px);
+      transform: translateY(-30px);
+    }
+    43% {
+      stroke-dashoffset: 0;
+      -webkit-transform: translateY(-30px);
+      transform: translateY(-30px);
+      opacity: 1;
+    }
+    85% {
+      stroke-dashoffset: 0;
+      -webkit-transform: translateY(-30px);
+      transform: translateY(-30px);
+      opacity: 0;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      -webkit-transform: translateY(-30px);
+      transform: translateY(-30px);
+      opacity: 0;
+    }
+  }
+  @-webkit-keyframes right-circle-anim {
+    12% {
+      stroke-dashoffset: 188.522;
+    }
+    31% {
+      stroke-dashoffset: 0;
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    41% {
+      stroke-dashoffset: 0;
+      -webkit-transform: translateX(30px);
+      transform: translateX(30px);
+    }
+    43% {
+      stroke-dashoffset: 0;
+      -webkit-transform: translateX(30px);
+      transform: translateX(30px);
+      opacity: 1;
+    }
+    85% {
+      stroke-dashoffset: 0;
+      -webkit-transform: translateX(30px);
+      transform: translateX(30px);
+      opacity: 0;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      -webkit-transform: translateX(30px);
+      transform: translateX(30px);
+      opacity: 0;
+    }
+  }
+  @keyframes right-circle-anim {
+    12% {
+      stroke-dashoffset: 188.522;
+    }
+    31% {
+      stroke-dashoffset: 0;
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    41% {
+      stroke-dashoffset: 0;
+      -webkit-transform: translateX(30px);
+      transform: translateX(30px);
+    }
+    43% {
+      stroke-dashoffset: 0;
+      -webkit-transform: translateX(30px);
+      transform: translateX(30px);
+      opacity: 1;
+    }
+    85% {
+      stroke-dashoffset: 0;
+      -webkit-transform: translateX(30px);
+      transform: translateX(30px);
+      opacity: 0;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      -webkit-transform: translateX(30px);
+      transform: translateX(30px);
+      opacity: 0;
+    }
+  }
+  @-webkit-keyframes group-anim {
+    43% {
+      -webkit-transform: rotate(0);
+      transform: rotate(0);
+    }
+    54% {
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+    90% {
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      opacity: 1;
+    }
+    97% {
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      opacity: 0;
+    }
+  }
+  @keyframes group-anim {
+    43% {
+      -webkit-transform: rotate(0);
+      transform: rotate(0);
+    }
+    54% {
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+    90% {
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      opacity: 1;
+    }
+    97% {
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      opacity: 0;
+    }
+  }
+  @-webkit-keyframes heart-anim {
+    55% {
+      stroke-dashoffset: 308.522;
+      fill: transparent;
+    }
+    70% {
+      stroke-dashoffset: 0;
+      fill: transparent;
+    }
+    87% {
+      stroke-dashoffset: 0;
+      fill: #E21737;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      fill: #E21737;
+    }
+  }
+  @keyframes heart-anim {
+    55% {
+      stroke-dashoffset: 308.522;
+      fill: transparent;
+    }
+    70% {
+      stroke-dashoffset: 0;
+      fill: transparent;
+    }
+    87% {
+      stroke-dashoffset: 0;
+      fill: #E21737;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      fill: #E21737;
+    }
+  }
+</style>
+
+<div class="container" style="padding-top:2em;padding-bottom:2em;">
+
+
+    <div class="columns">
+      <div class="column">
+
+
+      <div class="card" style="width:600px;">
+        <div class="card-image">
+          <figure class="image">
+              <div class='containertimes'>
+                <div class='bk'>
+                  <div class='mid'>
+                    <div class='fore'>
+                      <div class='figure'></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <div class="area"><div class="box"></div></div>
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4" id="twitname" style="display: inline;"></p>
+              <p class="subtitle is-6">@edTech</p>
+            </div>
+          </div>
+
+          <div class="content">
+            <div id="whatis" style="display: inline;font-size:18px"></div><br/>
+            <a href="#">#sensecourse</a> <a href="#">#findclasses</a>
+            <br>
+            <time id="time"></time>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      </div>
+      <div class="column" style="padding:20px 0">
+        <h1 style="font-size:32px;color:#4a4a4a;text-align:center;">
+          Find your perfect course match today!
+        </h1>
+
+        <p class="margin-left:120px;text-align:center;">
+        <svg class="heart-loader" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 90 90" version="1.1">
+          <g class="heart-loader__group">
+            <path class="heart-loader__square" stroke-width="1" fill="none" d="M0,30 0,90 60,90 60,30z"/>
+            <path class="heart-loader__circle m--left" stroke-width="1" fill="none" d="M60,60 a30,30 0 0,1 -60,0 a30,30 0 0,1 60,0"/>
+            <path class="heart-loader__circle m--right" stroke-width="1" fill="none" d="M60,60 a30,30 0 0,1 -60,0 a30,30 0 0,1 60,0"/>
+            <path class="heart-loader__heartPath" stroke-width="2" d="M60,30 a30,30 0 0,1 0,60 L0,90 0,30 a30,30 0 0,1 60,0" />
+          </g>
+        </svg>
+        </p>
+
+        <p style="text-align:center;margin:0 auto;">
+        <a class="button is-primary is-rounded is-large" id="registerbtn"><i class="fa fa-rocket" aria-hidden="true"></i>&nbsp;&nbsp;Register Now!</a>
+        </p>
+        <p style="text-align:center;color:#7b8e9e;">100% FREE</p>
+      </div>
+    </div>
+
+</div>
+
+<script>var today = new Date();document.getElementById("time").innerHTML = (today.getMonth()+1)+'/'+today.getDate()+"/"+today.getFullYear();</script>
+
+
+<section class="hero is-dark is-bold">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        What is Sense Course?
+      </h1>
+      <h2 class="subtitle">
+        <div class="columns">
+          <div class="column">
+           Sense Course is an easy to use system created
+           by {{ authors }}
+            to help students pick classes that match
+            based on their personality.
+          </div>
+          <div class="column"></div>
+        </div>
+      </h2>
+      <br/>
+      <h1 class="title">
+        Why should I use Sense Course?
+      </h1>
+      <br/>
+      <h2 class="subtitle">
+      <div class="columns">
+        <div class="column">
+          It uses AI to pick classes based on your personality insight.
+        </div>
+        <div class="column"></div>
+      </div>
+    </h2>
+      <br/>
+      <h1 class="title">
+        Is it really 100% free?
+      </h1>
+      <h2 class="subtitle">
+        <div class="columns">
+          <div class="column">
+            Yes! Our system is free and open for any user!
+          </div>
+          <div class="column"></div>
+        </div>
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<script>
+
+    var options = {
+        strings: ["Sense Course is awesome.", "Sense Course is easy to use.","Sense Course is made by students for students!",
+            "Sense Course is funner than little miss sunshine.", "Sense Course is best thing since sliced bread!"],
+        backSpeed: 300,
+        loop: true,
+        loopCount: Infinity,
+        typeSpeed: 40
+    };
+    var typed = new Typed("#whatis", options);
+
+    var optionstwo = {
+        strings: ["Andrey Makhanov","Ryan Lewis "],
+        backSpeed: 300,
+        loop: true,
+        loopCount: Infinity,
+        typeSpeed: 40
+    };
+    var twtiname = new Typed("#twitname", optionstwo);
+
+    const { easing, keyframes, styler } = window.popmotion;
+    const divStyler = styler(document.querySelector('.box'));
+    keyframes({
+        values: [
+            { x: 0, y: 0, rotateY: 0, background: '#9B65DE' },
+            { x: 15, y: 0, rotateY: 180, rotateX: 0, background: '#14D790' },
+            { x: 15, y: 15, rotateY: 180, rotateX: 180, background: '#FF1C68' },
+            { x: 0, y: 15, rotateY: 0, rotateX: 180, background: '#198FE3' },
+            { x: 0, y: 0, rotateY: 0, rotateX: 0, background: '#9B65DE' }
+        ],
+        duration: 3000,
+        easings: [easing.easeInOut, easing.easeInOut, easing.easeInOut, easing.easeInOut],
+        loop: Infinity,
+        //times: [0, 0.2, 0.5, 0.6, 1]
+    }).start(divStyler.set);
+
+</script>
+<style>
+  .typed-cursor {
+    -webkit-animation: blinker 1s linear infinite;
+    animation: blinker 1s linear infinite;
+    font-size:24px;
+  }
+
+  @-webkit-keyframes blinker {
+    50% {
+      opacity: 0;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    }
+  }
+
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    }
+  }
+</style>
+
+
+
+
+
+{% endblock %}

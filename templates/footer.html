@@ -1,0 +1,114 @@
+<footer class="footer hero is-primary ">
+    <div class="container ">
+        <div class="content has-text-centered">
+            <p>
+                © 2018 <strong>Sense Course</strong> by {{ authors }}. The source code is owned and protected by Sense Course.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .footer{
+        padding: 1rem 1.5rem 1rem;
+    }
+</style>
+
+<div class="modal" id="registermodal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Login/Register</p>
+      <button class="delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="field">
+            <p class="control has-icons-left has-icons-right">
+              <input class="input" type="email" placeholder="Email" id="myusername" required>
+              <span class="icon is-small is-left">
+          <i class="fas fa-envelope"></i>
+          </span>
+                <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+            </p>
+            <p class="help" id="helpusername"></p>
+      </div>
+      <div class="field">
+        <p class="control has-icons-left">
+          <input class="input" type="password" placeholder="Password" id="mypassword" required>
+          <span class="icon is-small is-left">
+      <i class="fas fa-lock"></i>
+    </span>
+        </p>
+        <p class="help" id="helppassword"></p>
+      </div>
+
+
+
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-primary" id="loginregister">Login/Register</button>
+    </footer>
+  </div>
+</div>
+
+
+<script>
+    $("#registerbtn").click(function(e) {
+        e.preventDefault();
+        $("#registermodal").addClass("is-active");
+    });
+    $("#loginbtn").click(function(e) {
+        e.preventDefault();
+        $("#registermodal").addClass("is-active");
+    });
+
+    $(".delete").click(function(e) {
+        e.preventDefault();
+        $(".modal").removeClass("is-active");
+    });
+
+    $("#loginregister").click(function(e){
+        e.preventDefault();
+        var username = $("#myusername").val();
+        var password = $("#mypassword").val();
+
+
+        $.post( "/register", { "inputUsername": username, "inputPassword": password }, function( data) {
+            console.log(data);
+            $('#helpusername').removeClass('is-success');
+            $('#helppassword').removeClass('is-success');
+
+            $('#helpusername').removeClass('is-danger');
+            $('#helppassword').removeClass('is-danger');
+
+            $('#myusername').removeClass('is-success');
+            $('#mypassword').removeClass('is-success');
+
+            $('#myusername').removeClass('is-danger');
+            $('#mypassword').removeClass('is-danger');
+
+            $('#helpusername').html('');
+            $('#helppassword').html('');
+           if(data['action'] === 'ok'){
+               window.location.href = "/";
+           }
+           else if(data['action'] === 'error'){
+              if(data['type'] === 'username'){
+                  $('#helpusername').addClass('is-danger');
+                  $('#myusername').addClass('is-danger');
+                  $('#helpusername').html(data['text']);
+              }
+              else if (data['type'] === 'password') {
+                  $('#helpusername').addClass('is-success');
+                  $('#myusername').addClass('is-success');
+                $('#helppassword').html(data['text']);
+                $('#helppassword').addClass('is-danger');
+                  $('#mypassword').addClass('is-danger');
+              }
+           }
+        });
+
+    });
+</script>

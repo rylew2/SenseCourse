@@ -1,0 +1,82 @@
+{% extends 'template.html' %}
+{% block content %}
+
+<div class="container" style="padding-top:2em;padding-bottom:2em;">
+    <article class="message is-warning">
+        <div class="message-header">
+            <p>Question Survey:</p>
+        </div>
+        <div class="message-body">
+
+            <div>Q1:</div>
+            <strong>How many hours a week do you plan to commit to OMSCS?</strong>
+            <div class="field">
+                <input id="hours" class="input" type="number" name="hours" min="5" max="100"
+                       placeholder="Enter a digit between 5-100 for best result">
+                <p class="help" id="helphours"></p>
+            </div>
+
+            <div>Q2:</div>
+            <strong>Why did you choose Computer Science as your major?</strong>
+            <div class="field">
+                <textarea id="personal" class="textarea"
+                          placeholder="Explain why you choose computer science. (write at least 500 words for more personalized results. min 100 words)"></textarea>
+                <p class="help" id="helppersonal"></p>
+            </div>
+            <div class="control">
+                <button class="button is-info" id="q_btn">Submit your questionaire!</button>
+            </div>
+        </div>
+    </article>
+</div>
+
+<script>
+        $("#q_btn").click(function(e){
+            e.preventDefault();
+            var hours = $("#hours").val();
+            var personal = $("#personal").val();
+
+            $.post( "/quiz", { "hours": hours, "personal": personal }, function( data) {
+
+
+
+            $('#helphours').removeClass('is-success');
+            $('#helppersonal').removeClass('is-success');
+
+            $('#helphours').removeClass('is-danger');
+            $('#helppersonal').removeClass('is-danger');
+
+            $('#hours').removeClass('is-success');
+            $('#personal').removeClass('is-success');
+
+            $('#hours').removeClass('is-danger');
+            $('#personal').removeClass('is-danger');
+
+            $('#helphours').html('');
+            $('#helppersonal').html('');
+           if(data['action'] === 'ok'){
+               window.location.href = "/";
+           }
+           else if(data['action'] === 'error'){
+              if(data['type'] === 'hours'){
+                  $('#helphours').addClass('is-danger');
+                  $('#hours').addClass('is-danger');
+                  $('#helphours').html(data['text']);
+              }
+              else if (data['type'] === 'personal') {
+                $('#helppersonal').html(data['text']);
+                $('#hpersonal').addClass('is-danger');
+                  $('#helppersonal').addClass('is-danger');
+              }
+              else if(data['type'] === 'nosession'){
+                 window.location.href = "/";
+              }
+           }
+
+
+            });
+
+        });
+</script>
+
+{% endblock %}
