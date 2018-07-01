@@ -28,6 +28,7 @@ def index():
         cur.execute("SELECT * FROM user WHERE username = '"+session.get('username')+"';")
         userrow = cur.fetchone()
 
+        #
         if userrow is None:
             return render_template("index_quiz.html", authors=authors)
 
@@ -38,6 +39,12 @@ def index():
             conn2 = sqlite3.connect(DATABASE)
             conn2.row_factory = dict_factory
             cur2 = conn2.cursor()
+
+            ########################################################################
+            # -Sum the difference (delta) between class personality and student's
+            # personality - for each of the 22 personality traits
+            # -
+            ############################################################################
 
             cur2.execute("SELECT * FROM classes WHERE course = 'CS-8803-GA'")
             i = cur2.fetchone()
