@@ -36,45 +36,57 @@
             var hours = $("#hours").val();
             var personal = $("#personal").val();
 
-            $.post( "/quiz", { "hours": hours, "personal": personal }, function( data) {
+            $.ajax({
+                  url: "/quiz",
+                  type: "POST",
+                  dataType: "json", // expected format for response
+                  contentType: "application/json", // send as JSON  (this should put it as the body as opposed to url encoding it
+                  data:  JSON.stringify({ "hours": hours, "personal":personal }),
 
+                  complete: function(data) {
+                         $('#helphours').removeClass('is-success');
+                        $('#helppersonal').removeClass('is-success');
 
+                        $('#helphours').removeClass('is-danger');
+                        $('#helppersonal').removeClass('is-danger');
 
-            $('#helphours').removeClass('is-success');
-            $('#helppersonal').removeClass('is-success');
+                        $('#hours').removeClass('is-success');
+                        $('#personal').removeClass('is-success');
 
-            $('#helphours').removeClass('is-danger');
-            $('#helppersonal').removeClass('is-danger');
+                        $('#hours').removeClass('is-danger');
+                        $('#personal').removeClass('is-danger');
 
-            $('#hours').removeClass('is-success');
-            $('#personal').removeClass('is-success');
+                        $('#helphours').html('');
+                        $('#helppersonal').html('');
+                       if(data['action'] === 'ok'){
+                           window.location.href = "/";
+                       }
+                       else if(data['action'] === 'error'){
+                          if(data['type'] === 'hours'){
+                              $('#helphours').addClass('is-danger');
+                              $('#hours').addClass('is-danger');
+                              $('#helphours').html(data['text']);
+                          }
+                          else if (data['type'] === 'personal') {
+                            $('#helppersonal').html(data['text']);
+                            $('#hpersonal').addClass('is-danger');
+                              $('#helppersonal').addClass('is-danger');
+                          }
+                          else if(data['type'] === 'nosession'){
+                             window.location.href = "/";
+                          }
+                       }
+                  },
 
-            $('#hours').removeClass('is-danger');
-            $('#personal').removeClass('is-danger');
+                  success: function() {
+                    //called when successful
+                 },
 
-            $('#helphours').html('');
-            $('#helppersonal').html('');
-           if(data['action'] === 'ok'){
-               window.location.href = "/";
-           }
-           else if(data['action'] === 'error'){
-              if(data['type'] === 'hours'){
-                  $('#helphours').addClass('is-danger');
-                  $('#hours').addClass('is-danger');
-                  $('#helphours').html(data['text']);
-              }
-              else if (data['type'] === 'personal') {
-                $('#helppersonal').html(data['text']);
-                $('#hpersonal').addClass('is-danger');
-                  $('#helppersonal').addClass('is-danger');
-              }
-              else if(data['type'] === 'nosession'){
-                 window.location.href = "/";
-              }
-           }
+                  error: function() {
+                    //called when there is an error
+                  },
+                });
 
-
-            });
 
         });
 </script>

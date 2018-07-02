@@ -22,8 +22,9 @@ def quiz():
     if not session.get('username'):
         return jsonify({'action': 'error', 'type': 'nosession'})
 
-    _hours = request.form['hours']
-    _personal = request.form['personal']
+    content = request.get_json()
+    _hours = content['hours']
+    _personal = content['personal']
 
     if _hours == '':
         return jsonify({'action': 'error', 'type': 'hours', 'text': 'You did not specify how many hours you want to spend on the course!'})
