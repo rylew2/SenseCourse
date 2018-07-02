@@ -54,7 +54,7 @@ def quiz():
 
         profile = personality_insights.profile(_personal, content_type="text/plain;charset=utf-8")
     except WatsonException as err:
-        return jsonify({'action': 'error', 'type': 'personal', 'text': 'The IBM Watson API requires sufficient English words - please try again.'})
+        return jsonify({'action': 'error', 'type': 'personal', 'text': 'IBM Watson API response: ' + err.message})
 
     myinsights = {}
     for category in ['needs', 'personality', 'values']:
