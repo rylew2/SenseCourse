@@ -10,6 +10,12 @@ def dict_factory(cursor, row):
         d[col[0]] = row[idx]
     return d
 
+#############################################################################
+# /quiz
+# Take input time commitment and personal from user
+# -Store hours in profile
+# -Run personal against Watson Personality Insights and store in profile
+#############################################################################
 app_quiz = Blueprint('app_quiz',__name__)
 @app_quiz.route("/quiz", methods = ['POST'])
 def quiz():
@@ -98,7 +104,10 @@ def quiz():
     return jsonify({'action': 'ok'})
 
 
-
+#############################################################################
+# /specialization
+# Take specialization input form user and store in profile
+#############################################################################
 app_specialization = Blueprint('app_specialization',__name__)
 @app_specialization.route("/specialization", methods = ['POST'])
 def specialization():
@@ -123,7 +132,10 @@ def specialization():
 
     return jsonify({'action': 'ok'})
 
-
+#############################################################################
+# /generating
+# Generate 10 classes
+#############################################################################
 app_generating = Blueprint('app_generating',__name__)
 @app_generating.route("/generating", methods = ['POST'])
 def generating():
@@ -145,6 +157,8 @@ def generating():
 
 
     #Algorithm
+
+    #GA for ML, Robotics, or Computing Systems, SDP for II
     if(spec == "Machine Learning" or spec == "Computational Perception & Robotics" or spec == "Computing Systems"):
         classes.append("CS-8803-GA")
     else:

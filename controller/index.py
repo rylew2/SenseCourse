@@ -20,6 +20,7 @@ def index():
     #session['username'] = '123@123'
 
 
+    #Check if user is already logged in (session is set)
     if session.get('username'):
 
         conn = sqlite3.connect(DATABASE)
@@ -28,7 +29,7 @@ def index():
         cur.execute("SELECT * FROM user WHERE username = '"+session.get('username')+"';")
         userrow = cur.fetchone()
 
-        #
+        # If it's a brand new user signing in - go to quiz
         if userrow is None:
             return render_template("index_quiz.html", authors=authors)
 
@@ -43,7 +44,6 @@ def index():
             ########################################################################
             # -Sum the difference (delta) between class personality and student's
             # personality - for each of the 22 personality traits
-            # -
             ############################################################################
 
             cur2.execute("SELECT * FROM classes WHERE course = 'CS-8803-GA'")
