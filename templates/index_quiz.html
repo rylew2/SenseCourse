@@ -25,6 +25,7 @@
             </div>
             <div class="control">
                 <button class="button is-info" id="q_btn">Submit your questionaire!</button>
+                <img id="scLoading" src="../static/images/loading.gif" style="width:10% !important; display:none">
             </div>
         </div>
     </article>
@@ -36,6 +37,8 @@
             var hours = $("#hours").val();
             var personal = $("#personal").val();
 
+            $('#scLoading').show();
+
             $.ajax({
                   url: "/quiz",
                   type: "POST",
@@ -44,6 +47,7 @@
                   data:  JSON.stringify({ "hours": hours, "personal":personal }),
 
                   success: function(data) {
+                        $('#scLoading').hide();
                          $('#helphours').removeClass('is-success');
                         $('#helppersonal').removeClass('is-success');
 
