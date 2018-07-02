@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, session, request, jsonify
 from db import *
 import json
-from watson_developer_cloud import PersonalityInsightsV3
+from watson_developer_cloud import PersonalityInsightsV3, WatsonException
 import credentials
 
 def dict_factory(cursor, row):
@@ -46,12 +46,15 @@ def quiz():
     cur = conn.cursor()
     cur.execute("INSERT INTO user (username, hours, personal) VALUES (?,?,?);", (session.get('username'),_hours,_personal))
 
-    personality_insights = PersonalityInsightsV3(
-        version='2016-10-20',
-        username= credentials.username,
-        password= credentials.password)
+    try:
+        personality_insights = PersonalityInsightsV3(
+            version='2016-10-20',
+            username= credentials.username,
+            password= credentials.password)
 
-    profile = personality_insights.profile(_personal, content_type="text/plain;charset=utf-8")
+        profile = personality_insights.profile(_personal, content_type="text/plain;charset=utf-8")
+    except WatsonException as err:
+        return jsonify({'action': 'error', 'type': 'personal', 'text': 'The IBM Watson API requires sufficient English words - please try again.'})
 
     myinsights = {}
     for category in ['needs', 'personality', 'values']:
