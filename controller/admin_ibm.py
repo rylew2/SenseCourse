@@ -6,7 +6,12 @@ from db import *
 
 app_admin_ibm = Blueprint('app_admin_ibm', __name__)
 
-
+#################################################################################
+# /app_admin_ibm
+# Only needed to be run once.
+# Runs each concatenated course review (reviews.json) through Watson to generate
+# am average personality insights for each class - dump to insights.json
+###################################################################################
 @app_admin_ibm.route("/app_admin_ibm", methods=['GET', 'POST'])
 def admin_ibm():
     log = "<pre>"

@@ -8,6 +8,13 @@ from db import *
 
 app_admin_parse = Blueprint('app_admin_parse',__name__)
 
+
+################################################################################################################
+# /admin_parse
+# Run once at start.
+#  - Generates class reviews (ourcourses.json) from raw OMSCentral data (anonymized-backup.json)
+#  - Generates concatenated course reviews for each class (reviews.json) from class reviews (ourcourses.json)
+###############################################################################################################
 @app_admin_parse.route("/admin_parse", methods = ['GET','POST'])
 def admin_parse():
     log = "<pre>"

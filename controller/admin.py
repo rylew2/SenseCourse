@@ -4,6 +4,11 @@ from validate_email import validate_email
 
 app_admin = Blueprint('app_admin',__name__)
 
+
+#############################################################################
+# /admin
+# Administrator view. Display all table data.
+#############################################################################
 @app_admin.route("/admin", methods = ['GET'])
 def admin():
     if not session.get('username'):

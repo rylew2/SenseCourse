@@ -43,7 +43,7 @@ def index():
 
             ########################################################################
             # -Sum the difference (delta) between class personality and student's
-            # personality - for each of the 22 personality traits
+            # personality - for GA, SDP, AI, ML4T, KBAI, AOS, HPC
             ############################################################################
 
             cur2.execute("SELECT * FROM classes WHERE course = 'CS-8803-GA'")

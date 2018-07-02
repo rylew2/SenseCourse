@@ -5,6 +5,11 @@ import hashlib
 
 app_authenticate = Blueprint('app_authenticate',__name__)
 
+
+#############################################################################
+# /register
+# Take input time commitment and personal from user
+#############################################################################
 @app_authenticate.route("/register", methods = ['POST'])
 def register():
     if session.get('username'):
@@ -12,6 +17,10 @@ def register():
    
     _username = request.form['inputUsername']
     _password = request.form['inputPassword']
+    #
+    ##########################
+    #Input Validation
+    ##########################
     if _username == '':
         return jsonify({'action': 'error', 'type': 'username',
                         'text': 'Empty username is not allowed'})
@@ -30,10 +39,11 @@ def register():
     conn = sqlite3.connect(DATABASE)
     
     cur = conn.cursor()
-    
+
     cur.execute("SELECT * FROM login WHERE username = '"+_username+"'")
     myrow = cur.fetchone()
-    
+
+    #add user to db
     if myrow is None: #NO LOGINS EXIST with such username
         cur.execute("INSERT INTO login (username, password, admin) VALUES (?,?,?)",[_username, hashlib.md5(_password).hexdigest(), 0])
         conn.commit()
@@ -41,7 +51,9 @@ def register():
         session['admin'] = False
         return jsonify({'action': 'ok'})
     
-    
+
+    #If the user enters a correct password - check if they're an admin and set the admin session variable
+    #If bad password - return error
     #1 is username #2 is password
     if myrow[2] == hashlib.md5(_password).hexdigest():
         session['username'] = _username
