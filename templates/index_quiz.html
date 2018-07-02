@@ -43,7 +43,7 @@
                   contentType: "application/json", // send as JSON  (this should put it as the body as opposed to url encoding it
                   data:  JSON.stringify({ "hours": hours, "personal":personal }),
 
-                  complete: function(data) {
+                  success: function(data) {
                          $('#helphours').removeClass('is-success');
                         $('#helppersonal').removeClass('is-success');
 
@@ -78,7 +78,7 @@
                        }
                   },
 
-                  success: function() {
+                 complete: function() {
                     //called when successful
                  },
 
