@@ -285,7 +285,7 @@ def index():
             myclasses = []
             tclass = json.loads(userrow[5])
             for i in tclass:
-                cur.execute("SELECT course,course_name,rating,hours FROM classes WHERE course=?",[str(i)])
+                cur.execute("SELECT course,course_name,printf('%.1f', rating) as rating,printf('%.0f',hours) as hours FROM classes WHERE course=?",[str(i)])
                 myclasses.append(cur.fetchone())
 
             #cur.execute("SELECT * FROM user WHERE username = '" + session.get('username') + "';")
