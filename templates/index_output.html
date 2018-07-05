@@ -22,8 +22,8 @@
         <tr>
             <td>{{class[0]}}</td>
             <td>{{class[1]}}</td>
-            <td>{{class[2]}}</td>
-            <td>{{class[3]}}</td>
+            <td>{{'%0.1f'| format(class[2]|float)}}</td>
+            <td>{{'%0.0f'| format(class[3]|float)}}</td>
         </tr>
         {% endfor %}
         </tbody>
