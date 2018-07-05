@@ -1,0 +1,68 @@
+{% extends 'template.html' %}
+{% block content %}
+
+<style type="text/css">
+.column {
+  height: 200px;
+  margin: 10px;
+  text-align: center;
+  font-size: 2em;
+-webkit-box-shadow: -7px 11px 25px -9px rgba(0,0,0,1);
+-moz-box-shadow: -7px 11px 25px -9px rgba(0,0,0,1);
+box-shadow: -7px 11px 25px -9px rgba(0,0,0,1);
+}
+
+.column p {
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
+
+.brand {
+  min-height: 3rem;
+  background: #212;
+}
+
+.brand-title, .brand-title:hover, .brand-title:focus {
+  color: #fff;
+  font-size: 1.5em;
+  text-align: center;
+  margin-left: 0.6rem;
+  text-transform: uppercase;
+}
+.img1, .img2, .img3, .img4, .img5{
+background: white;}
+}
+
+.is-ancestor{
+    margin: 10%;
+}
+</style>
+<div class="tile is-ancestor">
+  <div class="tile is-parent">
+    <article class="tile is-child box">
+      <p class="title">One</p>
+      <p class="subtitle">Subtitle</p>
+    </article>
+  </div>
+  <div class="tile is-parent">
+    <article class="tile is-child box">
+      <p class="title">Two</p>
+      <p class="subtitle">Subtitle</p>
+    </article>
+  </div>
+  <div class="tile is-parent">
+    <article class="tile is-child box">
+      <p class="title">Three</p>
+      <p class="subtitle">Subtitle</p>
+    </article>
+  </div>
+  <div class="tile is-parent">
+    <article class="tile is-child box">
+      <p class="title">Four</p>
+      <p class="subtitle">Subtitle</p>
+    </article>
+  </div>
+</div>
+
+
+{% endblock %}

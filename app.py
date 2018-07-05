@@ -20,6 +20,7 @@ from controller.admin_delete_specs import app_admin_delete_specs
 from controller.logic import app_quiz
 from controller.logic import app_specialization
 from controller.logic import app_generating
+from controller.personality_insights import app_personalityInsights
 
 # from controller.testwatson import app_testwatson
 
@@ -34,6 +35,7 @@ app.register_blueprint(app_quiz)
 app.register_blueprint(app_specialization)
 app.register_blueprint(app_generating)
 # app.register_blueprint(app_testwatson)
+app.register_blueprint(app_personalityInsights)
 
 if __name__ == "__main__":
     app.run(debug=True, port=80)
