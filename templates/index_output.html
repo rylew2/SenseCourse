@@ -1,13 +1,12 @@
 {% extends 'template.html' %}
 {% block content %}
 
-
-      <link rel="stylesheet" type="text/css" href="../static/css/index_output.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/index_output.css">
 
 
 <div class="container" style="padding-top:2em;padding-bottom:2em;">
     <h1 id="message">Here are the classes you should take:</h1>
-    <h2>You need to take {{classes|length}} classes</h2>
+    <h2 style="font-size:24px">You need to take {{classes|length}} classes!</h2>
     <table class="table is-striped">
         <thead>
         <tr>
@@ -15,6 +14,7 @@
             <th>Classname</th>
             <th>Rating</th>
             <th>Hours</th>
+            <th>When to take</th>
         </tr>
         </thead>
         <tbody>
@@ -24,6 +24,7 @@
             <td>{{class[1]}}</td>
             <td>{{'%0.1f'| format(class[2]|float)}}</td>
             <td>{{'%0.0f'| format(class[3]|float)}}</td>
+            <td>{{ class[4] }}</td>
         </tr>
         {% endfor %}
         </tbody>

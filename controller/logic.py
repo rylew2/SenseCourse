@@ -38,8 +38,13 @@ def quiz():
     if int(_hours) > 100:
         return jsonify({'action':'error', 'type': 'hours', 'text': 'You specified more than allowed time!'})
 
-    if len(_personal.split()) < 100:
+    if len(_personal.split()) < 4:
         return jsonify({'action':'error', 'type': 'personal', 'text': 'Please write more!'})
+
+
+    while len(_personal.split()) < 130:
+        _personal += " "+_personal
+
 
     conn = sqlite3.connect(DATABASE)
 
