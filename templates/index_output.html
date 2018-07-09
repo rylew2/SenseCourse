@@ -5,39 +5,38 @@
 
 
 <div class="container" style="padding-top:2em;padding-bottom:2em;">
-    <h1 id="message">Here are the classes you should take:</h1>
-    <h2 style="font-size:24px">You need to take {{classes|length}} classes!</h2>
-    <h3><span style="color:#b593ff">* courses that are "free" electives and can be substituted for any other course!</span></h3>
-    <table class="table is-striped">
-        <thead>
-        <tr>
-            <th>ClassID</th>
-            <th>Classname</th>
-            <th>Rating</th>
-            <th>Hours</th>
-            <th>When to take</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for class in classes %}
-        <tr {% if class[5] == 1 %} style="background-color:#ceb9ff" {% endif %}>
-            <td>{{class[0]}}</td>
-            <td>{{class[1]}}</td>
-            <td>{{'%0.1f'| format(class[2]|float)}}</td>
-            <td>{{'%0.0f'| format(class[3]|float)}}</td>
-            <td>{{ class[4] }}</td>
-        </tr>
-        {% endfor %}
-        </tbody>
-
-    </table>
-
-
-    <h1>Classes are picked based on: </h1>
     <div class="columns">
-        <div class="column">
-            <div class="card">
-                <div class="card-content">
+        <div class="column tenClasses">
+            <h1 id="message">Here are the 10 classes you should take:</h1> <br>
+
+                <table class="table is-striped is-bordered">
+                    <thead>
+                    <tr>
+                        <th>ClassID</th>
+                        <th>Classname</th>
+                        <th>Rating</th>
+                        <th>Hours</th>
+                        <th>When to take</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for class in classes %}
+                    <tr {% if class[5] == 1 %} style="background-color:#c7e3ff" {% endif %}>
+                        <td>{{class[0]}}</td>
+                        <td>{{class[1]}}</td>
+                        <td>{{'%0.1f'| format(class[2]|float)}}</td>
+                        <td>{{'%0.0f'| format(class[3]|float)}}</td>
+                        <td>{{ class[4] }}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+        <span style="color:#7fb7ff">* courses that are "free" electives and can be substituted for any other course!</span>
+        </div>
+        <div class="column picksBasedOn">
+            <h1>Classes are picked based on: </h1> <br>
+               <div class="card">
+                <div class="card-content classPickBasedOn" >
                     <div class="media">
                         <div class="media-content">
                             <p class="title is-4">Specialization</p>
@@ -48,14 +47,12 @@
                         {{spec}}
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="column">
-            <div class="card">
-                <div class="card-content">
+            </div> <br>
+               <div class="card">
+                <div class="card-content classPickBasedOn">
                     <div class="media">
                         <div class="media-content">
-                            <p class="title is-4">Hours</p>
+                            <p class="title is-4">Time Commitment per Week (Hours)</p>
                         </div>
                     </div>
 
@@ -63,14 +60,12 @@
                         {{hours}}
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="column">
-            <div class="card">
-                <div class="card-content">
+            </div> <br>
+                <div class="card">
+                <div class="card-content classPickBasedOn">
                     <div class="media">
                         <div class="media-content">
-                            <p class="title is-4">Text</p>
+                            <p class="title is-4">Personal Essay (Why did you choose Computer Science?)</p>
                         </div>
                     </div>
 
@@ -78,16 +73,21 @@
                         {{text}}...
                     </div>
                 </div>
-            </div>
+            </div> <br>
         </div>
+
     </div>
 
+
+
+
+
     <div class="card">
-        <div class="card-content">
+        <div class="card-content personalityList">
             <div class="media">
                 <div class="media-content">
                     <p class="title is-4">Personalities</p>
-                    <p class="subtitle is-6">@IBM Watson</p>
+                    <p class="subtitle is-6"><a href="https://www.ibm.com/watson/services/personality-insights/">@IBM Watson Personality Insights</a></p>
                 </div>
             </div>
 
