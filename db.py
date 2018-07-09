@@ -31,7 +31,12 @@ def install(DATABASE):
 
     ##Test account
     cur.execute("INSERT INTO login (username, password, admin) VALUES ('123@123', '4297f44b13955235245b2497399d7a93', 1)") #Password = 123123
-    cur.execute("INSERT INTO user(username,hours,personal) VALUES ('123@123', 100, 'Hello World I am awesome and how are you? Are you awesome? I am sad all the time?')")
+    #cur.execute("INSERT INTO user(username,hours,personal) VALUES ('123@123', 100, 'Hello World I am awesome and how are you? Are you awesome? I am sad all the time?')")
+
+    cur.execute(
+        "INSERT INTO login (username, password, admin) VALUES ('demo@demo', '4297f44b13955235245b2497399d7a93', 0)")
+    cur.execute(
+        "INSERT INTO user(username,hours,specialization,personal) VALUES ('demo@demo', 15, 'Machine Learning','I love computer science because I love artificial intelligence and machine learning. I enjoy doing statistics.')")
 
 
     ##Add Course Data
@@ -86,7 +91,34 @@ def install(DATABASE):
                     "Selftranscendence = ? WHERE course = ?", insights[i])
 
 
-    insights['CS-6035'][len(insights['CS-6035'])-1] = "123@123"
+    """insights['CS-6035'][len(insights['CS-6035'])-1] = "123@123"
+
+    cur.execute("UPDATE user "
+                "SET Challenge = ?,"
+                "Closeness = ?,"
+                "Curiosity = ?,"
+                "Excitement = ?,"
+                "Harmony = ?,"
+                "Ideal = ?,"
+                "Liberty = ?,"
+                "Love = ?,"
+                "Practicality = ?,"
+                "Selfexpression = ?,"
+                "Stability = ?,"
+                "Structure = ?,"
+                "Openness = ?,"
+                "Conscientiousness = ?,"
+                "Extraversion = ?,"
+                "Agreeableness = ?,"
+                "Emotionalrange = ?,"
+                "Conservation = ?,"
+                "Opennesstochange = ?,"
+                "Hedonism = ?,"
+                "Selfenhancement = ?,"
+                "Selftranscendence = ? WHERE username = ?", insights['CS-6035'])"""
+
+
+    insights['CS-6035'][len(insights['CS-6035'])-1] = "demo@demo"
 
     cur.execute("UPDATE user "
                 "SET Challenge = ?,"

@@ -10,62 +10,56 @@
       <div class="column">
 
 
-      <div class="card" style="width:600px;">
-        <div class="card-image">
-          <figure class="image">
-              <div class='containertimes'>
-                <div class='bk'>
-                  <div class='mid'>
-                    <div class='fore'>
-                      <div class='figure'></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </figure>
-        </div>
+      <div class="card" >
+
         <div class="card-content">
           <div class="media">
             <div class="media-left">
               <figure class="image is-48x48">
-                <div class="area"><div class="box"></div></div>
+                <img src="/static/images/j.png" alt="userlogo"/>
               </figure>
             </div>
             <div class="media-content">
-              <p class="title is-4" id="twitname" style="display: inline;"></p>
-              <p class="subtitle is-6">@edTech</p>
+              <p class="title is-4" id="twitname" >SenseCourse</p>
+              <p class="subtitle is-6">@sensecourse</p>
             </div>
           </div>
 
           <div class="content">
             <div id="whatis" style="display: inline;font-size:18px"></div><br/>
-            <a href="#">#sensecourse</a> <a href="#">#findclasses</a>
+            <a href="#">#SenseCourse</a> <a href="#">#Specialiazations</a> <a href="#">#FindClasses</a> <a href="#">#OMSCS</a> <a href="#">#AI</a>
             <br>
             <time id="time"></time>
           </div>
         </div>
+                  <div class="card-image">
+          <figure class="image">
+              <img src="/static/images/adult.jpg" alt="SenseCourse student"/>
+          </figure>
+        </div>
       </div>
-
-
-
-
-
       </div>
-      <div class="column" style="padding:20px 0">
+      <div class="column">
         <h1 style="font-size:32px;color:#4a4a4a;text-align:center;">
-          Find your perfect course match today!
+          A simple tool to help you choose an OMSCS specialization as well as the courses for you to be successful in.
         </h1>
 
-        <p class="margin-left:120px;text-align:center;">
-        <svg class="heart-loader" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 90 90" version="1.1">
-          <g class="heart-loader__group">
-            <path class="heart-loader__square" stroke-width="1" fill="none" d="M0,30 0,90 60,90 60,30z"/>
-            <path class="heart-loader__circle m--left" stroke-width="1" fill="none" d="M60,60 a30,30 0 0,1 -60,0 a30,30 0 0,1 60,0"/>
-            <path class="heart-loader__circle m--right" stroke-width="1" fill="none" d="M60,60 a30,30 0 0,1 -60,0 a30,30 0 0,1 60,0"/>
-            <path class="heart-loader__heartPath" stroke-width="2" d="M60,30 a30,30 0 0,1 0,60 L0,90 0,30 a30,30 0 0,1 60,0" />
-          </g>
-        </svg>
-        </p>
+          <style>
+              ul li{
+                  margin-top:10px;
+                  color:#666;
+                  margin-bottom:20px;
+              }
+          </style>
+        <ul style="font-size:24px;padding-top:20px;">
+            <li><strong>Step 1.</strong> Perform a 5 second registration.</li>
+            <li><strong>Step 2.</strong> Answer a simple question on "Why you picked Computer Science as your Major" in a few sentences.</li>
+            <li><strong>Step 3.</strong> "Personality Insights" about you will be generated based on how you responded to the question.</li>
+            <li><strong>Step 4.</strong> Our AI will propose specializations in order of best match based on your "Personality Insights". Choose whichever on you prefer and click submit.</li>
+            <li><strong>Step 5.</strong> Write how many hours you want to commit to OMSCS each week and click submit.</li>
+            <li><strong>Step 6.</strong> Based on rating, your "Personality Insights", and your time commitment, the courses you need to take will be generated.</li>
+
+        </ul>
 
         <p style="text-align:center;margin:0 auto;">
         <a class="button is-primary is-rounded is-large" id="registerbtn"><i class="fa fa-rocket" aria-hidden="true"></i>&nbsp;&nbsp;Register Now!</a>
@@ -76,35 +70,62 @@
 
 </div>
 
-<script>var today = new Date();document.getElementById("time").innerHTML = (today.getMonth()+1)+'/'+today.getDate()+"/"+today.getFullYear();</script>
+<script>var today = new Date();
+
+var minutes = today.getMinutes();
+var hour = today.getHours();
+
+var sun = "AM";
+if(hour > 12){
+    hour -= 12;
+    sun = "PM";
+}
+var month = new Array();
+month[0] = "January";
+month[1] = "February";
+month[2] = "March";
+month[3] = "April";
+month[4] = "May";
+month[5] = "June";
+month[6] = "July";
+month[7] = "August";
+month[8] = "September";
+month[9] = "October";
+month[10] = "November";
+month[11] = "December";
+var n = month[today.getMonth()];
+document.getElementById("time").innerHTML =  hour + ":" + minutes + " "+sun+" - " +n+' '+today.getDate()+", "+today.getFullYear();
+
+
+</script>
 
 
 <section class="hero is-dark is-bold">
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
-        What is Sense Course?
+        What is SenseCourse?
       </h1>
       <h2 class="subtitle">
         <div class="columns">
           <div class="column">
-           Sense Course is an easy to use system created
+           SenseCourse is an easy to use system created
            by {{ authors }}
-            to help students pick classes that match
-            based on their personality.
+            to help students easily pick a specialization and give students the courses they should take to be successful in OMSCS.
           </div>
           <div class="column"></div>
         </div>
       </h2>
       <br/>
       <h1 class="title">
-        Why should I use Sense Course?
+        Why should I use SenseCourse?
       </h1>
       <br/>
       <h2 class="subtitle">
       <div class="columns">
         <div class="column">
-          It uses AI to pick classes based on your personality insight.
+          The whole process only takes 10 minutes. Our algorithm suggest a specialization and generate the courses based
+            on the specialization you decide to pursue.
         </div>
         <div class="column"></div>
       </div>
@@ -117,6 +138,7 @@
         <div class="columns">
           <div class="column">
             Yes! Our system is free and open for any user!
+              If you would like to support, feel free to sponsor another project: Juliar DReAM at <a href="https://juliar.org">https://juliar.org</a>
           </div>
           <div class="column"></div>
         </div>
@@ -130,41 +152,13 @@
 
 
 <script>
+    slogans = ["SenseCourse is awesome.", "SenseCourse is easy to use.","SenseCourse is made by students for students!",
+            "SenseCourse is funner than little miss sunshine.", "SenseCourse is best thing since sliced bread!","SenseCourse is simple!","SenseCourse senses you!",
+    "SenseCourse contains both a Sense and a Course"];
 
-    var options = {
-        strings: ["Sense Course is awesome.", "Sense Course is easy to use.","Sense Course is made by students for students!",
-            "Sense Course is funner than little miss sunshine.", "Sense Course is best thing since sliced bread!"],
-        backSpeed: 300,
-        loop: true,
-        loopCount: Infinity,
-        typeSpeed: 40
-    };
-    var typed = new Typed("#whatis", options);
+    $("#whatis").html(slogans[Math.floor(Math.random() * slogans.length)])
 
-    var optionstwo = {
-        strings: ["Andrey Makhanov","Ryan Lewis "],
-        backSpeed: 300,
-        loop: true,
-        loopCount: Infinity,
-        typeSpeed: 40
-    };
-    var twtiname = new Typed("#twitname", optionstwo);
 
-    const { easing, keyframes, styler } = window.popmotion;
-    const divStyler = styler(document.querySelector('.box'));
-    keyframes({
-        values: [
-            { x: 0, y: 0, rotateY: 0, background: '#9B65DE' },
-            { x: 15, y: 0, rotateY: 180, rotateX: 0, background: '#14D790' },
-            { x: 15, y: 15, rotateY: 180, rotateX: 180, background: '#FF1C68' },
-            { x: 0, y: 15, rotateY: 0, rotateX: 180, background: '#198FE3' },
-            { x: 0, y: 0, rotateY: 0, rotateX: 0, background: '#9B65DE' }
-        ],
-        duration: 3000,
-        easings: [easing.easeInOut, easing.easeInOut, easing.easeInOut, easing.easeInOut],
-        loop: Infinity,
-        //times: [0, 0.2, 0.5, 0.6, 1]
-    }).start(divStyler.set);
 
 </script>
 <style>

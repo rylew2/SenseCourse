@@ -7,6 +7,7 @@
 <div class="container" style="padding-top:2em;padding-bottom:2em;">
     <h1 id="message">Here are the classes you should take:</h1>
     <h2 style="font-size:24px">You need to take {{classes|length}} classes!</h2>
+    <h3><span style="color:#b593ff">* courses that are "free" electives and can be substituted for any other course!</span></h3>
     <table class="table is-striped">
         <thead>
         <tr>
@@ -19,7 +20,7 @@
         </thead>
         <tbody>
         {% for class in classes %}
-        <tr>
+        <tr {% if class[5] == 1 %} style="background-color:#ceb9ff" {% endif %}>
             <td>{{class[0]}}</td>
             <td>{{class[1]}}</td>
             <td>{{'%0.1f'| format(class[2]|float)}}</td>

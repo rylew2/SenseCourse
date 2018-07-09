@@ -53,7 +53,6 @@ def index():
 
     #session['username'] = '123@123'
 
-
     #Check if user is already logged in (session is set)
     if session.get('username'):
 
@@ -67,13 +66,12 @@ def index():
         if userrow is None:
             return render_template("index_quiz.html", authors=authors)
 
-        if userrow[2] and userrow[3] and not userrow[4]:
+        if userrow[3] and not userrow[4]:
             myorder = {"cpr":0,"cs":0,"ii":0,"ml":0}
             mypersonalities = userrow[6:]
 
             ########################################################################
-            # -Sum the difference (delta) between class personality and student's
-            # personality - for GA, SDP, AI, ML4T, KBAI, AOS, HPC
+            # -Sum the difference (delta) between class personality and student
             ############################################################################
 
             cpr = ['CS-8803-GA','CS-6601','CS-7641','CS-6475','CS-6476','CS-8803-001']
@@ -121,6 +119,8 @@ def index():
                                                         "Computing Systems",
                                                         "Interactive Intelligence",
                                                         "Machine Learning"])
+        if userrow[3] and userrow[4] and not userrow[2]:
+            return render_template("index_hours.html", authors=authors)
 
         if userrow[2] and userrow[3] and userrow[4] and not userrow[5]:
             return render_template("index_generating.html", authors=authors)
@@ -128,6 +128,15 @@ def index():
         if userrow[5]:
             myclasses = []
             tclass = json.loads(userrow[5])
+
+
+            if userrow[4] == "Computing Systems":
+                smart_cnt = 4
+                #6 courses
+            else:
+                smart_cnt = 5
+                #5 courses
+
             tclass.reverse()
             for i in tclass:
                 cur.execute("SELECT course,course_name,rating,hours FROM classes WHERE course=?",[str(i)])
@@ -138,7 +147,10 @@ def index():
             when_count = 0
             myclasses2 = []
             for i in myclasses:
-                myclasses2.append([i[0],i[1],i[2],i[3],when[when_count]])
+                zcnt = 0
+                if when_count < smart_cnt:
+                    zcnt = 1
+                myclasses2.append([i[0],i[1],i[2],i[3],when[when_count], zcnt])
                 when_count += 1
                 #print(i+(4))
 

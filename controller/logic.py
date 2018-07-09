@@ -4,58 +4,49 @@ import json
 from watson_developer_cloud import PersonalityInsightsV3, WatsonException
 import credentials
 
+
 def dict_factory(cursor, row):
     d = {}
     for idx, col in enumerate(cursor.description):
         d[col[0]] = row[idx]
     return d
 
+
 #############################################################################
 # /quiz
-# Take input time commitment and personal from user
-# -Store hours in profile
+#  Input: Personal Question from user
 # -Run personal against Watson Personality Insights and store in profile
 #############################################################################
-app_quiz = Blueprint('app_quiz',__name__)
-@app_quiz.route("/quiz", methods = ['POST'])
+app_quiz = Blueprint('app_quiz', __name__)
+
+
+@app_quiz.route("/quiz", methods=['POST'])
 def quiz():
     if not session.get('username'):
         return jsonify({'action': 'error', 'type': 'nosession'})
 
     content = request.get_json()
-    _hours = content['hours']
     _personal = content['personal']
 
-    if _hours == '':
-        return jsonify({'action': 'error', 'type': 'hours', 'text': 'You did not specify how many hours you want to spend on the course!'})
-
     if _personal == '':
-        return jsonify({'action':'error', 'type': 'personal', 'text': 'You did not answer the question!'})
-
-    if int(_hours) < 5:
-        return jsonify({'action':'error', 'type': 'hours', 'text': 'You specified less than allowed time!'})
-
-    if int(_hours) > 100:
-        return jsonify({'action':'error', 'type': 'hours', 'text': 'You specified more than allowed time!'})
+        return jsonify({'action': 'error', 'type': 'personal', 'text': 'You did not answer the question!'})
 
     if len(_personal.split()) < 4:
-        return jsonify({'action':'error', 'type': 'personal', 'text': 'Please write more!'})
-
+        return jsonify({'action': 'error', 'type': 'personal', 'text': 'Please write more!'})
 
     while len(_personal.split()) < 130:
-        _personal += " "+_personal
-
+        _personal += " " + _personal
 
     conn = sqlite3.connect(DATABASE)
 
     cur = conn.cursor()
-    cur.execute("INSERT INTO user (username, hours, personal) VALUES (?,?,?);", (session.get('username'),_hours,_personal))
+    cur.execute("INSERT INTO user (username, personal) VALUES (?,?);", (session.get('username'), _personal))
 
     try:
         personality_insights = PersonalityInsightsV3(
             version='2016-10-20',
-            username= credentials.username,
-            password= credentials.password)
+            username=credentials.username,
+            password=credentials.password)
 
         profile = personality_insights.profile(_personal, content_type="text/plain;charset=utf-8")
     except WatsonException as err:
@@ -67,39 +58,41 @@ def quiz():
         for trait in profile[category]:
             myinsights[trait['name']] = trait['percentile']
 
+
     #myinsights = {u'Emotional range': 0.28327360777610966, u'Liberty': 0.007254166630536019, u'Extraversion': 0.36721033332928, u'Conservation': 0.0004725338903785459, u'Agreeableness': 0.0167271664796797, u'Harmony': 0.007403095555066019, u'Openness to change': 0.6782749960203265, u'Self-transcendence': 0.36406397019542713, u'Conscientiousness': 0.4783699781762936, u'Hedonism': 0.007182633242991621, u'Self-enhancement': 0.1906140428288537, u'Structure': 0.04808455118475502, u'Practicality': 0.002143384188252162, u'Curiosity': 0.9752422922316606, u'Challenge': 0.3651970174369701, u'Excitement': 0.014951236572620319, u'Love': 0.10285670216713816, u'Self-expression': 0.006274098976008113, u'Closeness': 0.007407496319555118, u'Ideal': 0.07581279455010392, u'Stability': 0.007876238813793346, u'Openness': 0.9999869265760524}
 
     cur.execute("UPDATE user "
                 "SET Challenge = ?,"
-                    "Closeness = ?,"
-                    "Curiosity = ?,"
-                    "Excitement = ?,"
-                    "Harmony = ?,"
-                    "Ideal = ?,"
-                    "Liberty = ?,"
-                    "Love = ?,"
-                    "Practicality = ?,"
-                    "Selfexpression = ?,"
-                    "Stability = ?,"
-                    "Structure = ?,"
-                    "Openness = ?,"
-                    "Conscientiousness = ?,"
-                    "Extraversion = ?,"
-                    "Agreeableness = ?,"
-                    "Emotionalrange = ?,"
-                    "Conservation = ?,"
-                    "Opennesstochange = ?,"
-                    "Hedonism = ?,"
-                    "Selfenhancement = ?,"
-                    "Selftranscendence = ? WHERE username = ?", (myinsights['Challenge'], myinsights['Closeness'],myinsights['Curiosity'],
-                                                                 myinsights['Excitement'],myinsights['Harmony'], myinsights['Ideal'],
-                                                                 myinsights['Liberty'],myinsights['Love'],myinsights['Practicality'],
-                                                                 myinsights['Self-expression'],
-                                                                 myinsights['Stability'], myinsights['Structure'], myinsights['Openness'],
-                                                                 myinsights['Conscientiousness'], myinsights['Extraversion'], myinsights['Agreeableness'],
-                                                                 myinsights['Emotional range'], myinsights['Conservation'], myinsights['Openness to change'],
-                                                                 myinsights['Hedonism'], myinsights['Self-enhancement'], myinsights['Self-transcendence'],
-                                                                 session.get('username')))
+                "Closeness = ?,"
+                "Curiosity = ?,"
+                "Excitement = ?,"
+                "Harmony = ?,"
+                "Ideal = ?,"
+                "Liberty = ?,"
+                "Love = ?,"
+                "Practicality = ?,"
+                "Selfexpression = ?,"
+                "Stability = ?,"
+                "Structure = ?,"
+                "Openness = ?,"
+                "Conscientiousness = ?,"
+                "Extraversion = ?,"
+                "Agreeableness = ?,"
+                "Emotionalrange = ?,"
+                "Conservation = ?,"
+                "Opennesstochange = ?,"
+                "Hedonism = ?,"
+                "Selfenhancement = ?,"
+                "Selftranscendence = ? WHERE username = ?",
+                (myinsights['Challenge'], myinsights['Closeness'], myinsights['Curiosity'],
+                 myinsights['Excitement'], myinsights['Harmony'], myinsights['Ideal'],
+                 myinsights['Liberty'], myinsights['Love'], myinsights['Practicality'],
+                 myinsights['Self-expression'],
+                 myinsights['Stability'], myinsights['Structure'], myinsights['Openness'],
+                 myinsights['Conscientiousness'], myinsights['Extraversion'], myinsights['Agreeableness'],
+                 myinsights['Emotional range'], myinsights['Conservation'], myinsights['Openness to change'],
+                 myinsights['Hedonism'], myinsights['Self-enhancement'], myinsights['Self-transcendence'],
+                 session.get('username')))
 
     "Challenge, Closeness, Curiosity, Excitement, Harmony,"
     "Ideal, Liberty, Love, Practicality, Selfexpression,"
@@ -107,6 +100,39 @@ def quiz():
     "Agreeableness, Emotionalrange, Conservation, Opennesstochange, Hedonism,"
     "Selfenhancement, Selftranscendence)"
 
+    conn.commit()
+
+    return jsonify({'action': 'ok'})
+
+
+#############################################################################
+# /hours
+# Input: time commitment
+# -Store hours in profile
+#############################################################################
+app_hours = Blueprint('app_hours', __name__)
+
+
+@app_hours.route("/hours", methods=['POST'])
+def hours():
+    if not session.get('username'):
+        return jsonify({'action': 'error', 'type': 'nosession'})
+
+    content = request.get_json()
+    _hours = content['hours']
+
+    if _hours == '':
+        return jsonify({'action': 'error', 'type': 'hours',
+                        'text': 'You did not specify how many hours you want to spend on the course!'})
+    if int(_hours) < 5:
+        return jsonify({'action': 'error', 'type': 'hours', 'text': 'You specified less than allowed time!'})
+    if int(_hours) > 100:
+        return jsonify({'action': 'error', 'type': 'hours', 'text': 'You specified more than allowed time!'})
+
+    conn = sqlite3.connect(DATABASE)
+
+    cur = conn.cursor()
+    cur.execute("UPDATE user SET hours = '" + _hours + "' WHERE username = '" + session.get('username') + "';")
 
     conn.commit()
 
@@ -117,8 +143,10 @@ def quiz():
 # /specialization
 # Take specialization input form user and store in profile
 #############################################################################
-app_specialization = Blueprint('app_specialization',__name__)
-@app_specialization.route("/specialization", methods = ['POST'])
+app_specialization = Blueprint('app_specialization', __name__)
+
+
+@app_specialization.route("/specialization", methods=['POST'])
 def specialization():
     if not session.get('username'):
         return jsonify({'action': 'error', 'type': 'nosession'})
@@ -128,25 +156,29 @@ def specialization():
     if not _specs:
         return jsonify({'action': 'error', 'type': 'noselection', 'text': "You did not pick a specialization!"})
 
-    allspecs = ['Computing Systems','Computational Perception & Robotics','Interactive Intelligence','Machine Learning']
+    allspecs = ['Computing Systems', 'Computational Perception & Robotics', 'Interactive Intelligence',
+                'Machine Learning']
     if _specs not in allspecs:
         return jsonify({'action': 'error', 'type': 'noexist', 'text': "Something went wrong contact admin!"})
 
     conn = sqlite3.connect(DATABASE)
 
     cur = conn.cursor()
-    cur.execute("UPDATE user SET specialization = '"+_specs+"' WHERE username = '"+session.get('username')+"';")
+    cur.execute("UPDATE user SET specialization = '" + _specs + "' WHERE username = '" + session.get('username') + "';")
 
     conn.commit()
 
     return jsonify({'action': 'ok'})
 
+
 #############################################################################
 # /generating
 # Generate 10 classes
 #############################################################################
-app_generating = Blueprint('app_generating',__name__)
-@app_generating.route("/generating", methods = ['POST'])
+app_generating = Blueprint('app_generating', __name__)
+
+
+@app_generating.route("/generating", methods=['POST'])
 def generating():
     if not session.get('username'):
         return jsonify({'action': 'error', 'type': 'nosession'})
@@ -154,32 +186,31 @@ def generating():
     conn = sqlite3.connect(DATABASE)
     cur = conn.cursor()
 
-    cur.execute("SELECT * FROM user WHERE username = '"+ session.get('username') + "'")
+    cur.execute("SELECT * FROM user WHERE username = '" + session.get('username') + "'")
     myrow = cur.fetchone()
 
     spec = myrow[4]
     myhours = myrow[2]
     mypersonalities = myrow[6:]
 
-    #['Computing Systems','Computational Perception & Robotics','Interactive Intelligence','Machine Learning']
+    # ['Computing Systems','Computational Perception & Robotics','Interactive Intelligence','Machine Learning']
     classes = []
 
+    # Algorithm
 
-    #Algorithm
-
-    #GA for ML, Robotics, or Computing Systems, SDP for II
-    if(spec == "Machine Learning" or spec == "Computational Perception & Robotics" or spec == "Computing Systems"):
+    # GA for ML, Robotics, or Computing Systems, SDP for II
+    if (spec == "Machine Learning" or spec == "Computational Perception & Robotics" or spec == "Computing Systems"):
         classes.append("CS-8803-GA")
     else:
         classes.append("CS-6300")
 
-    #Core
+    # Core
     choices_core = {'Machine Learning': ['CS-7641'],
-                    'Computational Perception & Robotics': ['CS-6601','CS-7641'],
-                    'Interactive Intelligence':['CS-6601','CS-7641','CS-7637'],
-                    'Computing Systems':['CS-6210','CS-6250','CS-6290','CS-6300','CS-6400']}[spec]
+                    'Computational Perception & Robotics': ['CS-6601', 'CS-7641'],
+                    'Interactive Intelligence': ['CS-6601', 'CS-7641', 'CS-7637'],
+                    'Computing Systems': ['CS-6210', 'CS-6250', 'CS-6290', 'CS-6300', 'CS-6400']}[spec]
 
-    if(spec == "Machine Learning" or spec == "Computational Perception & Robotics"):
+    if (spec == "Machine Learning" or spec == "Computational Perception & Robotics"):
         take = 1
     else:
         take = 2
@@ -194,7 +225,7 @@ def generating():
             chours[i] = myrow[1]
 
         temp_cc = choices_core[:]
-        if any(float(k) <= float(myhours) for k in chours.itervalues()): #eliminate > hours if we can
+        if any(float(k) <= float(myhours) for k in chours.itervalues()):  # eliminate > hours if we can
             for l in choices_core:
                 if float(chours[l]) > float(myhours):
                     temp_cc.remove(l)
@@ -210,13 +241,14 @@ def generating():
         classes.append(bestclass)
         take = take - 1
 
-    #Electives
-    choices_core = {'Machine Learning': ['CS-6476','CS-7642','CS-7646','CSE-6242','CSE-6250'],
-                    'Computational Perception & Robotics': ['CS-6475','CS-6476','CS-8803-001'],
-                    'Interactive Intelligence':['CS-6440','CS-6460','CS-6750'],
-                    'Computing Systems':['CS-6035','CS-6200','CS-6262','CS-6291','CS-6310','CS-6340','CSE-6220']}[spec]
+    # Electives
+    choices_core = {'Machine Learning': ['CS-6476', 'CS-7642', 'CS-7646', 'CSE-6242', 'CSE-6250'],
+                    'Computational Perception & Robotics': ['CS-6475', 'CS-6476', 'CS-8803-001'],
+                    'Interactive Intelligence': ['CS-6440', 'CS-6460', 'CS-6750'],
+                    'Computing Systems': ['CS-6035', 'CS-6200', 'CS-6262', 'CS-6291', 'CS-6310', 'CS-6340',
+                                          'CSE-6220']}[spec]
 
-    if(spec == "Interactive Intelligence"):
+    if (spec == "Interactive Intelligence"):
         take = 2
     else:
         take = 3
@@ -231,7 +263,7 @@ def generating():
             chours[i] = myrow[1]
 
         temp_cc = choices_core[:]
-        if any(float(k) <= float(myhours) for k in chours.itervalues()): #eliminate > hours if we can
+        if any(float(k) <= float(myhours) for k in chours.itervalues()):  # eliminate > hours if we can
             for l in choices_core:
                 if float(chours[l]) > float(myhours):
                     temp_cc.remove(l)
@@ -247,8 +279,8 @@ def generating():
         classes.append(bestclass)
         take = take - 1
 
-    #Generated based on IBM
-    #cur.execute("SELECT * FROM classes WHERE course = ?", [i])
+    # Generated based on IBM
+    # cur.execute("SELECT * FROM classes WHERE course = ?", [i])
     needed = 10 - len(classes)
 
     conn2 = sqlite3.connect(DATABASE)
@@ -272,8 +304,6 @@ def generating():
             if float(i['hours']) <= float(myhours):
                 nn_rows.append(i)
         new_rows = nn_rows
-
-
 
     while needed > 0:
         bestclass = ""
@@ -304,7 +334,7 @@ def generating():
             tdelta = delta1 + delta2 + delta3 + delta4 + delta5 + delta6 + delta7 + delta8 + delta9 + delta10 + delta11 + \
                      delta12 + delta13 + delta14 + delta15 + delta16 + delta17 + delta18 + delta19 + delta20 + delta21 + delta22
             if bestdelta > tdelta:
-                bestdelta=tdelta
+                bestdelta = tdelta
                 bestclass = i['course']
 
         classes.append(bestclass)
@@ -313,8 +343,8 @@ def generating():
 
     json_classes = json.dumps(classes)
 
-
-    cur.execute("UPDATE user SET generated_classes = '" + json_classes + "' WHERE username = '" + session.get('username') + "';")
+    cur.execute("UPDATE user SET generated_classes = '" + json_classes + "' WHERE username = '" + session.get(
+        'username') + "';")
 
     conn.commit()
 

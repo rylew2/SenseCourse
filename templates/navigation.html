@@ -1,65 +1,108 @@
 <nav class="navbar is-info">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="/">
-      <img src="static/images/navdog.png" alt="Sense Courses Logo" width="128" height="64">
-    </a>
-    <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-
-  <div id="navbarExampleTransparentExample" class="navbar-menu">
-   {% if session.get('admin') %}
-    <div class="navbar-start">
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link" href="#">
-          Admin
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+            <img src="static/images/navdog.png" alt="Sense Courses Logo" width="128" height="64">
         </a>
-        <div class="navbar-dropdown is-boxed">
-          <a class="navbar-item" href="/admin">
-            View Tables
-          </a>
-          <!--<hr class="navbar-divider">
-          <a class="navbar-item is-active" href="https://bulma.io/documentation/components/breadcrumb/">
-            Regenerate Classes
-          </a>-->
-        </div>
-      </div>
+        <a class="navbar-burger" data-target="sensenavbar" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
     </div>
-    {% endif %}
 
-    <div class="navbar-end">
-        {% if session.get('username') %}
-        <div class="navbar-item">
-            <p>Welcome {{ session.get('username') }} </p>
-        </div>
+    <div id="sensenavbar" class="navbar-menu">
+        {% if not session.get('username') %}
+            <div class="navbar-start">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="#">
+                        Demo
+                    </a>
+                    <div class="navbar-dropdown is-boxed">
+                        <a class="navbar-item" href="/demo">
+                            View the demo!
+                        </a>
+                    </div>
+                </div>
+            </div>
         {% endif %}
-      <div class="navbar-item">
-        <div class="field is-grouped">
-          <p class="control">
+        {% if session.get('admin') %}
+            <div class="navbar-start">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="#">
+                        Admin
+                    </a>
+                    <div class="navbar-dropdown is-boxed">
+                        <a class="navbar-item" href="/admin">
+                            View Tables
+                        </a>
+                        <!--<hr class="navbar-divider">
+                        <a class="navbar-item is-active" href="https://bulma.io/documentation/components/breadcrumb/">
+                          Regenerate Classes
+                        </a>-->
+                    </div>
+                </div>
+            </div>
+        {% endif %}
 
-          {% if session.get('username') %}
-            <a class="button" href="/logout">
+        <div class="navbar-end">
+            {% if session.get('username') %}
+                <div class="navbar-item">
+                    <p>Welcome {{ session.get('username') }} </p>
+                </div>
+            {% endif %}
+            <div class="navbar-item">
+                <div class="field is-grouped">
+                    <p class="control">
+
+                        {% if session.get('username') %}
+                            <a class="button" href="/logout">
               <span class="icon">
               <i class="fas fa-sign-out-alt"></i>
               </span>
-              <span>Logout</span>
-            </a>
-           {% else %}
-            <a class="button" href="#" id="loginbtn">
+                                <span>Logout</span>
+                            </a>
+                        {% else %}
+                            <a class="button" href="#" id="loginbtn">
               <span class="icon">
                <i class="fa fa-user" aria-hidden="true"></i>
               </span>
-              <span>Login</span>
-            </a>
+                                <span>Login | Register</span>
+                            </a>
 
-            {% endif %}
-          </p>
+                        {% endif %}
+                    </p>
 
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+  // Get all "navbar-burger" elements
+  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Check if there are any navbar burgers
+  if ($navbarBurgers.length > 0) {
+
+    // Add a click event on each of them
+    $navbarBurgers.forEach(function ($el) {
+      $el.addEventListener('click', function () {
+
+        // Get the target from the "data-target" attribute
+        var target = $el.dataset.target;
+        var $target = document.getElementById(target);
+
+        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+        $el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
+      });
+    });
+  }
+
+});
+
+</script>
