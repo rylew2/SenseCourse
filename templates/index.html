@@ -55,9 +55,9 @@
                               }
                           </style>
                         <ul style="font-size:24px;padding-top:20px;">
-                            <li><strong>Step 1.</strong> Enter a new <a href="">username and password here to register.</a></li>
+                            <li><strong>Step 1.</strong> Enter a new <a class="stepLinkRegister">username and password here to register.</a></li>
                             <li><strong>Step 2.</strong> Answer a question and let our AI suggest a specialization. You will get to pick the specialization you want.</li>
-                            <li><strong>Step 3.</strong> Once specialization is chosen, SenseCourse will generate 10 OMSCS courses for you to take based on <a href="https://omscentral.com/">OMSCentral</a> course rating, your <a href="https://www.ibm.com/watson/services/personality-insights/">"Personality Insights"</a> generated, and your preferred time commitment per week .</li>
+                            <li><strong>Step 3.</strong> Once specialization is chosen, SenseCourse will generate 10 OMSCS courses for you to take based on <a href="https://omscentral.com/" target="_blank">OMSCentral</a> course rating, your <a href="https://www.ibm.com/watson/services/personality-insights/">"Personality Insights"</a> generated, and your preferred time commitment per week .</li>
                         </ul>
 
                 </div>
@@ -111,9 +111,9 @@ document.getElementById("time").innerHTML =  hour + ":" + minutes + " "+sun+" - 
       <h2 class="subtitle">
         <div class="columns">
           <div class="column">
-           SenseCourse is an easy to use system created
+           SenseCourse is a simple system created
            by {{ authors }}
-            to help students easily pick a specialization and give students the courses they should take to be successful in OMSCS.
+            to help give students the courses they should take to be successful in OMSCS.
           </div>
           <div class="column"></div>
         </div>
@@ -160,7 +160,7 @@ document.getElementById("time").innerHTML =  hour + ":" + minutes + " "+sun+" - 
 
     $("#whatis").html(slogans[Math.floor(Math.random() * slogans.length)])
 
-
+    $('.stepLinkRegister').click( function() {$('#registerbtn').click()} );
 
 </script>
 <style>
