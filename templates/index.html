@@ -1,192 +1,224 @@
 {% extends 'template.html' %}
 {% block content %}
 
- <link rel="stylesheet" type="text/css" href="../static/css/index.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css">
 
-<div class="container" style="padding-top:2em;padding-bottom:2em;">
-
-
-    <div class="columns">
-      <div class="column">
+    <div class="container" style="padding-top:2em;padding-bottom:2em;">
 
 
-      <div class="card" >
+        <div class="columns">
+            <div class="column">
 
-        <div class="card-content">
-            <div class="card-image">
-          <figure class="image">
-              <img src="/static/images/adult.jpg" alt="SenseCourse student"/>
-          </figure>
-        </div><br/>
-          <div class="media">
-            <div class="media-left">
-              <figure class="image is-48x48">
-                <img src="/static/images/j.png" alt="userlogo"/>
-              </figure>
-            </div>
-            <div class="media-content">
-              <p class="title is-4" id="twitname" >SenseCourse</p>
-              <p class="subtitle is-6">@sensecourse</p>
-            </div>
-          </div>
 
-          <div class="content">
-            <div id="whatis" style="display: inline;font-size:18px"></div><br/>
-            <a href="#">#SenseCourse</a> <a href="#">#Specialiazations</a> <a href="#">#FindClasses</a> <a href="#">#OMSCS</a> <a href="#">#AI</a>
-            <br>
-            <time id="time"></time>
-          </div>
-        </div>
+                <div class="card">
 
-      </div>
-      </div>
-      <div class="column">
-           <div class="card">
-                <div class="card-content" style="background-color: #f5f5f5" >
-                    <h1 style="font-size:32px;color:#4a4a4a;text-align:center;">
-                          A simple tool to help you choose an OMSCS specialization as well as the courses for you to be successful in.
-                        </h1>
+                    <div class="card-content">
+                        <div class="card-image">
+                            <figure class="image" id="mycan">
+                                <canvas id="canvas"></canvas>
+                            </figure>
+                        </div>
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-48x48">
+                                    <div class="area">
+                                        <div class="box" style="width:32px"></div>
+                                    </div>
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <p class="title is-4" id="twitname" style="display: inline;"></p>
+                                <p class="subtitle is-6">@senseCourse</p>
+                            </div>
+                        </div>
 
-                          <style>
-                              ul li{
-                                  margin-top:10px;
-                                  color:#666;
-                                  margin-bottom:20px;
-                              }
-                          </style>
-                        <ul style="font-size:24px;padding-top:20px;">
-                            <li><strong>Step 1.</strong> Enter a new <a class="stepLinkRegister">username and password here to register.</a></li>
-                            <li><strong>Step 2.</strong> Answer a question and let our AI suggest a specialization. You will get to pick the specialization you want.</li>
-                            <li><strong>Step 3.</strong> Once specialization is chosen, SenseCourse will generate 10 OMSCS courses for you to take based on <a href="https://omscentral.com/" target="_blank">OMSCentral</a> course rating, your <a href="https://www.ibm.com/watson/services/personality-insights/">"Personality Insights"</a> generated, and your preferred time commitment per week .</li>
-                        </ul>
+                        <div class="content">
+                            <div id="whatis" style="display: inline;font-size:18px"></div>
+                            <br/>
+                            <a href="#">#SenseCourse</a> <a href="#">#Specialiazations</a> <a href="#">#FindClasses</a>
+                            <a href="#">#OMSCS</a> <a href="#">#AI</a>
+                            <br>
+                            <time id="time"></time>
+                        </div>
+
+
+                    </div>
 
                 </div>
             </div>
+            <div class="column">
+                <div class="card">
+                    <div class="card-content" style="background-color: #f5f5f5">
+                        <h1 style="font-size:32px;color:#4a4a4a;text-align:center;">
+                            A simple tool to help you choose an OMSCS specialization as well as the courses for you to
+                            be successful in.
+                        </h1>
 
-        <p style="text-align:center;margin:0 auto;"> <br>
-        <a class="button is-primary is-rounded is-large" id="registerbtn"><i class="fa fa-rocket" aria-hidden="true"></i>&nbsp;&nbsp;Register Now!</a>
-        </p>
-        <p style="text-align:center;color:#7b8e9e;">100% FREE</p>
-      </div>
+                        <style>
+                            ul li {
+                                margin-top: 10px;
+                                color: #666;
+                                margin-bottom: 20px;
+                            }
+                        </style>
+                        <ul style="font-size:24px;padding-top:20px;">
+                            <li><strong>Step 1.</strong>  <a class="stepLinkRegister">Login or create</a> an account by providing username and password.</li>
+                            <li><strong>Step 2.</strong> Answer a simple question. Our AI will generate your "Personality Insights" based on the response. Our AI will provide your compatibility for each specialization.
+                            </li>
+                            <li><strong>Step 3.</strong> Once you've chosen a specialization, SenseCourse will generate 10 OMSCS courses for you to take.
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <p style="text-align:center;margin:0 auto;"><br>
+                    <a class="button is-primary is-rounded is-large" id="registerbtn"><i class="fa fa-rocket"
+                                                                                         aria-hidden="true"></i>&nbsp;&nbsp;Register
+                        Now!</a>
+                </p>
+                <p style="text-align:center;color:#7b8e9e;">100% FREE</p>
+            </div>
+        </div>
+
     </div>
 
-</div>
+    <script>var today = new Date();
 
-<script>var today = new Date();
+    var minutes = today.getMinutes();
+    var hour = today.getHours();
 
-var minutes = today.getMinutes();
-var hour = today.getHours();
-
-var sun = "AM";
-if(hour > 12){
-    hour -= 12;
-    sun = "PM";
-}
-var month = new Array();
-month[0] = "January";
-month[1] = "February";
-month[2] = "March";
-month[3] = "April";
-month[4] = "May";
-month[5] = "June";
-month[6] = "July";
-month[7] = "August";
-month[8] = "September";
-month[9] = "October";
-month[10] = "November";
-month[11] = "December";
-var n = month[today.getMonth()];
-document.getElementById("time").innerHTML =  hour + ":" + minutes + " "+sun+" - " +n+' '+today.getDate()+", "+today.getFullYear();
-
-
-</script>
-
-
-<section class="hero is-dark is-bold">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
-        What is SenseCourse?
-      </h1>
-      <h2 class="subtitle">
-        <div class="columns">
-          <div class="column">
-           SenseCourse is a simple system created
-           by {{ authors }}
-            to help give students the courses they should take to be successful in OMSCS.
-          </div>
-          <div class="column"></div>
-        </div>
-      </h2>
-      <br/>
-      <h1 class="title">
-        Why should I use SenseCourse?
-      </h1>
-      <br/>
-      <h2 class="subtitle">
-      <div class="columns">
-        <div class="column">
-          The whole process only takes 10 minutes. Our algorithm suggest a specialization and generate the courses based
-            on the specialization you decide to pursue.
-        </div>
-        <div class="column"></div>
-      </div>
-    </h2>
-      <br/>
-      <h1 class="title">
-        Is it really 100% free?
-      </h1>
-      <h2 class="subtitle">
-        <div class="columns">
-          <div class="column">
-            Yes! Our system is free and open for any user!
-              If you would like to support, feel free to sponsor another project: Juliar DReAM at <a href="https://juliar.org">https://juliar.org</a>
-          </div>
-          <div class="column"></div>
-        </div>
-      </h2>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-<script>
-    slogans = ["SenseCourse is awesome.", "SenseCourse is easy to use.","SenseCourse is made by students for students!",
-            "SenseCourse is funner than little miss sunshine.", "SenseCourse is best thing since sliced bread!","SenseCourse is simple!","SenseCourse senses you!",
-    "SenseCourse contains both a Sense and a Course"];
-
-    $("#whatis").html(slogans[Math.floor(Math.random() * slogans.length)])
-
-    $('.stepLinkRegister').click( function() {$('#registerbtn').click()} );
-
-</script>
-<style>
-  .typed-cursor {
-    -webkit-animation: blinker 1s linear infinite;
-    animation: blinker 1s linear infinite;
-    font-size:24px;
-  }
-
-  @-webkit-keyframes blinker {
-    50% {
-      opacity: 0;
-      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    var sun = "AM";
+    if (hour > 12) {
+        hour -= 12;
+        sun = "PM";
     }
-  }
+    var month = new Array();
+    month[0] = "January";
+    month[1] = "February";
+    month[2] = "March";
+    month[3] = "April";
+    month[4] = "May";
+    month[5] = "June";
+    month[6] = "July";
+    month[7] = "August";
+    month[8] = "September";
+    month[9] = "October";
+    month[10] = "November";
+    month[11] = "December";
+    var n = month[today.getMonth()];
+    document.getElementById("time").innerHTML = hour + ":" + minutes + " " + sun + " - " + n + ' ' + today.getDate() + ", " + today.getFullYear();
 
-  @keyframes blinker {
-    50% {
-      opacity: 0;
-      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    }
-  }
-</style>
+
+    </script>
+
+
+    <section class="hero is-dark is-bold">
+        <div class="hero-body">
+            <div class="container">
+
+                <h1 class="title">
+                    What is SenseCourse?
+                </h1>
+                <h2 class="subtitle">
+                    <div class="columns">
+                        <div class="column">
+                            SenseCourse is a simple system created
+                            by {{ authors }}
+                            to help give students the courses they should take to be successful in OMSCS.
+                        </div>
+                        <div class="column"></div>
+                    </div>
+                </h2>
+                <br/>
+                <h1 class="title">
+                    Why should I use SenseCourse?
+                </h1>
+                <br/>
+                <h2 class="subtitle">
+                    <div class="columns">
+                        <div class="column">
+                            The whole process only takes 10 minutes. Our algorithm suggest a specialization and generate
+                            the courses based
+                            on the specialization you decide to pursue.
+                        </div>
+                        <div class="column"></div>
+                    </div>
+                </h2>
+                <br/>
+                <h1 class="title">
+                    Is it really 100% free?
+                </h1>
+                <h2 class="subtitle">
+                    <div class="columns">
+                        <div class="column">
+                            Yes! Our system is free and open for any user!
+                            If you would like to support, feel free to sponsor another project: Juliar DReAM at <a
+                                href="https://juliar.org">https://juliar.org</a>
+                        </div>
+                        <div class="column"></div>
+                    </div>
+                </h2>
+
+
+                <div class="card-image">
+
+                    <figure class="image">
+                        <img src="static/images/adult.jpg"/>
+                    </figure>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 
 
+
+    <script>
+        var options = {
+            strings: ["SenseCourse is awesome.", "SenseCourse is easy to use.", "SenseCourse is made by students for students!",
+                "SenseCourse is funner than little miss sunshine.", "SenseCourse is best thing since sliced bread!", "SenseCourse is simple!", "SenseCourse senses you!",
+                "SenseCourse contains both a Sense and a Course"],
+            backSpeed: 300,
+            loop: true,
+            loopCount: Infinity,
+            typeSpeed: 40
+        };
+        var typed = new Typed("#whatis", options);
+        var optionstwo = {
+            strings: ["Andrey Makhanov", "Ryan Lewis "],
+            backSpeed: 300,
+            loop: true,
+            loopCount: Infinity,
+            typeSpeed: 40
+        };
+
+        var twtiname = new Typed("#twitname", optionstwo);
+        const {easing, keyframes, styler} = window.popmotion;
+        const divStyler = styler(document.querySelector('.box'));
+        keyframes({
+            values: [
+                {x: 0, y: 0, rotateY: 0, background: '#9B65DE'},
+                {x: 15, y: 0, rotateY: 180, rotateX: 0, background: '#14D790'},
+                {x: 15, y: 15, rotateY: 180, rotateX: 180, background: '#FF1C68'},
+                {x: 0, y: 15, rotateY: 0, rotateX: 180, background: '#198FE3'},
+                {x: 0, y: 0, rotateY: 0, rotateX: 0, background: '#9B65DE'}
+            ],
+            duration: 3000,
+            easings: [easing.easeInOut, easing.easeInOut, easing.easeInOut, easing.easeInOut],
+            loop: Infinity,
+            //times: [0, 0.2, 0.5, 0.6, 1]
+        }).start(divStyler.set);
+
+        $('.stepLinkRegister').click(function () {
+            $('#registerbtn').click()
+        });
+
+    </script>
+
+    <script src="/static/js/brain.js"></script>
 
 {% endblock %}

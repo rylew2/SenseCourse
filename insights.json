@@ -1,478 +1,478 @@
 {
     "CS-6035": [
         {
-            "Challenge": 0.6983683882625662
+            "Challenge": 0.6951472096812719
         }, 
         {
-            "Closeness": 0.004605621862997733
+            "Closeness": 0.005269523434887902
         }, 
         {
-            "Curiosity": 0.9297062137999736
+            "Curiosity": 0.9367006569233276
         }, 
         {
-            "Excitement": 0.02551485392365105
+            "Excitement": 0.026683182707973818
         }, 
         {
-            "Harmony": 0.012238602070319737
+            "Harmony": 0.01403011131307541
         }, 
         {
-            "Ideal": 0.16813398127219314
+            "Ideal": 0.17779521713752483
         }, 
         {
-            "Liberty": 0.07393348407643974
+            "Liberty": 0.08039525890917942
         }, 
         {
-            "Love": 0.010305587983859832
+            "Love": 0.01007552953477453
         }, 
         {
-            "Practicality": 0.07943333636082778
+            "Practicality": 0.07994544931048236
         }, 
         {
-            "Self-expression": 0.0037796558022229476
+            "Self-expression": 0.00459326390927306
         }, 
         {
-            "Stability": 0.014388720124006271
+            "Stability": 0.01988136403245222
         }, 
         {
-            "Structure": 0.5024876172488909
+            "Structure": 0.5536213368717223
         }, 
         {
-            "Openness": 0.9872634585928048
+            "Openness": 0.9874474918635637
         }, 
         {
-            "Conscientiousness": 0.7324318561427173
+            "Conscientiousness": 0.74829794376853
         }, 
         {
-            "Extraversion": 0.0329721657285158
+            "Extraversion": 0.03941090833077243
         }, 
         {
-            "Agreeableness": 0.008771019296025806
+            "Agreeableness": 0.011368097491089635
         }, 
         {
-            "Emotional range": 0.5356933489141944
+            "Emotional range": 0.5620575021960178
         }, 
         {
-            "Conservation": 0.004060860005438538
+            "Conservation": 0.004661655807388587
         }, 
         {
-            "Openness to change": 0.4311176024677584
+            "Openness to change": 0.44543686641791647
         }, 
         {
-            "Hedonism": 0.005308408765696215
+            "Hedonism": 0.005570083263634451
         }, 
         {
-            "Self-enhancement": 0.3077629515717845
+            "Self-enhancement": 0.30907600028764415
         }, 
         {
-            "Self-transcendence": 0.2835862412832898
+            "Self-transcendence": 0.29812901006260095
         }
     ], 
     "CS-6200": [
         {
-            "Challenge": 0.8594471954780047
+            "Challenge": 0.8698675996296762
         }, 
         {
-            "Closeness": 0.005878402790945425
+            "Closeness": 0.004929575536368358
         }, 
         {
-            "Curiosity": 0.9368115277876391
+            "Curiosity": 0.925721942286636
         }, 
         {
-            "Excitement": 0.05000989256785121
+            "Excitement": 0.048711170706834506
         }, 
         {
-            "Harmony": 0.020040486492369947
+            "Harmony": 0.018067885670273398
         }, 
         {
-            "Ideal": 0.3037216724447038
+            "Ideal": 0.29231742478737777
         }, 
         {
-            "Liberty": 0.136937640302845
+            "Liberty": 0.12980479436715386
         }, 
         {
-            "Love": 0.013990993560629328
+            "Love": 0.010401515898030844
         }, 
         {
-            "Practicality": 0.1595928863127875
+            "Practicality": 0.15710539126026962
         }, 
         {
-            "Self-expression": 0.005588101009102897
+            "Self-expression": 0.004300735458634741
         }, 
         {
-            "Stability": 0.032660384372626916
+            "Stability": 0.03539914552255463
         }, 
         {
-            "Structure": 0.6614726902969841
+            "Structure": 0.6785134713866805
         }, 
         {
-            "Openness": 0.9539603393246521
+            "Openness": 0.9470574574439927
         }, 
         {
-            "Conscientiousness": 0.751365551287872
+            "Conscientiousness": 0.7818086731593514
         }, 
         {
-            "Extraversion": 0.06902171933672446
+            "Extraversion": 0.0683835060174578
         }, 
         {
-            "Agreeableness": 0.012558577690491457
+            "Agreeableness": 0.011442306972068272
         }, 
         {
-            "Emotional range": 0.6202941870845614
+            "Emotional range": 0.6559434208918925
         }, 
         {
-            "Conservation": 0.009096054441578849
+            "Conservation": 0.011267186062366596
         }, 
         {
-            "Openness to change": 0.4285775932255798
+            "Openness to change": 0.40053008733522033
         }, 
         {
-            "Hedonism": 0.007637309589350827
+            "Hedonism": 0.007520355275089485
         }, 
         {
-            "Self-enhancement": 0.2911500328684207
+            "Self-enhancement": 0.30863176499326017
         }, 
         {
-            "Self-transcendence": 0.31696151108604503
+            "Self-transcendence": 0.30455706013979633
         }
     ], 
     "CS-6210": [
         {
-            "Challenge": 0.8408775144141397
+            "Challenge": 0.7815449309497748
         }, 
         {
-            "Closeness": 0.004911028897441327
+            "Closeness": 0.0077969119840147205
         }, 
         {
-            "Curiosity": 0.9152699631324019
+            "Curiosity": 0.9415020983337901
         }, 
         {
-            "Excitement": 0.04238504122262471
+            "Excitement": 0.03702551950233096
         }, 
         {
-            "Harmony": 0.025167489295841228
+            "Harmony": 0.029873056131031528
         }, 
         {
-            "Ideal": 0.15776923329531206
+            "Ideal": 0.15555569699893534
         }, 
         {
-            "Liberty": 0.07045935193276226
+            "Liberty": 0.0753447232993461
         }, 
         {
-            "Love": 0.007710159739538813
+            "Love": 0.012518841211676568
         }, 
         {
-            "Practicality": 0.08101044851993888
+            "Practicality": 0.06680896478592896
         }, 
         {
-            "Self-expression": 0.0032319826424857534
+            "Self-expression": 0.0047002309954017885
         }, 
         {
-            "Stability": 0.02307681372490661
+            "Stability": 0.03926910161815911
         }, 
         {
-            "Structure": 0.5975367376081375
+            "Structure": 0.5954289851437685
         }, 
         {
-            "Openness": 0.9524923914192818
+            "Openness": 0.972856266027599
         }, 
         {
-            "Conscientiousness": 0.8544305392258609
+            "Conscientiousness": 0.8504730509454651
         }, 
         {
-            "Extraversion": 0.024331736527845094
+            "Extraversion": 0.03686029834554283
         }, 
         {
-            "Agreeableness": 0.014781943680066356
+            "Agreeableness": 0.0180084866535965
         }, 
         {
-            "Emotional range": 0.5307059136287713
+            "Emotional range": 0.5224717223744562
         }, 
         {
-            "Conservation": 0.01492003211840115
+            "Conservation": 0.014568150525490986
         }, 
         {
-            "Openness to change": 0.352969009428595
+            "Openness to change": 0.42158814671791467
         }, 
         {
-            "Hedonism": 0.003112400229594414
+            "Hedonism": 0.0026282399594125816
         }, 
         {
-            "Self-enhancement": 0.21084841506136798
+            "Self-enhancement": 0.20617940062095685
         }, 
         {
-            "Self-transcendence": 0.31426419494175795
+            "Self-transcendence": 0.3457390030942538
         }
     ], 
     "CS-6250": [
         {
-            "Challenge": 0.6924675392837586
+            "Challenge": 0.7221320292375661
         }, 
         {
-            "Closeness": 0.004241037579585438
+            "Closeness": 0.005692596635213432
         }, 
         {
-            "Curiosity": 0.9152015812326529
+            "Curiosity": 0.9166803777009174
         }, 
         {
-            "Excitement": 0.017327570876893017
+            "Excitement": 0.017821473914630348
         }, 
         {
-            "Harmony": 0.008800583694588804
+            "Harmony": 0.009932701224028562
         }, 
         {
-            "Ideal": 0.20173867255773137
+            "Ideal": 0.16488337721645674
         }, 
         {
-            "Liberty": 0.05176234961304732
+            "Liberty": 0.05265046136048579
         }, 
         {
-            "Love": 0.010567739474554916
+            "Love": 0.011184986023878907
         }, 
         {
-            "Practicality": 0.09226771120058119
+            "Practicality": 0.08446698285371174
         }, 
         {
-            "Self-expression": 0.0025190486866220607
+            "Self-expression": 0.0017591808949994348
         }, 
         {
-            "Stability": 0.014597812999219306
+            "Stability": 0.01862984604729573
         }, 
         {
-            "Structure": 0.5178236733582073
+            "Structure": 0.5837978855507032
         }, 
         {
-            "Openness": 0.9783514097981088
+            "Openness": 0.9829512778399401
         }, 
         {
-            "Conscientiousness": 0.6752263381313189
+            "Conscientiousness": 0.7096052044946091
         }, 
         {
-            "Extraversion": 0.07040811126638519
+            "Extraversion": 0.081424762755476
         }, 
         {
-            "Agreeableness": 0.008417224764708686
+            "Agreeableness": 0.010564085758092367
         }, 
         {
-            "Emotional range": 0.5620187570490927
+            "Emotional range": 0.5765747916440498
         }, 
         {
-            "Conservation": 0.004172394157539394
+            "Conservation": 0.004255118204310515
         }, 
         {
-            "Openness to change": 0.30260552237279104
+            "Openness to change": 0.3828116227396273
         }, 
         {
-            "Hedonism": 0.006476070278922719
+            "Hedonism": 0.005020382315027827
         }, 
         {
-            "Self-enhancement": 0.2672924396168717
+            "Self-enhancement": 0.25111014199099485
         }, 
         {
-            "Self-transcendence": 0.24707080911336515
+            "Self-transcendence": 0.23733232862438802
         }
     ], 
     "CS-6262": [
         {
-            "Challenge": 0.6435175676305129
+            "Challenge": 0.7385191742028157
         }, 
         {
-            "Closeness": 0.0054752625541804045
+            "Closeness": 0.004981467250676386
         }, 
         {
-            "Curiosity": 0.8894078566570452
+            "Curiosity": 0.9096047097034196
         }, 
         {
-            "Excitement": 0.016954354705124075
+            "Excitement": 0.023347085148126945
         }, 
         {
-            "Harmony": 0.01199968626966963
+            "Harmony": 0.013293488075378224
         }, 
         {
-            "Ideal": 0.1948696392979411
+            "Ideal": 0.21290547689425493
         }, 
         {
-            "Liberty": 0.057403596339577534
+            "Liberty": 0.07844834807245571
         }, 
         {
-            "Love": 0.00932260083647457
+            "Love": 0.011574668775575114
         }, 
         {
-            "Practicality": 0.08997084196599514
+            "Practicality": 0.10844422205090204
         }, 
         {
-            "Self-expression": 0.004330787476411635
+            "Self-expression": 0.004318280123053797
         }, 
         {
-            "Stability": 0.03360814847959315
+            "Stability": 0.03986810353562731
         }, 
         {
-            "Structure": 0.5708857705421748
+            "Structure": 0.6286299474331274
         }, 
         {
-            "Openness": 0.975815400407753
+            "Openness": 0.9737426129611343
         }, 
         {
-            "Conscientiousness": 0.6991358821067393
+            "Conscientiousness": 0.7499778093828722
         }, 
         {
-            "Extraversion": 0.08898665894305252
+            "Extraversion": 0.10675265979180015
         }, 
         {
-            "Agreeableness": 0.01785777032236968
+            "Agreeableness": 0.013589883701368544
         }, 
         {
-            "Emotional range": 0.6222680068849339
+            "Emotional range": 0.6650225345064571
         }, 
         {
-            "Conservation": 0.0034438033636246534
+            "Conservation": 0.004049356690496386
         }, 
         {
-            "Openness to change": 0.27574513756011176
+            "Openness to change": 0.2998568864037481
         }, 
         {
-            "Hedonism": 0.006704541341830628
+            "Hedonism": 0.005832592335861808
         }, 
         {
-            "Self-enhancement": 0.1993452574857631
+            "Self-enhancement": 0.24426641423316453
         }, 
         {
-            "Self-transcendence": 0.26578213142140084
+            "Self-transcendence": 0.2698348323465643
         }
     ], 
     "CS-6263": [
         {
-            "Challenge": 0.6954199939539418
+            "Challenge": 0.760628704736132
         }, 
         {
-            "Closeness": 0.0014898455690918744
+            "Closeness": 0.002301362519930239
         }, 
         {
-            "Curiosity": 0.9189655837442262
+            "Curiosity": 0.9391028257129105
         }, 
         {
-            "Excitement": 0.03461523584066756
+            "Excitement": 0.01906388404650089
         }, 
         {
-            "Harmony": 0.003539248028239239
+            "Harmony": 0.004907792026694224
         }, 
         {
-            "Ideal": 0.26902578393700693
+            "Ideal": 0.3294282721589137
         }, 
         {
-            "Liberty": 0.06398382117112072
+            "Liberty": 0.05991932796515542
         }, 
         {
-            "Love": 0.01226708975710944
+            "Love": 0.017537105648823603
         }, 
         {
-            "Practicality": 0.14273705898116834
+            "Practicality": 0.09601188851554787
         }, 
         {
-            "Self-expression": 0.0022953409458357776
+            "Self-expression": 0.0026494620854607964
         }, 
         {
-            "Stability": 0.00975770936575282
+            "Stability": 0.013089025324588888
         }, 
         {
-            "Structure": 0.5503176966021669
+            "Structure": 0.47594163028012926
         }, 
         {
-            "Openness": 0.9820659587385683
+            "Openness": 0.9802818227020098
         }, 
         {
-            "Conscientiousness": 0.5870606785791928
+            "Conscientiousness": 0.6599385619443517
         }, 
         {
-            "Extraversion": 0.0590702200805861
+            "Extraversion": 0.06080153868957333
         }, 
         {
-            "Agreeableness": 0.0010175910782486142
+            "Agreeableness": 0.0025775113311979347
         }, 
         {
-            "Emotional range": 0.6314509539557289
+            "Emotional range": 0.582558733719478
         }, 
         {
-            "Conservation": 0.0039123201967381505
+            "Conservation": 0.0023747201845419896
         }, 
         {
-            "Openness to change": 0.3092139137107128
+            "Openness to change": 0.311699149086633
         }, 
         {
-            "Hedonism": 0.01023040613801457
+            "Hedonism": 0.008192952923202657
         }, 
         {
-            "Self-enhancement": 0.44589140889655854
+            "Self-enhancement": 0.38291289248979177
         }, 
         {
-            "Self-transcendence": 0.16716830463420063
+            "Self-transcendence": 0.19772482448182416
         }
     ], 
     "CS-6290": [
         {
-            "Challenge": 0.6708880658232249
+            "Challenge": 0.7222474644972445
         }, 
         {
-            "Closeness": 0.0023860168881495447
+            "Closeness": 0.0037935279500693753
         }, 
         {
-            "Curiosity": 0.8931191539000398
+            "Curiosity": 0.9074896164222624
         }, 
         {
-            "Excitement": 0.03648526324910256
+            "Excitement": 0.03766563140587492
         }, 
         {
-            "Harmony": 0.004043217743110672
+            "Harmony": 0.004614949874654051
         }, 
         {
-            "Ideal": 0.21659956913966294
+            "Ideal": 0.2175750614176854
         }, 
         {
-            "Liberty": 0.07206489991191167
+            "Liberty": 0.09790402454082053
         }, 
         {
-            "Love": 0.009768356917855492
+            "Love": 0.009517036918874344
         }, 
         {
-            "Practicality": 0.09176344078560361
+            "Practicality": 0.10226432932970192
         }, 
         {
-            "Self-expression": 0.0014195757716962687
+            "Self-expression": 0.0015506867491527632
         }, 
         {
-            "Stability": 0.0047960176924676245
+            "Stability": 0.0038530704895301526
         }, 
         {
-            "Structure": 0.39441290909156124
+            "Structure": 0.3928563591690633
         }, 
         {
-            "Openness": 0.9768572975288925
+            "Openness": 0.9756969732534646
         }, 
         {
-            "Conscientiousness": 0.5142190262913043
+            "Conscientiousness": 0.5537484434552665
         }, 
         {
-            "Extraversion": 0.05270870456552118
+            "Extraversion": 0.06136412106176292
         }, 
         {
-            "Agreeableness": 0.004099642189908881
+            "Agreeableness": 0.0075412619449852225
         }, 
         {
-            "Emotional range": 0.5295060515983794
+            "Emotional range": 0.5999045777103799
         }, 
         {
-            "Conservation": 0.0019716376416935577
+            "Conservation": 0.0037042869840435144
         }, 
         {
-            "Openness to change": 0.344002176647815
+            "Openness to change": 0.3760816540329036
         }, 
         {
-            "Hedonism": 0.008209888698015644
+            "Hedonism": 0.008595414058588546
         }, 
         {
-            "Self-enhancement": 0.28526596886733857
+            "Self-enhancement": 0.29030168841568227
         }, 
         {
-            "Self-transcendence": 0.18129197658027518
+            "Self-transcendence": 0.15075503601416718
         }
     ], 
     "CS-6291": [
@@ -545,1158 +545,1158 @@
     ], 
     "CS-6300": [
         {
-            "Challenge": 0.8953940590867302
+            "Challenge": 0.8939419563141773
         }, 
         {
-            "Closeness": 0.010488844552688892
+            "Closeness": 0.008944350049412908
         }, 
         {
-            "Curiosity": 0.9482658825729013
+            "Curiosity": 0.9362147677757194
         }, 
         {
-            "Excitement": 0.05270785658883986
+            "Excitement": 0.049399676099315615
         }, 
         {
-            "Harmony": 0.018559053991212826
+            "Harmony": 0.017175938376963462
         }, 
         {
-            "Ideal": 0.3513346245592065
+            "Ideal": 0.3223450862873194
         }, 
         {
-            "Liberty": 0.24806663977728438
+            "Liberty": 0.23596194673116844
         }, 
         {
-            "Love": 0.042542419891005434
+            "Love": 0.037283187604847556
         }, 
         {
-            "Practicality": 0.241587759531125
+            "Practicality": 0.24745612202801864
         }, 
         {
-            "Self-expression": 0.0047173217613817875
+            "Self-expression": 0.003927604649349825
         }, 
         {
-            "Stability": 0.03924173561793609
+            "Stability": 0.04298399101491829
         }, 
         {
-            "Structure": 0.7728157140113269
+            "Structure": 0.8249504486062564
         }, 
         {
-            "Openness": 0.9658482267040154
+            "Openness": 0.9686721105420026
         }, 
         {
-            "Conscientiousness": 0.6552435107248461
+            "Conscientiousness": 0.7078506454002188
         }, 
         {
-            "Extraversion": 0.13796082122207948
+            "Extraversion": 0.13323451525494828
         }, 
         {
-            "Agreeableness": 0.007956900530218025
+            "Agreeableness": 0.0047557981333000154
         }, 
         {
-            "Emotional range": 0.6233100897821869
+            "Emotional range": 0.6752315900797888
         }, 
         {
-            "Conservation": 0.006436894356480205
+            "Conservation": 0.008344847372851072
         }, 
         {
-            "Openness to change": 0.5994928826161822
+            "Openness to change": 0.5466959417009609
         }, 
         {
-            "Hedonism": 0.009422883016354189
+            "Hedonism": 0.006201652454948914
         }, 
         {
-            "Self-enhancement": 0.3708665281116832
+            "Self-enhancement": 0.312145991839461
         }, 
         {
-            "Self-transcendence": 0.29912547075246315
+            "Self-transcendence": 0.28231410100595483
         }
     ], 
     "CS-6310": [
         {
-            "Challenge": 0.8426717189565491
+            "Challenge": 0.8629491982290549
         }, 
         {
-            "Closeness": 0.006546024286701035
+            "Closeness": 0.006463832926843438
         }, 
         {
-            "Curiosity": 0.9306259541637687
+            "Curiosity": 0.8801641656661854
         }, 
         {
-            "Excitement": 0.04178679257578727
+            "Excitement": 0.038831414542757736
         }, 
         {
-            "Harmony": 0.014162034698936232
+            "Harmony": 0.01208491537178441
         }, 
         {
-            "Ideal": 0.2743889630173132
+            "Ideal": 0.21468297172094652
         }, 
         {
-            "Liberty": 0.12509317915692736
+            "Liberty": 0.10785576462436225
         }, 
         {
-            "Love": 0.024174378673966546
+            "Love": 0.021079687016993198
         }, 
         {
-            "Practicality": 0.13592850217776253
+            "Practicality": 0.13733303821374593
         }, 
         {
-            "Self-expression": 0.0027697932126024005
+            "Self-expression": 0.0019133690475289233
         }, 
         {
-            "Stability": 0.02230302100697762
+            "Stability": 0.01769993289394184
         }, 
         {
-            "Structure": 0.7027862402185506
+            "Structure": 0.7647042233691496
         }, 
         {
-            "Openness": 0.9766920805348791
+            "Openness": 0.9786988671369603
         }, 
         {
-            "Conscientiousness": 0.7050664135941002
+            "Conscientiousness": 0.775306369834427
         }, 
         {
-            "Extraversion": 0.09591803088038015
+            "Extraversion": 0.12085285651362931
         }, 
         {
-            "Agreeableness": 0.007966236753980838
+            "Agreeableness": 0.009292092320294154
         }, 
         {
-            "Emotional range": 0.5995570073457397
+            "Emotional range": 0.7177264632417332
         }, 
         {
-            "Conservation": 0.006539888238512981
+            "Conservation": 0.009631793981828007
         }, 
         {
-            "Openness to change": 0.5388226750750118
+            "Openness to change": 0.46966452784856183
         }, 
         {
-            "Hedonism": 0.008051594203827006
+            "Hedonism": 0.005787804263903684
         }, 
         {
-            "Self-enhancement": 0.39188079505293455
+            "Self-enhancement": 0.3403989618896676
         }, 
         {
-            "Self-transcendence": 0.24229014353256062
+            "Self-transcendence": 0.17438997213499063
         }
     ], 
     "CS-6340": [
         {
-            "Challenge": 0.7243395269869558
+            "Challenge": 0.7272965061869758
         }, 
         {
-            "Closeness": 0.0037264385423085855
+            "Closeness": 0.0043949128908082336
         }, 
         {
-            "Curiosity": 0.9365787030467574
+            "Curiosity": 0.9380412021261513
         }, 
         {
-            "Excitement": 0.0282431899127904
+            "Excitement": 0.027940016609591556
         }, 
         {
-            "Harmony": 0.01042270556469549
+            "Harmony": 0.01068886786492429
         }, 
         {
-            "Ideal": 0.2031265597614163
+            "Ideal": 0.17867307994302645
         }, 
         {
-            "Liberty": 0.06607525065490522
+            "Liberty": 0.05977704459608629
         }, 
         {
-            "Love": 0.007668343516598453
+            "Love": 0.009013930436613304
         }, 
         {
-            "Practicality": 0.08725457687463967
+            "Practicality": 0.08475765550855452
         }, 
         {
-            "Self-expression": 0.002261490936589894
+            "Self-expression": 0.0027627870133456467
         }, 
         {
-            "Stability": 0.026102304082868455
+            "Stability": 0.02040909852081213
         }, 
         {
-            "Structure": 0.5175449690220371
+            "Structure": 0.5383600392532423
         }, 
         {
-            "Openness": 0.9733152893092895
+            "Openness": 0.976403104080066
         }, 
         {
-            "Conscientiousness": 0.7335509175433255
+            "Conscientiousness": 0.7203458931125062
         }, 
         {
-            "Extraversion": 0.049427429266050704
+            "Extraversion": 0.05552995706780739
         }, 
         {
-            "Agreeableness": 0.006031293904793733
+            "Agreeableness": 0.006916316349536322
         }, 
         {
-            "Emotional range": 0.5184490718614674
+            "Emotional range": 0.5180887714650452
         }, 
         {
-            "Conservation": 0.0038542916378301317
+            "Conservation": 0.0039141498473407865
         }, 
         {
-            "Openness to change": 0.38476452369224573
+            "Openness to change": 0.4228856414989464
         }, 
         {
-            "Hedonism": 0.0050391587038828844
+            "Hedonism": 0.005059182366188908
         }, 
         {
-            "Self-enhancement": 0.27971293644654727
+            "Self-enhancement": 0.25631239369912584
         }, 
         {
-            "Self-transcendence": 0.3087518625607689
+            "Self-transcendence": 0.3156632781332698
         }
     ], 
     "CS-6400": [
         {
-            "Challenge": 0.8048532684739855
+            "Challenge": 0.8594736732921815
         }, 
         {
-            "Closeness": 0.0020600175724748704
+            "Closeness": 0.0019820154065767204
         }, 
         {
-            "Curiosity": 0.928700637457584
+            "Curiosity": 0.9375239337183523
         }, 
         {
-            "Excitement": 0.050790039347503146
+            "Excitement": 0.055456527189640725
         }, 
         {
-            "Harmony": 0.005326015858853728
+            "Harmony": 0.007363370936057156
         }, 
         {
-            "Ideal": 0.27676837562864215
+            "Ideal": 0.3045688645642274
         }, 
         {
-            "Liberty": 0.14685296472600984
+            "Liberty": 0.17594700866976482
         }, 
         {
-            "Love": 0.009177197008327698
+            "Love": 0.010601960982784209
         }, 
         {
-            "Practicality": 0.2218389334123162
+            "Practicality": 0.2548785502917227
         }, 
         {
-            "Self-expression": 0.0026942962927552494
+            "Self-expression": 0.002910127234117099
         }, 
         {
-            "Stability": 0.012547300802821848
+            "Stability": 0.011308247937983795
         }, 
         {
-            "Structure": 0.603408541220023
+            "Structure": 0.6587022088542487
         }, 
         {
-            "Openness": 0.9722072301331558
+            "Openness": 0.9722233292795137
         }, 
         {
-            "Conscientiousness": 0.6399927674347973
+            "Conscientiousness": 0.654877732672503
         }, 
         {
-            "Extraversion": 0.07875067759033533
+            "Extraversion": 0.08240325860216557
         }, 
         {
-            "Agreeableness": 0.0016003006635702532
+            "Agreeableness": 0.0012614820260389292
         }, 
         {
-            "Emotional range": 0.6524024723512303
+            "Emotional range": 0.639159289113115
         }, 
         {
-            "Conservation": 0.004008779339053414
+            "Conservation": 0.004539937751364631
         }, 
         {
-            "Openness to change": 0.40044530638343767
+            "Openness to change": 0.45208449359749125
         }, 
         {
-            "Hedonism": 0.006471115408897721
+            "Hedonism": 0.006256625616088862
         }, 
         {
-            "Self-enhancement": 0.3229780591984266
+            "Self-enhancement": 0.33777364446866787
         }, 
         {
-            "Self-transcendence": 0.18456898137351385
+            "Self-transcendence": 0.19294760736581668
         }
     ], 
     "CS-6440": [
         {
-            "Challenge": 0.7547692696597648
+            "Challenge": 0.7329265169454032
         }, 
         {
-            "Closeness": 0.0055678464288762
+            "Closeness": 0.004457826965158396
         }, 
         {
-            "Curiosity": 0.8943612903262075
+            "Curiosity": 0.9382840614595479
         }, 
         {
-            "Excitement": 0.03414024436844171
+            "Excitement": 0.046376365351070314
         }, 
         {
-            "Harmony": 0.0074485662504906736
+            "Harmony": 0.010109993144222285
         }, 
         {
-            "Ideal": 0.20981749882795792
+            "Ideal": 0.19405769428229175
         }, 
         {
-            "Liberty": 0.11454305470809706
+            "Liberty": 0.1286167049493292
         }, 
         {
-            "Love": 0.01585711417329666
+            "Love": 0.03657720125281677
         }, 
         {
-            "Practicality": 0.13862693375333174
+            "Practicality": 0.10402236686841032
         }, 
         {
-            "Self-expression": 0.004512852880113938
+            "Self-expression": 0.005344922450242595
         }, 
         {
-            "Stability": 0.023458530227037366
+            "Stability": 0.02794638947720729
         }, 
         {
-            "Structure": 0.6236582899824332
+            "Structure": 0.5350530286850448
         }, 
         {
-            "Openness": 0.9765531812257742
+            "Openness": 0.9809741240323282
         }, 
         {
-            "Conscientiousness": 0.7043447968610852
+            "Conscientiousness": 0.6214014428578387
         }, 
         {
-            "Extraversion": 0.10402192457582127
+            "Extraversion": 0.23147472233219285
         }, 
         {
-            "Agreeableness": 0.0066805000065158215
+            "Agreeableness": 0.006867683538995861
         }, 
         {
-            "Emotional range": 0.6223652981358191
+            "Emotional range": 0.5705024667588867
         }, 
         {
-            "Conservation": 0.0047465920859907085
+            "Conservation": 0.002244849201954169
         }, 
         {
-            "Openness to change": 0.4925787960916797
+            "Openness to change": 0.6599577171153385
         }, 
         {
-            "Hedonism": 0.00973077771545311
+            "Hedonism": 0.012739786165744116
         }, 
         {
-            "Self-enhancement": 0.3532551137600741
+            "Self-enhancement": 0.4447560252737014
         }, 
         {
-            "Self-transcendence": 0.25703013002519604
+            "Self-transcendence": 0.326104367573405
         }
     ], 
     "CS-6460": [
         {
-            "Challenge": 0.9717755022307524
+            "Challenge": 0.9728771415134501
         }, 
         {
-            "Closeness": 0.024270536875658222
+            "Closeness": 0.026394236026605067
         }, 
         {
-            "Curiosity": 0.9649709572717934
+            "Curiosity": 0.9633792586041287
         }, 
         {
-            "Excitement": 0.10550942822544251
+            "Excitement": 0.10054102920060859
         }, 
         {
-            "Harmony": 0.06704422147108158
+            "Harmony": 0.06549607908684418
         }, 
         {
-            "Ideal": 0.28802437577646484
+            "Ideal": 0.28293353608587524
         }, 
         {
-            "Liberty": 0.3251443785162561
+            "Liberty": 0.3175900164901162
         }, 
         {
-            "Love": 0.05347099845260034
+            "Love": 0.05555171918393981
         }, 
         {
-            "Practicality": 0.31389189871131046
+            "Practicality": 0.2888913497313278
         }, 
         {
-            "Self-expression": 0.0318062327544098
+            "Self-expression": 0.030716848217446635
         }, 
         {
-            "Stability": 0.05660372592364665
+            "Stability": 0.05615811752485633
         }, 
         {
-            "Structure": 0.7886594102528437
+            "Structure": 0.7776023545260415
         }, 
         {
-            "Openness": 0.9841838745302927
+            "Openness": 0.9813200100322436
         }, 
         {
-            "Conscientiousness": 0.8911155423074005
+            "Conscientiousness": 0.8755758784062573
         }, 
         {
-            "Extraversion": 0.3205090026747774
+            "Extraversion": 0.30575566411610683
         }, 
         {
-            "Agreeableness": 0.07653326425810408
+            "Agreeableness": 0.09301724812274254
         }, 
         {
-            "Emotional range": 0.707851095629898
+            "Emotional range": 0.6937814650775788
         }, 
         {
-            "Conservation": 0.0174742326738217
+            "Conservation": 0.016455484969816914
         }, 
         {
-            "Openness to change": 0.6636862655504515
+            "Openness to change": 0.6705678295560469
         }, 
         {
-            "Hedonism": 0.00613492578405922
+            "Hedonism": 0.006658913596814142
         }, 
         {
-            "Self-enhancement": 0.3554511884192978
+            "Self-enhancement": 0.3211714355462021
         }, 
         {
-            "Self-transcendence": 0.32347984126479434
+            "Self-transcendence": 0.3407179576448261
         }
     ], 
     "CS-6475": [
         {
-            "Challenge": 0.8587176280560938
+            "Challenge": 0.8561344393972716
         }, 
         {
-            "Closeness": 0.006870338793915021
+            "Closeness": 0.00867003507691333
         }, 
         {
-            "Curiosity": 0.9558044453910431
+            "Curiosity": 0.952888080327782
         }, 
         {
-            "Excitement": 0.08205948787506634
+            "Excitement": 0.08811932920674831
         }, 
         {
-            "Harmony": 0.021698785731166903
+            "Harmony": 0.024523805023854428
         }, 
         {
-            "Ideal": 0.2657547480353377
+            "Ideal": 0.27471468887789485
         }, 
         {
-            "Liberty": 0.14889141202925582
+            "Liberty": 0.14407422468068598
         }, 
         {
-            "Love": 0.022841630684480085
+            "Love": 0.02375343686025083
         }, 
         {
-            "Practicality": 0.1570824391106287
+            "Practicality": 0.1456875512982272
         }, 
         {
-            "Self-expression": 0.006157139534164746
+            "Self-expression": 0.004484158374566061
         }, 
         {
-            "Stability": 0.02349961472215889
+            "Stability": 0.02479325555084594
         }, 
         {
-            "Structure": 0.5145047326338857
+            "Structure": 0.5052187900897639
         }, 
         {
-            "Openness": 0.973774126904577
+            "Openness": 0.9691784588269654
         }, 
         {
-            "Conscientiousness": 0.7750692562930475
+            "Conscientiousness": 0.793741161340907
         }, 
         {
-            "Extraversion": 0.06994490297593192
+            "Extraversion": 0.05517843923477239
         }, 
         {
-            "Agreeableness": 0.009315449726040537
+            "Agreeableness": 0.01152605631671022
         }, 
         {
-            "Emotional range": 0.556730686402789
+            "Emotional range": 0.5866022508524851
         }, 
         {
-            "Conservation": 0.006533936216414682
+            "Conservation": 0.008780559088659712
         }, 
         {
-            "Openness to change": 0.5241869164706979
+            "Openness to change": 0.47936416994798364
         }, 
         {
-            "Hedonism": 0.0064852562164481875
+            "Hedonism": 0.008366585891216582
         }, 
         {
-            "Self-enhancement": 0.3371980064530885
+            "Self-enhancement": 0.3351602799632356
         }, 
         {
-            "Self-transcendence": 0.3099391446011249
+            "Self-transcendence": 0.3076619115067414
         }
     ], 
     "CS-6476": [
         {
-            "Challenge": 0.803262855064906
+            "Challenge": 0.7288134570683356
         }, 
         {
-            "Closeness": 0.0059519406168331845
+            "Closeness": 0.006628719155449658
         }, 
         {
-            "Curiosity": 0.9373403856769298
+            "Curiosity": 0.9158253685673062
         }, 
         {
-            "Excitement": 0.0832007409212388
+            "Excitement": 0.06161319183224734
         }, 
         {
-            "Harmony": 0.021086482976267917
+            "Harmony": 0.021131207380813366
         }, 
         {
-            "Ideal": 0.3244170530341677
+            "Ideal": 0.2601682971803365
         }, 
         {
-            "Liberty": 0.14008101447735427
+            "Liberty": 0.10200831016868506
         }, 
         {
-            "Love": 0.0382251630443346
+            "Love": 0.035927157176589175
         }, 
         {
-            "Practicality": 0.16695212361978057
+            "Practicality": 0.12835149245259414
         }, 
         {
-            "Self-expression": 0.008635240963586366
+            "Self-expression": 0.0067715483695882095
         }, 
         {
-            "Stability": 0.02330933742128727
+            "Stability": 0.02368710312176514
         }, 
         {
-            "Structure": 0.4420149645580454
+            "Structure": 0.406549340400906
         }, 
         {
-            "Openness": 0.956844398571941
+            "Openness": 0.960832712158225
         }, 
         {
-            "Conscientiousness": 0.6425475611160762
+            "Conscientiousness": 0.6375621562591507
         }, 
         {
-            "Extraversion": 0.052676768957878595
+            "Extraversion": 0.05220780862273111
         }, 
         {
-            "Agreeableness": 0.0075364566921241605
+            "Agreeableness": 0.011090224348850375
         }, 
         {
-            "Emotional range": 0.45399967724469514
+            "Emotional range": 0.4346577629439888
         }, 
         {
-            "Conservation": 0.005857470910263007
+            "Conservation": 0.006413125067382175
         }, 
         {
-            "Openness to change": 0.48278076389537206
+            "Openness to change": 0.4449290177810559
         }, 
         {
-            "Hedonism": 0.016972268706753113
+            "Hedonism": 0.014216677009639411
         }, 
         {
-            "Self-enhancement": 0.38092634055856867
+            "Self-enhancement": 0.3496004532589946
         }, 
         {
-            "Self-transcendence": 0.32534305879160114
+            "Self-transcendence": 0.3290837903270507
         }
     ], 
     "CS-6505": [
         {
-            "Challenge": 0.8941492030459208
+            "Challenge": 0.8699950891078573
         }, 
         {
-            "Closeness": 0.007186603419982951
+            "Closeness": 0.006150756320217998
         }, 
         {
-            "Curiosity": 0.9588446169161745
+            "Curiosity": 0.9393853435879513
         }, 
         {
-            "Excitement": 0.09945436111876349
+            "Excitement": 0.09097222918514264
         }, 
         {
-            "Harmony": 0.03079435392694524
+            "Harmony": 0.02974664667707705
         }, 
         {
-            "Ideal": 0.4179248875903374
+            "Ideal": 0.37254660880342994
         }, 
         {
-            "Liberty": 0.15803067044719793
+            "Liberty": 0.14271257232025497
         }, 
         {
-            "Love": 0.03735615116483193
+            "Love": 0.025317397412367104
         }, 
         {
-            "Practicality": 0.21567246558889358
+            "Practicality": 0.1660195281492265
         }, 
         {
-            "Self-expression": 0.007061695863937567
+            "Self-expression": 0.004764980358748727
         }, 
         {
-            "Stability": 0.02955795279367701
+            "Stability": 0.019414367038273317
         }, 
         {
-            "Structure": 0.5495640217712625
+            "Structure": 0.5122632817092901
         }, 
         {
-            "Openness": 0.9163037905559996
+            "Openness": 0.8746875624389354
         }, 
         {
-            "Conscientiousness": 0.7036439128660396
+            "Conscientiousness": 0.7292183281568677
         }, 
         {
-            "Extraversion": 0.03853719545812928
+            "Extraversion": 0.036142995050742976
         }, 
         {
-            "Agreeableness": 0.01098692675759666
+            "Agreeableness": 0.013584677840930093
         }, 
         {
-            "Emotional range": 0.4867718817029453
+            "Emotional range": 0.438835402974465
         }, 
         {
-            "Conservation": 0.02043362348800115
+            "Conservation": 0.024821038978420362
         }, 
         {
-            "Openness to change": 0.3821219744347565
+            "Openness to change": 0.4065379527721504
         }, 
         {
-            "Hedonism": 0.01665603580354097
+            "Hedonism": 0.01671739082021534
         }, 
         {
-            "Self-enhancement": 0.48685631000657004
+            "Self-enhancement": 0.5149536714126997
         }, 
         {
-            "Self-transcendence": 0.32925778944604517
+            "Self-transcendence": 0.32170044997958314
         }
     ], 
     "CS-6601": [
         {
-            "Challenge": 0.8631227904105772
+            "Challenge": 0.8697014288823288
         }, 
         {
-            "Closeness": 0.007044829140879116
+            "Closeness": 0.007947350214371374
         }, 
         {
-            "Curiosity": 0.9344741947097688
+            "Curiosity": 0.9418056934984371
         }, 
         {
-            "Excitement": 0.068980461404902
+            "Excitement": 0.0717364204501098
         }, 
         {
-            "Harmony": 0.0226732086755827
+            "Harmony": 0.025007307070852913
         }, 
         {
-            "Ideal": 0.3121936668338564
+            "Ideal": 0.31116127703932417
         }, 
         {
-            "Liberty": 0.10818738698450164
+            "Liberty": 0.10953214963232027
         }, 
         {
-            "Love": 0.022582931689793917
+            "Love": 0.02217948982545137
         }, 
         {
-            "Practicality": 0.13599365019601567
+            "Practicality": 0.12831621992712278
         }, 
         {
-            "Self-expression": 0.00371425718783297
+            "Self-expression": 0.0038990557138624538
         }, 
         {
-            "Stability": 0.0331043719570947
+            "Stability": 0.034853378650125943
         }, 
         {
-            "Structure": 0.5520801322741672
+            "Structure": 0.5442972344482281
         }, 
         {
-            "Openness": 0.949455231110154
+            "Openness": 0.9503681111201561
         }, 
         {
-            "Conscientiousness": 0.7851245616417502
+            "Conscientiousness": 0.8064501139950695
         }, 
         {
-            "Extraversion": 0.05356469273891379
+            "Extraversion": 0.05583954565424282
         }, 
         {
-            "Agreeableness": 0.010666126031971201
+            "Agreeableness": 0.013193328731200715
         }, 
         {
-            "Emotional range": 0.538991914743702
+            "Emotional range": 0.5434620695652583
         }, 
         {
-            "Conservation": 0.012308020004616171
+            "Conservation": 0.014498319876989796
         }, 
         {
-            "Openness to change": 0.3957959874872526
+            "Openness to change": 0.4095182159042102
         }, 
         {
-            "Hedonism": 0.01148652951992396
+            "Hedonism": 0.010612894040689658
         }, 
         {
-            "Self-enhancement": 0.42277524667803723
+            "Self-enhancement": 0.4294185766580431
         }, 
         {
-            "Self-transcendence": 0.30731954170349907
+            "Self-transcendence": 0.31659028513963483
         }
     ], 
     "CS-6750": [
         {
-            "Challenge": 0.9028447695484103
+            "Challenge": 0.8942275621408771
         }, 
         {
-            "Closeness": 0.006885215965643343
+            "Closeness": 0.006828822043400906
         }, 
         {
-            "Curiosity": 0.936322358462005
+            "Curiosity": 0.9354971879760742
         }, 
         {
-            "Excitement": 0.03853680857074959
+            "Excitement": 0.033551642317854014
         }, 
         {
-            "Harmony": 0.026285214001062596
+            "Harmony": 0.027604617928041753
         }, 
         {
-            "Ideal": 0.21971531986646242
+            "Ideal": 0.21450835756585707
         }, 
         {
-            "Liberty": 0.12162249545412201
+            "Liberty": 0.10779988593079232
         }, 
         {
-            "Love": 0.01971415145373573
+            "Love": 0.01935138879970516
         }, 
         {
-            "Practicality": 0.1494893611275594
+            "Practicality": 0.13924443514383855
         }, 
         {
-            "Self-expression": 0.007318160817029629
+            "Self-expression": 0.007254142050880874
         }, 
         {
-            "Stability": 0.038964999154896374
+            "Stability": 0.03913951294710866
         }, 
         {
-            "Structure": 0.674461655291141
+            "Structure": 0.6439397534529501
         }, 
         {
-            "Openness": 0.979256068022935
+            "Openness": 0.9805550318325712
         }, 
         {
-            "Conscientiousness": 0.8811924163892902
+            "Conscientiousness": 0.8805345690885479
         }, 
         {
-            "Extraversion": 0.1564239681861488
+            "Extraversion": 0.17251716120365046
         }, 
         {
-            "Agreeableness": 0.015477901969823737
+            "Agreeableness": 0.017380660057312813
         }, 
         {
-            "Emotional range": 0.6080790025193372
+            "Emotional range": 0.602435405028838
         }, 
         {
-            "Conservation": 0.008605976777126045
+            "Conservation": 0.007521298988074909
         }, 
         {
-            "Openness to change": 0.5182050374698015
+            "Openness to change": 0.5007730835967684
         }, 
         {
-            "Hedonism": 0.003675753791793801
+            "Hedonism": 0.003364396825061733
         }, 
         {
-            "Self-enhancement": 0.3514266279748939
+            "Self-enhancement": 0.339634320674326
         }, 
         {
-            "Self-transcendence": 0.30997583545724083
+            "Self-transcendence": 0.30663534430166417
         }
     ], 
     "CS-7637": [
         {
-            "Challenge": 0.8671028780940939
+            "Challenge": 0.8876202776998215
         }, 
         {
-            "Closeness": 0.006999191820584227
+            "Closeness": 0.007327090128287084
         }, 
         {
-            "Curiosity": 0.9773197002953002
+            "Curiosity": 0.9797615594921532
         }, 
         {
-            "Excitement": 0.04022549069247444
+            "Excitement": 0.044690177530206765
         }, 
         {
-            "Harmony": 0.023050271138858325
+            "Harmony": 0.026879731756491054
         }, 
         {
-            "Ideal": 0.2860872478770982
+            "Ideal": 0.3042618534953191
         }, 
         {
-            "Liberty": 0.1494630726196315
+            "Liberty": 0.16752252139253643
         }, 
         {
-            "Love": 0.045092177445720694
+            "Love": 0.04942992826296627
         }, 
         {
-            "Practicality": 0.11109278389326971
+            "Practicality": 0.1258388726579071
         }, 
         {
-            "Self-expression": 0.00920790157509127
+            "Self-expression": 0.01147413277697279
         }, 
         {
-            "Stability": 0.021202045853797535
+            "Stability": 0.02272243467873114
         }, 
         {
-            "Structure": 0.5089953174785984
+            "Structure": 0.531157875356275
         }, 
         {
-            "Openness": 0.9876043248154516
+            "Openness": 0.9915519694481703
         }, 
         {
-            "Conscientiousness": 0.6132374104430987
+            "Conscientiousness": 0.6852762942722677
         }, 
         {
-            "Extraversion": 0.10024601697540608
+            "Extraversion": 0.10795254988393882
         }, 
         {
-            "Agreeableness": 0.014898026659280972
+            "Agreeableness": 0.013309096566152256
         }, 
         {
-            "Emotional range": 0.4592548187954968
+            "Emotional range": 0.4905532556767744
         }, 
         {
-            "Conservation": 0.00289852625813225
+            "Conservation": 0.0033608854028308044
         }, 
         {
-            "Openness to change": 0.5330946018955672
+            "Openness to change": 0.5477245060362055
         }, 
         {
-            "Hedonism": 0.006412411096566373
+            "Hedonism": 0.00605734161307897
         }, 
         {
-            "Self-enhancement": 0.3154215141445732
+            "Self-enhancement": 0.302154923139801
         }, 
         {
-            "Self-transcendence": 0.3520695531734479
+            "Self-transcendence": 0.34795836443413025
         }
     ], 
     "CS-7641": [
         {
-            "Challenge": 0.8806662633620084
+            "Challenge": 0.887739275512573
         }, 
         {
-            "Closeness": 0.010386505333590368
+            "Closeness": 0.012288484647140996
         }, 
         {
-            "Curiosity": 0.9716993108957231
+            "Curiosity": 0.9734590871635985
         }, 
         {
-            "Excitement": 0.08973414734631463
+            "Excitement": 0.07610658240748902
         }, 
         {
-            "Harmony": 0.04817639838247895
+            "Harmony": 0.05062987719448053
         }, 
         {
-            "Ideal": 0.4038339366822337
+            "Ideal": 0.4307712104102549
         }, 
         {
-            "Liberty": 0.1773527258834648
+            "Liberty": 0.1649296091245786
         }, 
         {
-            "Love": 0.04569944433050577
+            "Love": 0.054969868781183207
         }, 
         {
-            "Practicality": 0.19914613742279114
+            "Practicality": 0.16902128668371957
         }, 
         {
-            "Self-expression": 0.014395360104115684
+            "Self-expression": 0.012138590874377853
         }, 
         {
-            "Stability": 0.047831704350214
+            "Stability": 0.06664631396822718
         }, 
         {
-            "Structure": 0.5627409406669837
+            "Structure": 0.5697499819990881
         }, 
         {
-            "Openness": 0.9544624824340278
+            "Openness": 0.9542469310364545
         }, 
         {
-            "Conscientiousness": 0.7469579336580854
+            "Conscientiousness": 0.7971292479231336
         }, 
         {
-            "Extraversion": 0.06919665240694184
+            "Extraversion": 0.07586693467104688
         }, 
         {
-            "Agreeableness": 0.011454247091491565
+            "Agreeableness": 0.01275273682574285
         }, 
         {
-            "Emotional range": 0.5166360447282836
+            "Emotional range": 0.5278160838174245
         }, 
         {
-            "Conservation": 0.016546903268062296
+            "Conservation": 0.01937285768365421
         }, 
         {
-            "Openness to change": 0.46383735676378735
+            "Openness to change": 0.4278029493903095
         }, 
         {
-            "Hedonism": 0.010207066235192241
+            "Hedonism": 0.008607772083338683
         }, 
         {
-            "Self-enhancement": 0.42415085933894126
+            "Self-enhancement": 0.4425398388523998
         }, 
         {
-            "Self-transcendence": 0.3731963975198642
+            "Self-transcendence": 0.3645102528615114
         }
     ], 
     "CS-7642": [
         {
-            "Challenge": 0.7928907506508593
+            "Challenge": 0.7749415716709204
         }, 
         {
-            "Closeness": 0.008743963156344348
+            "Closeness": 0.010082090461287552
         }, 
         {
-            "Curiosity": 0.9212311654629186
+            "Curiosity": 0.9064028779264921
         }, 
         {
-            "Excitement": 0.030919498475800666
+            "Excitement": 0.024987990438756436
         }, 
         {
-            "Harmony": 0.030007226346987437
+            "Harmony": 0.03117352586159683
         }, 
         {
-            "Ideal": 0.21289155874521776
+            "Ideal": 0.17889979532617417
         }, 
         {
-            "Liberty": 0.08638540842598008
+            "Liberty": 0.07728425866480193
         }, 
         {
-            "Love": 0.025207463927490237
+            "Love": 0.019410725686619168
         }, 
         {
-            "Practicality": 0.09813783615470939
+            "Practicality": 0.086138936240516
         }, 
         {
-            "Self-expression": 0.005025505693143861
+            "Self-expression": 0.0046010275465112604
         }, 
         {
-            "Stability": 0.03594098704424459
+            "Stability": 0.04278261826786117
         }, 
         {
-            "Structure": 0.4875432101848856
+            "Structure": 0.5070943944298868
         }, 
         {
-            "Openness": 0.9613327639550782
+            "Openness": 0.9611840750850229
         }, 
         {
-            "Conscientiousness": 0.7389511757574072
+            "Conscientiousness": 0.7828640501699904
         }, 
         {
-            "Extraversion": 0.04506148221076611
+            "Extraversion": 0.04385017809186603
         }, 
         {
-            "Agreeableness": 0.0170150635616928
+            "Agreeableness": 0.021039217989527792
         }, 
         {
-            "Emotional range": 0.45837339084477746
+            "Emotional range": 0.4990398629443069
         }, 
         {
-            "Conservation": 0.008139516538180736
+            "Conservation": 0.010727826357233183
         }, 
         {
-            "Openness to change": 0.3676115186811202
+            "Openness to change": 0.3531017676346857
         }, 
         {
-            "Hedonism": 0.00648495237865504
+            "Hedonism": 0.004875977192057013
         }, 
         {
-            "Self-enhancement": 0.2986702454308594
+            "Self-enhancement": 0.2532275721917548
         }, 
         {
-            "Self-transcendence": 0.29797291039367674
+            "Self-transcendence": 0.2932458791246646
         }
     ], 
     "CS-7646": [
         {
-            "Challenge": 0.8251042348084138
+            "Challenge": 0.8290107800877025
         }, 
         {
-            "Closeness": 0.0069138309875755866
+            "Closeness": 0.007380789727043202
         }, 
         {
-            "Curiosity": 0.9031617709486814
+            "Curiosity": 0.900668793747302
         }, 
         {
-            "Excitement": 0.049394607125711365
+            "Excitement": 0.05050143847007754
         }, 
         {
-            "Harmony": 0.019796929018322473
+            "Harmony": 0.019948883263202044
         }, 
         {
-            "Ideal": 0.28971343504755254
+            "Ideal": 0.27968526613568534
         }, 
         {
-            "Liberty": 0.11408715830836469
+            "Liberty": 0.1142705977690836
         }, 
         {
-            "Love": 0.03720545668798664
+            "Love": 0.038601566125123
         }, 
         {
-            "Practicality": 0.197090919524902
+            "Practicality": 0.19894366437005595
         }, 
         {
-            "Self-expression": 0.003948176589205876
+            "Self-expression": 0.004423176649382965
         }, 
         {
-            "Stability": 0.02902911351789128
+            "Stability": 0.029654940805960817
         }, 
         {
-            "Structure": 0.581978873648219
+            "Structure": 0.5920553223159942
         }, 
         {
-            "Openness": 0.969548775552292
+            "Openness": 0.9706794047587688
         }, 
         {
-            "Conscientiousness": 0.7440122507988249
+            "Conscientiousness": 0.7468373439047229
         }, 
         {
-            "Extraversion": 0.10530799603001406
+            "Extraversion": 0.12913785874810813
         }, 
         {
-            "Agreeableness": 0.006737439568302472
+            "Agreeableness": 0.008079499673277424
         }, 
         {
-            "Emotional range": 0.6123142712186637
+            "Emotional range": 0.6298456953746969
         }, 
         {
-            "Conservation": 0.008207861554016593
+            "Conservation": 0.008187054516133774
         }, 
         {
-            "Openness to change": 0.4015006351545911
+            "Openness to change": 0.40327948172015304
         }, 
         {
-            "Hedonism": 0.008597663487024232
+            "Hedonism": 0.008676325253784367
         }, 
         {
-            "Self-enhancement": 0.3753493189474628
+            "Self-enhancement": 0.35419369620100494
         }, 
         {
-            "Self-transcendence": 0.21795002179517398
+            "Self-transcendence": 0.21294460131845971
         }
     ], 
     "CS-8803-001": [
         {
-            "Challenge": 0.846180248283712
+            "Challenge": 0.8315225572835162
         }, 
         {
-            "Closeness": 0.006267845144038442
+            "Closeness": 0.006867882981812012
         }, 
         {
-            "Curiosity": 0.9554215692391861
+            "Curiosity": 0.9477901662507362
         }, 
         {
-            "Excitement": 0.07309057382549361
+            "Excitement": 0.07355011808411549
         }, 
         {
-            "Harmony": 0.020619955200570916
+            "Harmony": 0.024444359742028465
         }, 
         {
-            "Ideal": 0.3211969977104625
+            "Ideal": 0.29567094327248183
         }, 
         {
-            "Liberty": 0.18922759707902154
+            "Liberty": 0.18997562494845588
         }, 
         {
-            "Love": 0.022595912096318893
+            "Love": 0.019439403976958314
         }, 
         {
-            "Practicality": 0.19332552807255438
+            "Practicality": 0.19397063402795384
         }, 
         {
-            "Self-expression": 0.009189527133168507
+            "Self-expression": 0.00890656745883256
         }, 
         {
-            "Stability": 0.03945838605671692
+            "Stability": 0.05058857423393892
         }, 
         {
-            "Structure": 0.6193389678413966
+            "Structure": 0.6453328914264578
         }, 
         {
-            "Openness": 0.9579795226693919
+            "Openness": 0.9548237029181934
         }, 
         {
-            "Conscientiousness": 0.747862972493157
+            "Conscientiousness": 0.7903206775225234
         }, 
         {
-            "Extraversion": 0.05452265345937757
+            "Extraversion": 0.05813953721541859
         }, 
         {
-            "Agreeableness": 0.004424353610377907
+            "Agreeableness": 0.004810693800520183
         }, 
         {
-            "Emotional range": 0.6133208881089537
+            "Emotional range": 0.638386706153587
         }, 
         {
-            "Conservation": 0.011621272534976357
+            "Conservation": 0.013141179860848784
         }, 
         {
-            "Openness to change": 0.4910362476267823
+            "Openness to change": 0.48434510970781297
         }, 
         {
-            "Hedonism": 0.006346423210867869
+            "Hedonism": 0.005465243661896879
         }, 
         {
-            "Self-enhancement": 0.3437016907555537
+            "Self-enhancement": 0.32439206241973073
         }, 
         {
-            "Self-transcendence": 0.29877753630254594
+            "Self-transcendence": 0.3066303417658091
         }
     ], 
     "CS-8803-004": [
         {
-            "Challenge": 0.8217315289812046
+            "Challenge": 0.7587239050075689
         }, 
         {
-            "Closeness": 0.0013805553436672113
+            "Closeness": 0.0011409594814403845
         }, 
         {
-            "Curiosity": 0.9083097386197236
+            "Curiosity": 0.8991439617656801
         }, 
         {
-            "Excitement": 0.05824587254065566
+            "Excitement": 0.037664049625203755
         }, 
         {
-            "Harmony": 0.006811189506868376
+            "Harmony": 0.004916174316312416
         }, 
         {
-            "Ideal": 0.2021446602734352
+            "Ideal": 0.17038611428121314
         }, 
         {
-            "Liberty": 0.10361278789519823
+            "Liberty": 0.06627732250979096
         }, 
         {
-            "Love": 0.01039527415304009
+            "Love": 0.008921479301209512
         }, 
         {
-            "Practicality": 0.2278340241245772
+            "Practicality": 0.16174248072276204
         }, 
         {
-            "Self-expression": 0.0032008701995778766
+            "Self-expression": 0.0013055193385375086
         }, 
         {
-            "Stability": 0.005357013751716266
+            "Stability": 0.0035561911720726203
         }, 
         {
-            "Structure": 0.5571890296333075
+            "Structure": 0.5286067144390562
         }, 
         {
-            "Openness": 0.9868529088554482
+            "Openness": 0.9893160509450892
         }, 
         {
-            "Conscientiousness": 0.7234242750371416
+            "Conscientiousness": 0.6859518292988236
         }, 
         {
-            "Extraversion": 0.08527530372553455
+            "Extraversion": 0.0487662402409329
         }, 
         {
-            "Agreeableness": 0.0010819917070292173
+            "Agreeableness": 0.0009011559957056714
         }, 
         {
-            "Emotional range": 0.5950121783631993
+            "Emotional range": 0.5494795042832739
         }, 
         {
-            "Conservation": 0.001949916523009132
+            "Conservation": 0.0018213912583734393
         }, 
         {
-            "Openness to change": 0.4644463043712914
+            "Openness to change": 0.4222803101975973
         }, 
         {
-            "Hedonism": 0.005576719123276508
+            "Hedonism": 0.004361940853096158
         }, 
         {
-            "Self-enhancement": 0.4399946595317405
+            "Self-enhancement": 0.40355274121292
         }, 
         {
-            "Self-transcendence": 0.1815667040595873
+            "Self-transcendence": 0.16139547083164596
         }
     ], 
     "CS-8803-008": [
@@ -1973,206 +1973,206 @@
     ], 
     "CSE-6220": [
         {
-            "Challenge": 0.9442254717101493
+            "Challenge": 0.9459264970369947
         }, 
         {
-            "Closeness": 0.011786452512627
+            "Closeness": 0.011117709874674975
         }, 
         {
-            "Curiosity": 0.929561671629159
+            "Curiosity": 0.9422109393116282
         }, 
         {
-            "Excitement": 0.10298971169335885
+            "Excitement": 0.08104805007111304
         }, 
         {
-            "Harmony": 0.02848357602109275
+            "Harmony": 0.025686270926391586
         }, 
         {
-            "Ideal": 0.3866269671486173
+            "Ideal": 0.37168339187510757
         }, 
         {
-            "Liberty": 0.15772840415653744
+            "Liberty": 0.14808260850948363
         }, 
         {
-            "Love": 0.026353428915378896
+            "Love": 0.02467246309915133
         }, 
         {
-            "Practicality": 0.21954384309740266
+            "Practicality": 0.18359512971543585
         }, 
         {
-            "Self-expression": 0.0043305342932954405
+            "Self-expression": 0.0035986344043387186
         }, 
         {
-            "Stability": 0.028505276712476824
+            "Stability": 0.022366929050250284
         }, 
         {
-            "Structure": 0.5804903687306717
+            "Structure": 0.6213356373710717
         }, 
         {
-            "Openness": 0.9233719759640788
+            "Openness": 0.9491886042007832
         }, 
         {
-            "Conscientiousness": 0.7781632774456253
+            "Conscientiousness": 0.7948422622321245
         }, 
         {
-            "Extraversion": 0.08026946708066218
+            "Extraversion": 0.09468136060328902
         }, 
         {
-            "Agreeableness": 0.020270428275065755
+            "Agreeableness": 0.02252898049681168
         }, 
         {
-            "Emotional range": 0.5700278785041317
+            "Emotional range": 0.590912406012491
         }, 
         {
-            "Conservation": 0.01602339142414666
+            "Conservation": 0.01222636551181483
         }, 
         {
-            "Openness to change": 0.3913848707645613
+            "Openness to change": 0.40345535978558117
         }, 
         {
-            "Hedonism": 0.0176361259065837
+            "Hedonism": 0.013826361942768317
         }, 
         {
-            "Self-enhancement": 0.43195102048389095
+            "Self-enhancement": 0.3919815593068837
         }, 
         {
-            "Self-transcendence": 0.300995114479533
+            "Self-transcendence": 0.30066367864986576
         }
     ], 
     "CSE-6242": [
         {
-            "Challenge": 0.8285435478163918
+            "Challenge": 0.8640864289619538
         }, 
         {
-            "Closeness": 0.0063999249193233965
+            "Closeness": 0.007148163269700691
         }, 
         {
-            "Curiosity": 0.9200394919890176
+            "Curiosity": 0.9332535216143716
         }, 
         {
-            "Excitement": 0.038700447352847556
+            "Excitement": 0.043618725327228214
         }, 
         {
-            "Harmony": 0.021033391861203676
+            "Harmony": 0.022930557175482202
         }, 
         {
-            "Ideal": 0.3952616720635947
+            "Ideal": 0.3915268555879781
         }, 
         {
-            "Liberty": 0.10015593283610175
+            "Liberty": 0.11382285198717262
         }, 
         {
-            "Love": 0.02399203708767461
+            "Love": 0.02791541294005917
         }, 
         {
-            "Practicality": 0.13687189174832365
+            "Practicality": 0.1367480291098192
         }, 
         {
-            "Self-expression": 0.002655599278854004
+            "Self-expression": 0.0031549428819961367
         }, 
         {
-            "Stability": 0.04978646968425693
+            "Stability": 0.04868166850280187
         }, 
         {
-            "Structure": 0.5770287133405687
+            "Structure": 0.5963093428842304
         }, 
         {
-            "Openness": 0.9382210587056424
+            "Openness": 0.9398183799158863
         }, 
         {
-            "Conscientiousness": 0.7553059456940661
+            "Conscientiousness": 0.7824786727059645
         }, 
         {
-            "Extraversion": 0.060623164538455176
+            "Extraversion": 0.06009177618776029
         }, 
         {
-            "Agreeableness": 0.009684589341194594
+            "Agreeableness": 0.011120324969669804
         }, 
         {
-            "Emotional range": 0.598751756529578
+            "Emotional range": 0.6200839777327877
         }, 
         {
-            "Conservation": 0.010641736341105545
+            "Conservation": 0.009716108377608501
         }, 
         {
-            "Openness to change": 0.28662752185032275
+            "Openness to change": 0.31626206804740853
         }, 
         {
-            "Hedonism": 0.010794486206816833
+            "Hedonism": 0.008764437644708412
         }, 
         {
-            "Self-enhancement": 0.3913560285722711
+            "Self-enhancement": 0.33936671569631977
         }, 
         {
-            "Self-transcendence": 0.23319414204721994
+            "Self-transcendence": 0.24948382251460682
         }
     ], 
     "CSE-6250": [
         {
-            "Challenge": 0.8090782236783688
+            "Challenge": 0.8046906518087579
         }, 
         {
-            "Closeness": 0.008891436932434382
+            "Closeness": 0.008862365508213677
         }, 
         {
-            "Curiosity": 0.9468978548854536
+            "Curiosity": 0.9424258451029538
         }, 
         {
-            "Excitement": 0.07025964067475654
+            "Excitement": 0.06504874340939087
         }, 
         {
-            "Harmony": 0.03685594909057116
+            "Harmony": 0.040692813269279815
         }, 
         {
-            "Ideal": 0.30103791352032383
+            "Ideal": 0.28265309210533784
         }, 
         {
-            "Liberty": 0.20621096736970684
+            "Liberty": 0.21577527458208456
         }, 
         {
-            "Love": 0.027502256017983395
+            "Love": 0.021314337754084423
         }, 
         {
-            "Practicality": 0.2553130720173512
+            "Practicality": 0.2696961922781116
         }, 
         {
-            "Self-expression": 0.006898874444461522
+            "Self-expression": 0.007677056242799962
         }, 
         {
-            "Stability": 0.04913502231018224
+            "Stability": 0.0556298786620123
         }, 
         {
-            "Structure": 0.674540825439796
+            "Structure": 0.6975102407785823
         }, 
         {
-            "Openness": 0.9395015842715844
+            "Openness": 0.9324635332199348
         }, 
         {
-            "Conscientiousness": 0.7727136541049506
+            "Conscientiousness": 0.8137094056563894
         }, 
         {
-            "Extraversion": 0.0719357121551425
+            "Extraversion": 0.0825657343884193
         }, 
         {
-            "Agreeableness": 0.011583982258195291
+            "Agreeableness": 0.011111089894341508
         }, 
         {
-            "Emotional range": 0.6787997495073259
+            "Emotional range": 0.7354783555681245
         }, 
         {
-            "Conservation": 0.012391335924817226
+            "Conservation": 0.01316943039787194
         }, 
         {
-            "Openness to change": 0.36732973874512853
+            "Openness to change": 0.33559138105742975
         }, 
         {
-            "Hedonism": 0.006843583085254512
+            "Hedonism": 0.006527950723679343
         }, 
         {
-            "Self-enhancement": 0.2069900121051182
+            "Self-enhancement": 0.18224651361871574
         }, 
         {
-            "Self-transcendence": 0.3080237701770462
+            "Self-transcendence": 0.2961380633169589
         }
     ]
 }

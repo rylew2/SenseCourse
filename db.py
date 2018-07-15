@@ -36,7 +36,8 @@ def install(DATABASE):
     cur.execute(
         "INSERT INTO login (username, password, admin) VALUES ('demo@demo', '4297f44b13955235245b2497399d7a93', 0)")
     cur.execute(
-        "INSERT INTO user(username,hours,specialization,personal) VALUES ('demo@demo', 15, 'Machine Learning','I love computer science because I love artificial intelligence and machine learning. I enjoy doing statistics.')")
+        "INSERT INTO user(username,hours,specialization,personal,generated_classes) VALUES ('demo@demo', 15, 'Machine Learning',"
+        "'I love computer science because I love artificial intelligence and machine learning. I enjoy doing statistics.','[\"CS-8803-GA\", \"CS-7641\", \"CS-7646\", \"CSE-6242\", \"CS-6476\", \"CS-6035\", \"CS-6340\", \"CS-6250\", \"CS-6262\", \"CS-6475\"]')")
 
 
     ##Add Course Data

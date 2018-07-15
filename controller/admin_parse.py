@@ -54,7 +54,7 @@ def admin_parse():
         new_reviews[i] = ""
 
     for i in reviews:
-        if reviews[i]["course"] in our_courses:
+        if reviews[i]["course"] in our_courses and 'rating' in reviews[i] and reviews[i]['rating'] >= 4:
             this_course = reviews[i]["course"]
             new_reviews[this_course] += " " + reviews[i]["text"]
 
