@@ -2,6 +2,8 @@
                        Version 3, 29 June 2007
 
  Copyright (C) 2018 SenseCourse https://sensecourse.herokuapp.com/
+ Ryan Lewis, Andrey Makhanov
+ 
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
 
