@@ -6,7 +6,7 @@ from db import *
 ###############################
 app = Flask(__name__)
 app.secret_key = "b'\\xb4\\xde\\xd9\\x86\\x93\\xb8\\x1bg\\x93@8W\\xc2&Dn4\\xf4\\xd0\\xa6\\x92\\x13XO'" #str(os.urandom(24)) #randomizing will clear flask_login session when app is restarted
-
+# app.secret_key = str(os.urandom(24))
 ##############################
 # controller initialization
 ###############################

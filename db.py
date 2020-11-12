@@ -4,7 +4,7 @@ import json
 
 
 def install(DATABASE):
-    print "Installing..."
+    print("Installing...")
     conn = sqlite3.connect(DATABASE)
     cur = conn.cursor()
     cur.execute("PRAGMA foreign_keys = ON;")

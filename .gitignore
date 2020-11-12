@@ -3,6 +3,9 @@ controller/*.pyc
 controller/**.pyc
 setenv.bat
 
+.env
+
+
 # User-specific stuff
 .idea/**/workspace.xml
 .idea/**/tasks.xml

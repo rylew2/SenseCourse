@@ -1,8 +1,12 @@
 from flask import Blueprint, render_template, session, request, jsonify
 from db import *
 import json
-from watson_developer_cloud import PersonalityInsightsV3, WatsonException
+# from watson_developer_cloud import PersonalityInsightsV3, WatsonException
+from ibm_watson import PersonalityInsightsV3, ApiException
+from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
+from os.path import join, dirname
 import credentials
+import pdb
 
 
 def dict_factory(cursor, row):
@@ -40,16 +44,44 @@ def quiz():
     conn = sqlite3.connect(DATABASE)
 
     cur = conn.cursor()
-    cur.execute("INSERT INTO user (username, personal) VALUES (?,?);", (session.get('username'), _personal))
+    cur.execute("INSERT INTO user (username, personal) VALUES (?,?);",
+                (session.get('username'), _personal))
 
     try:
-        personality_insights = PersonalityInsightsV3(
-            version='2016-10-20',
-            username=credentials.username,
-            password=credentials.password)
+        # personality_insights = PersonalityInsightsV3(
+        #     version='2016-10-20',
+        #     username=credentials.username,
+        #     password=credentials.password)
+        # print(_personal)
+        # profile = personality_insights.profile(_personal, content_type="text/plain;charset=utf-8")
 
-        profile = personality_insights.profile(_personal, content_type="text/plain;charset=utf-8")
-    except WatsonException as err:
+        print(os.environ)
+        apikey = os.environ['PERSONALITY_INSIGHTS_APIKEY']
+        url = os.environ['PERSONALITY_INSIGHTS_URL']
+
+        # Authenticate and create service
+        authenticator = IAMAuthenticator({apikey})
+        service = PersonalityInsightsV3(
+            version='2017-10-13',
+            authenticator=authenticator
+        )
+        service.set_service_url({url})
+
+        profile = PersonalityInsightsV3.profile(
+            _personal,
+            content_type="text/plain;charset=utf-8",
+            consumption_preferences=True,
+            raw_scores=True
+
+            # profile_json.read(),
+            # 'application/json',
+            # content_type='application/json',
+            # consumption_preferences=True,
+            # raw_scores=True
+        ).get_result()
+        pdb.set_trace()
+
+    except ApiException as err:
         return jsonify({'action': 'error', 'type': 'personal', 'text': 'IBM Watson API response: ' + err.message})
 
     myinsights = {}
@@ -57,7 +89,6 @@ def quiz():
         # for category in ['needs']:
         for trait in profile[category]:
             myinsights[trait['name']] = trait['percentile']
-
 
     #myinsights = {u'Emotional range': 0.28327360777610966, u'Liberty': 0.007254166630536019, u'Extraversion': 0.36721033332928, u'Conservation': 0.0004725338903785459, u'Agreeableness': 0.0167271664796797, u'Harmony': 0.007403095555066019, u'Openness to change': 0.6782749960203265, u'Self-transcendence': 0.36406397019542713, u'Conscientiousness': 0.4783699781762936, u'Hedonism': 0.007182633242991621, u'Self-enhancement': 0.1906140428288537, u'Structure': 0.04808455118475502, u'Practicality': 0.002143384188252162, u'Curiosity': 0.9752422922316606, u'Challenge': 0.3651970174369701, u'Excitement': 0.014951236572620319, u'Love': 0.10285670216713816, u'Self-expression': 0.006274098976008113, u'Closeness': 0.007407496319555118, u'Ideal': 0.07581279455010392, u'Stability': 0.007876238813793346, u'Openness': 0.9999869265760524}
 
@@ -132,7 +163,8 @@ def hours():
     conn = sqlite3.connect(DATABASE)
 
     cur = conn.cursor()
-    cur.execute("UPDATE user SET hours = '" + _hours + "' WHERE username = '" + session.get('username') + "';")
+    cur.execute("UPDATE user SET hours = '" + _hours +
+                "' WHERE username = '" + session.get('username') + "';")
 
     conn.commit()
 
@@ -164,7 +196,8 @@ def specialization():
     conn = sqlite3.connect(DATABASE)
 
     cur = conn.cursor()
-    cur.execute("UPDATE user SET specialization = '" + _specs + "' WHERE username = '" + session.get('username') + "';")
+    cur.execute("UPDATE user SET specialization = '" + _specs +
+                "' WHERE username = '" + session.get('username') + "';")
 
     conn.commit()
 
@@ -186,7 +219,8 @@ def generating():
     conn = sqlite3.connect(DATABASE)
     cur = conn.cursor()
 
-    cur.execute("SELECT * FROM user WHERE username = '" + session.get('username') + "'")
+    cur.execute("SELECT * FROM user WHERE username = '" +
+                session.get('username') + "'")
     myrow = cur.fetchone()
 
     spec = myrow[4]
@@ -219,7 +253,8 @@ def generating():
         cratings = {}
         chours = {}
         for i in choices_core:
-            cur.execute("SELECT rating,hours FROM classes WHERE course = ?", [i])
+            cur.execute(
+                "SELECT rating,hours FROM classes WHERE course = ?", [i])
             myrow = cur.fetchone()
             cratings[i] = myrow[0]
             chours[i] = myrow[1]
@@ -257,7 +292,8 @@ def generating():
         cratings = {}
         chours = {}
         for i in choices_core:
-            cur.execute("SELECT rating,hours FROM classes WHERE course = ?", [i])
+            cur.execute(
+                "SELECT rating,hours FROM classes WHERE course = ?", [i])
             myrow = cur.fetchone()
             cratings[i] = myrow[0]
             chours[i] = myrow[1]
@@ -318,21 +354,31 @@ def generating():
             delta7 = abs(float(i['Liberty']) - float(mypersonalities[6]))
             delta8 = abs(float(i['Love']) - float(mypersonalities[7]))
             delta9 = abs(float(i['Practicality']) - float(mypersonalities[8]))
-            delta10 = abs(float(i['Selfexpression']) - float(mypersonalities[9]))
+            delta10 = abs(float(i['Selfexpression']) -
+                          float(mypersonalities[9]))
             delta11 = abs(float(i['Stability']) - float(mypersonalities[10]))
             delta12 = abs(float(i['Structure']) - float(mypersonalities[11]))
             delta13 = abs(float(i['Openness']) - float(mypersonalities[12]))
-            delta14 = abs(float(i['Conscientiousness']) - float(mypersonalities[13]))
-            delta15 = abs(float(i['Extraversion']) - float(mypersonalities[14]))
-            delta16 = abs(float(i['Agreeableness']) - float(mypersonalities[15]))
-            delta17 = abs(float(i['Emotionalrange']) - float(mypersonalities[16]))
-            delta18 = abs(float(i['Conservation']) - float(mypersonalities[17]))
-            delta19 = abs(float(i['Opennesstochange']) - float(mypersonalities[18]))
+            delta14 = abs(float(i['Conscientiousness']) -
+                          float(mypersonalities[13]))
+            delta15 = abs(float(i['Extraversion']) -
+                          float(mypersonalities[14]))
+            delta16 = abs(float(i['Agreeableness']) -
+                          float(mypersonalities[15]))
+            delta17 = abs(float(i['Emotionalrange']) -
+                          float(mypersonalities[16]))
+            delta18 = abs(float(i['Conservation']) -
+                          float(mypersonalities[17]))
+            delta19 = abs(float(i['Opennesstochange']) -
+                          float(mypersonalities[18]))
             delta20 = abs(float(i['Hedonism']) - float(mypersonalities[19]))
-            delta21 = abs(float(i['Selfenhancement']) - float(mypersonalities[20]))
-            delta22 = abs(float(i['Selftranscendence']) - float(mypersonalities[21]))
+            delta21 = abs(float(i['Selfenhancement']) -
+                          float(mypersonalities[20]))
+            delta22 = abs(float(i['Selftranscendence']) -
+                          float(mypersonalities[21]))
             tdelta = delta1 + delta2 + delta3 + delta4 + delta5 + delta6 + delta7 + delta8 + delta9 + delta10 + delta11 + \
-                     delta12 + delta13 + delta14 + delta15 + delta16 + delta17 + delta18 + delta19 + delta20 + delta21 + delta22
+                delta12 + delta13 + delta14 + delta15 + delta16 + \
+                delta17 + delta18 + delta19 + delta20 + delta21 + delta22
             if bestdelta > tdelta:
                 bestdelta = tdelta
                 bestclass = i['course']

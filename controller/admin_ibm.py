@@ -25,7 +25,7 @@ def admin_ibm():
     with open('reviews.json') as f:
         data = json.load(f)
 
-
+    print(credentials)
     personality_insights = PersonalityInsightsV3(
         version='2016-10-20',
         username= credentials.username,

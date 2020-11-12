@@ -45,7 +45,7 @@ def register():
 
     #add user to db
     if myrow is None: #NO LOGINS EXIST with such username
-        cur.execute("INSERT INTO login (username, password, admin) VALUES (?,?,?)",[_username, hashlib.md5(_password).hexdigest(), 0])
+        cur.execute("INSERT INTO login (username, password, admin) VALUES (?,?,?)",[_username, hashlib.md5(_password.encode('utf-8')).hexdigest(), 0])
         conn.commit()
         session['username'] = _username
         session['admin'] = False
