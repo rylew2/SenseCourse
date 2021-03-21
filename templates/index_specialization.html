@@ -1,187 +1,305 @@
-{% extends 'template.html' %}
-{% block content %}
-    <link rel="stylesheet" type="text/css" href="../static/css/index_output.css">
+{% extends 'template.html' %} {% block content %}
+<link rel="stylesheet" type="text/css" href="../static/css/index_output.css" />
 
-
-<div class="container" style="padding-top:2em;padding-bottom:2em;">
-    <article class="message">
-        <div class="message-header">
-            <h1>Sense Course AI has calculated your perfect specialization!<br/> It's time for you to decide which route you want to go:</h1>
-        </div>
-        <div class="message-body">
-            <div class="control" id="specs">
-                1. <label class="radio">
-                    <input type="radio" name="specialization">
-                    {{ specs[order[0]] }}
-                </label><em> (Matches your personality {{'%0.2f'| format(worth[order[0]]|float)}}%)</em>
-                <br/>
-                2. <label class="radio">
-                    <input type="radio" name="specialization">
-                     {{ specs[order[1]] }}
-                </label><em> (Matches your personality {{'%0.2f'| format(worth[order[1]]|float)}}%)</em>
-                <br/>
-                3. <label class="radio">
-                    <input type="radio" name="specialization">
-                    {{ specs[order[2]] }}
-                </label><em> (Matches your personality {{'%0.2f'| format(worth[order[2]]|float)}}%)</em>
-                <br/>
-                4. <label class="radio">
-                    <input type="radio" name="specialization">
-                    {{ specs[order[3]] }}
-                </label><em> (Matches your personality {{'%0.2f'| format(worth[order[3]]|float)}}%)</em>
-                <br/>
-            </div>
-            <p class="help" id="helpspecialization"></p>
-            <br/>
-            <div class="control">
-                <button class="button is-success" id="q_btn">I picked my specialization. Let me see my schedule!</button>
-            </div>
-        </div>
-    </article>
-
-
-    <div class="card">
-        <div class="card-content">
-            <div class="media">
-                <div class="media-content">
-                   <h1>Specialization is picked based on: </h1>
-                    <p class="subtitle is-6">IBM Watson Personalities:</p>
-                </div>
-            </div>
-
-            <div class="content">
-                <div class="columns">
-                    <div class="column"><strong>Challenge: </strong>
-                        <progress class="progress is-info" value="{{ personality[0] }}" max="1"></progress>
-                    </div>
-                    <div class="column"><strong>Closeness: </strong>
-                        <progress class="progress is-info" value="{{ personality[1] }}" max="1"></progress>
-                    </div>
-                    <div class="column"><strong>Curiosity: </strong>
-                        <progress class="progress is-info" value="{{ personality[2] }}" max="1"></progress>
-                    </div>
-                </div>
-
-                <div class="columns">
-                    <div class="column"><strong>Excitement: </strong>
-                        <progress class="progress is-info" value="{{ personality[3] }}" max="1"></progress>
-                    </div>
-                    <div class="column"><strong>Harmony: </strong>
-                        <progress class="progress is-info" value="{{ personality[4] }}" max="1"></progress>
-                    </div>
-                    <div class="column"><strong>Ideal: </strong>
-                        <progress class="progress is-info" value="{{ personality[5] }}" max="1"></progress>
-                    </div>
-                </div>
-
-                <div class="columns">
-                    <div class="column"><strong>Liberty: </strong>
-                        <progress class="progress is-info" value="{{ personality[6] }}" max="1"></progress>
-                    </div>
-                    <div class="column"><strong>Love: </strong>
-                        <progress class="progress is-info" value="{{ personality[7] }}" max="1"></progress>
-                    </div>
-                    <div class="column"><strong>Practicality: </strong>
-                        <progress class="progress is-info" value="{{ personality[8] }}" max="1"></progress>
-                    </div>
-                </div>
-
-                <div class="columns">
-                    <div class="column"><strong>Self-expression: </strong>
-                        <progress class="progress is-info" value="{{ personality[9] }}" max="1"></progress>
-                    </div>
-                    <div class="column"><strong>Stability: </strong>
-                        <progress class="progress is-info" value="{{ personality[10] }}" max="1"></progress>
-                    </div>
-                    <div class="column"><strong>Structure: </strong>
-                        <progress class="progress is-info" value="{{ personality[11] }}" max="1"></progress>
-                    </div>
-                </div>
-
-                <div class="columns">
-                    <div class="column"><strong>Openness: </strong>
-                        <progress class="progress is-info" value="{{ personality[12] }}" max="1"></progress>
-                    </div>
-                    <div class="column"><strong>Conscientiousness: </strong>
-                        <progress class="progress is-info" value="{{ personality[13] }}" max="1"></progress>
-                    </div>
-                    <div class="column"><strong>Extraversion: </strong>
-                        <progress class="progress is-info" value="{{ personality[14] }}" max="1"></progress>
-                    </div>
-                </div>
-
-                <div class="columns">
-                    <div class="column"><strong>Agreeableness: </strong>
-                        <progress class="progress is-info" value="{{ personality[15] }}" max="1"></progress>
-                    </div>
-                    <div class="column"><strong>Emotional range: </strong>
-                        <progress class="progress is-info" value="{{ personality[16] }}" max="1"></progress>
-                    </div>
-                    <div class="column"><strong>Conservation: </strong>
-                        <progress class="progress is-info" value="{{ personality[17] }}" max="1"></progress>
-                    </div>
-                </div>
-
-                <div class="columns">
-                    <div class="column"><strong>Openness to change: </strong>
-                        <progress class="progress is-info" value="{{ personality[18] }}" max="1"></progress>
-                    </div>
-                    <div class="column"><strong>Hedonism: </strong>
-                        <progress class="progress is-info" value="{{ personality[19] }}" max="1"></progress>
-                    </div>
-                    <div class="column"><strong>Self-enhancement: </strong>
-                        <progress class="progress is-info" value="{{ personality[20] }}" max="1"></progress>
-                    </div>
-                </div>
-
-                <div class="columns">
-                    <div class="column"><strong>Self-transcendence: </strong>
-                        <progress class="progress is-info" value="{{ personality[21] }}" max="1"></progress>
-                    </div>
-                    <div class="column"></div>
-                    <div class="column"></div>
-                </div>
-            </div>
-        </div>
+<div class="container" style="padding-top: 2em; padding-bottom: 2em">
+  <article class="message">
+    <div class="message-header">
+      <h1>
+        Sense Course AI has calculated your perfect specialization!<br />
+        It's time for you to decide which route you want to go:
+      </h1>
     </div>
+    <div class="message-body">
+      <div class="control" id="specs">
+        1.
+        <label class="radio">
+          <input type="radio" name="specialization" />
+          {{ specs[order[0]] }} </label
+        ><em>
+          (Matches your personality {{'%0.2f'|
+          format(worth[order[0]]|float)}}%)</em
+        >
+        <br />
+        2.
+        <label class="radio">
+          <input type="radio" name="specialization" />
+          {{ specs[order[1]] }} </label
+        ><em>
+          (Matches your personality {{'%0.2f'|
+          format(worth[order[1]]|float)}}%)</em
+        >
+        <br />
+        3.
+        <label class="radio">
+          <input type="radio" name="specialization" />
+          {{ specs[order[2]] }} </label
+        ><em>
+          (Matches your personality {{'%0.2f'|
+          format(worth[order[2]]|float)}}%)</em
+        >
+        <br />
+        4.
+        <label class="radio">
+          <input type="radio" name="specialization" />
+          {{ specs[order[3]] }} </label
+        ><em>
+          (Matches your personality {{'%0.2f'|
+          format(worth[order[3]]|float)}}%)</em
+        >
+        <br />
+      </div>
+      <p class="help" id="helpspecialization"></p>
+      <br />
+      <div class="control">
+        <button class="button is-success" id="q_btn">
+          I picked my specialization. Let me see my schedule!
+        </button>
+      </div>
+    </div>
+  </article>
+
+  <div class="card">
+    <div class="card-content">
+      <div class="media">
+        <div class="media-content">
+          <h1>Specialization is picked based on:</h1>
+          <p class="subtitle is-6">IBM Watson Personalities:</p>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="columns">
+          <div class="column">
+            <strong>Challenge: </strong>
+            <progress
+              class="progress is-info"
+              value="{{ personality[0] }}"
+              max="1"
+            ></progress>
+          </div>
+          <div class="column">
+            <strong>Closeness: </strong>
+            <progress
+              class="progress is-info"
+              value="{{ personality[1] }}"
+              max="1"
+            ></progress>
+          </div>
+          <div class="column">
+            <strong>Curiosity: </strong>
+            <progress
+              class="progress is-info"
+              value="{{ personality[2] }}"
+              max="1"
+            ></progress>
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column">
+            <strong>Excitement: </strong>
+            <progress
+              class="progress is-info"
+              value="{{ personality[3] }}"
+              max="1"
+            ></progress>
+          </div>
+          <div class="column">
+            <strong>Harmony: </strong>
+            <progress
+              class="progress is-info"
+              value="{{ personality[4] }}"
+              max="1"
+            ></progress>
+          </div>
+          <div class="column">
+            <strong>Ideal: </strong>
+            <progress
+              class="progress is-info"
+              value="{{ personality[5] }}"
+              max="1"
+            ></progress>
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column">
+            <strong>Liberty: </strong>
+            <progress
+              class="progress is-info"
+              value="{{ personality[6] }}"
+              max="1"
+            ></progress>
+          </div>
+          <div class="column">
+            <strong>Love: </strong>
+            <progress
+              class="progress is-info"
+              value="{{ personality[7] }}"
+              max="1"
+            ></progress>
+          </div>
+          <div class="column">
+            <strong>Practicality: </strong>
+            <progress
+              class="progress is-info"
+              value="{{ personality[8] }}"
+              max="1"
+            ></progress>
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column">
+            <strong>Self-expression: </strong>
+            <progress
+              class="progress is-info"
+              value="{{ personality[9] }}"
+              max="1"
+            ></progress>
+          </div>
+          <div class="column">
+            <strong>Stability: </strong>
+            <progress
+              class="progress is-info"
+              value="{{ personality[10] }}"
+              max="1"
+            ></progress>
+          </div>
+          <div class="column">
+            <strong>Structure: </strong>
+            <progress
+              class="progress is-info"
+              value="{{ personality[11] }}"
+              max="1"
+            ></progress>
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column">
+            <strong>Openness: </strong>
+            <progress
+              class="progress is-info"
+              value="{{ personality[12] }}"
+              max="1"
+            ></progress>
+          </div>
+          <div class="column">
+            <strong>Conscientiousness: </strong>
+            <progress
+              class="progress is-info"
+              value="{{ personality[13] }}"
+              max="1"
+            ></progress>
+          </div>
+          <div class="column">
+            <strong>Extraversion: </strong>
+            <progress
+              class="progress is-info"
+              value="{{ personality[14] }}"
+              max="1"
+            ></progress>
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column">
+            <strong>Agreeableness: </strong>
+            <progress
+              class="progress is-info"
+              value="{{ personality[15] }}"
+              max="1"
+            ></progress>
+          </div>
+          <div class="column">
+            <strong>Emotional range: </strong>
+            <progress
+              class="progress is-info"
+              value="{{ personality[16] }}"
+              max="1"
+            ></progress>
+          </div>
+          <div class="column">
+            <strong>Conservation: </strong>
+            <progress
+              class="progress is-info"
+              value="{{ personality[17] }}"
+              max="1"
+            ></progress>
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column">
+            <strong>Openness to change: </strong>
+            <progress
+              class="progress is-info"
+              value="{{ personality[18] }}"
+              max="1"
+            ></progress>
+          </div>
+          <div class="column">
+            <strong>Hedonism: </strong>
+            <progress
+              class="progress is-info"
+              value="{{ personality[19] }}"
+              max="1"
+            ></progress>
+          </div>
+          <div class="column">
+            <strong>Self-enhancement: </strong>
+            <progress
+              class="progress is-info"
+              value="{{ personality[20] }}"
+              max="1"
+            ></progress>
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column">
+            <strong>Self-transcendence: </strong>
+            <progress
+              class="progress is-info"
+              value="{{ personality[21] }}"
+              max="1"
+            ></progress>
+          </div>
+          <div class="column"></div>
+          <div class="column"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-
-
-
-
 <script>
-        $("#q_btn").click(function(e){
-            e.preventDefault();
-            var specs = $("#specs input[name='specialization']:checked").parent().text().trim();
+  $("#q_btn").click(function (e) {
+    e.preventDefault();
+    var specs = $("#specs input[name='specialization']:checked")
+      .parent()
+      .text()
+      .trim();
 
-            $.post( "/specialization", { "specs": specs}, function( data) {
+    $.post("/specialization", { specs: specs }, function (data) {
+      $("#helpspecialization").html("");
 
-
-            $('#helpspecialization').html('');
-
-           if(data['action'] === 'ok'){
-               window.location.href = "/";
-           }
-           else if(data['action'] === 'error'){
-              if(data['type'] === 'noselection'){
-                  $('#helpspecialization').addClass('is-danger');
-                  $('#helpspecialization').html(data['text']);
-              }
-              else if (data['type'] === 'noexist') {
-                $('#helpspecialization').addClass('is-danger');
-                $('#helpspecialization').html(data['text']);
-              }
-              else if(data['type'] === 'nosession'){
-                 window.location.href = "/";
-              }
-           }
-
-
-            });
-
-        });
-
+      if (data["action"] === "ok") {
+        window.location.href = "/";
+      } else if (data["action"] === "error") {
+        if (data["type"] === "noselection") {
+          $("#helpspecialization").addClass("is-danger");
+          $("#helpspecialization").html(data["text"]);
+        } else if (data["type"] === "noexist") {
+          $("#helpspecialization").addClass("is-danger");
+          $("#helpspecialization").html(data["text"]);
+        } else if (data["type"] === "nosession") {
+          window.location.href = "/";
+        }
+      }
+    });
+  });
 </script>
 
 {% endblock %}
