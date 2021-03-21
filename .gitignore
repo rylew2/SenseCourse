@@ -5,6 +5,7 @@ setenv.bat
 
 .env
 
+.vscode/*
 
 # User-specific stuff
 .idea/**/workspace.xml
@@ -56,3 +57,8 @@ fabric.properties
 
 # Editor-based Rest Client
 .idea/httpRequests
+.vscode/settings.json
+
+.pytest_cache/v/cache/stepwise
+.vscode/settings.json
+.vscode/settings.json
