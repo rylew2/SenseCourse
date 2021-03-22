@@ -1,85 +1,102 @@
-{% extends 'template.html' %}
-{% block content %}
+{% extends 'template.html' %} {% block content %}
 
- <link rel="stylesheet" type="text/css" href="../static/css/index_quiz.css">
+<link rel="stylesheet" type="text/css" href="../static/css/index_quiz.css" />
 
-<div class="container" style="padding-top:2em;padding-bottom:2em;">
-    <article class="message is-warning">
-        <div class="message-header">
-            <p>Answer the following question:</p>
-        </div>
-        <div class="message-body">
-            <div style="font-size:165%;"><strong>Why did you choose Computer Science as your major?</strong></div>
-            <div class="field">
-                <textarea id="personal" class="textarea"
-                          placeholder="Explain why you choose computer science. (For best results, write at least 100 words). Please write in English! Do not use generators such as 'Lorem upsum'!"></textarea>
-                <p class="help" id="helppersonal"></p>
-                <em class="quizNote">SenseCourse algorithm will first pass what you wrote to IBM Watson's AI in order to generate your "Personal Insights" (Characteristics based on the text you write).</em>
-                <em class="quizNote">Our algorithm will then use the "Personal Insights" to suggest a specialization for you (NOTE: you will have to pick the specialization).</em>
-                <em class="quizNote">Once the specialization is chosen, the algorithm will then use "Personal Insights" information in order to generate "free" courses that you should take. </em>
-            </div>
-            <div class="control">
-                <button class="button is-info" id="q_btn">Submit your questionaire! <span id="loader" class="loader"></span></button>
-
-
-            </div>
-        </div>
-    </article>
+<div class="container" style="padding-top: 2em; padding-bottom: 2em">
+  <article class="message is-warning">
+    <div class="message-header">
+      <p>
+        <b style="color: red"
+          >This form is just here for demo purposes, the application no longer
+          accepts written input</b
+        >
+      </p>
+    </div>
+    <div class="message-body">
+      <div style="font-size: 165%">
+        <strong>Why did you choose Computer Science as your major?</strong>
+      </div>
+      <div class="field">
+        <textarea
+          id="personal"
+          class="textarea"
+          placeholder="Explain why you choose computer science. (For best results, write at least 100 words). Please write in English! Do not use generators such as 'Lorem upsum'!"
+        ></textarea>
+        <p class="help" id="helppersonal"></p>
+        <em class="quizNote"
+          >SenseCourse algorithm will first pass what you wrote to IBM Watson's
+          AI in order to generate your "Personal Insights" (Characteristics
+          based on the text you write).</em
+        >
+        <em class="quizNote"
+          >Our algorithm will then use the "Personal Insights" to suggest a
+          specialization for you (NOTE: you will have to pick the
+          specialization).</em
+        >
+        <em class="quizNote"
+          >Once the specialization is chosen, the algorithm will then use
+          "Personal Insights" information in order to generate "free" courses
+          that you should take.
+        </em>
+      </div>
+      <div class="control">
+        <button class="button is-info" id="q_btn">
+          Submit your questionaire! <span id="loader" class="loader"></span>
+        </button>
+      </div>
+    </div>
+  </article>
 </div>
 
 <script>
-        $("#q_btn").click(function(e){
-            e.preventDefault();
-            var personal = $("#personal").val();
+  $("#q_btn").click(function (e) {
+    e.preventDefault();
+    var personal = $("#personal").val();
 
-            $('#loader').show();
-            $('#q_btn').prop("disabled",true);
-            $('#personal').prop("disabled",true);
+    $("#loader").show();
+    $("#q_btn").prop("disabled", true);
+    $("#personal").prop("disabled", true);
 
-            $.ajax({
-                  url: "/quiz",
-                  type: "POST",
-                  dataType: "json", // expected format for response
-                  contentType: "application/json", // send as JSON  (this should put it as the body as opposed to url encoding it
-                  data:  JSON.stringify({ "personal":personal }),
+    $.ajax({
+      url: "/quiz",
+      type: "POST",
+      dataType: "json", // expected format for response
+      contentType: "application/json", // send as JSON  (this should put it as the body as opposed to url encoding it
+      data: JSON.stringify({ personal: personal }),
 
-                  success: function(data) {
-                        $('#scLoading').hide();
-                        $('#helppersonal').removeClass('is-success');
-                        $('#helppersonal').removeClass('is-danger');
+      success: function (data) {
+        $("#scLoading").hide();
+        $("#helppersonal").removeClass("is-success");
+        $("#helppersonal").removeClass("is-danger");
 
-                        $('#personal').removeClass('is-success');
-                        $('#personal').removeClass('is-danger');
+        $("#personal").removeClass("is-success");
+        $("#personal").removeClass("is-danger");
 
-                        $('#helppersonal').html('');
-                       if(data['action'] === 'ok'){
-                           window.location.href = "/";
-                       }
-                       else if(data['action'] === 'error'){
-                          if (data['type'] === 'personal') {
-                            $('#helppersonal').html(data['text']);
-                            $('#hpersonal').addClass('is-danger');
-                              $('#helppersonal').addClass('is-danger');
-                          }
-                          else if(data['type'] === 'nosession'){
-                             window.location.href = "/";
-                          }
-                       }
-                  },
+        $("#helppersonal").html("");
+        if (data["action"] === "ok") {
+          window.location.href = "/";
+        } else if (data["action"] === "error") {
+          if (data["type"] === "personal") {
+            $("#helppersonal").html(data["text"]);
+            $("#hpersonal").addClass("is-danger");
+            $("#helppersonal").addClass("is-danger");
+          } else if (data["type"] === "nosession") {
+            window.location.href = "/";
+          }
+        }
+      },
 
-                 complete: function() {
-                    $('#loader').hide();
-                    $('#q_btn').prop("disabled",false);
-                    $('#personal').prop("disabled",false);
-                 },
+      complete: function () {
+        $("#loader").hide();
+        $("#q_btn").prop("disabled", false);
+        $("#personal").prop("disabled", false);
+      },
 
-                  error: function() {
-                    //called when there is an error
-                  },
-                });
-
-
-        });
+      error: function () {
+        //called when there is an error
+      },
+    });
+  });
 </script>
 
 {% endblock %}

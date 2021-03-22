@@ -1,4 +1,5 @@
-from flask import Flask, render_template, json, request, session
+from flask import Flask, json, render_template, request, session
+
 from db import *
 
 ##############################
@@ -6,13 +7,7 @@ from db import *
 ###############################
 app = Flask(__name__)
 app.secret_key = "b'\\xb4\\xde\\xd9\\x86\\x93\\xb8\\x1bg\\x93@8W\\xc2&Dn4\\xf4\\xd0\\xa6\\x92\\x13XO'" #str(os.urandom(24)) #randomizing will clear flask_login session when app is restarted
-# app.secret_key = str(os.urandom(24))
-##############################
-# controller initialization
-# ###############################
-from controller.index import app_index
-# from controller.authenticate import app_authenticate
-# from controller.logout import app_logout
+from controller.authenticate import app_authenticate
 # from controller.admin import app_admin
 # from controller.admin_parse import app_admin_parse
 # from controller.admin_ibm import app_admin_ibm
@@ -23,12 +18,18 @@ from controller.index import app_index
 # from controller.logic import app_hours
 # from controller.personality_insights import app_personalityInsights
 from controller.demo import app_demo
+# app.secret_key = str(os.urandom(24))
+##############################
+# controller initialization
+# ###############################
+from controller.index import app_index
+from controller.logout import app_logout
 
 # from controller.testwatson import app_testwatson
 
 app.register_blueprint(app_index)
-# app.register_blueprint(app_authenticate)
-# app.register_blueprint(app_logout)
+app.register_blueprint(app_authenticate)
+app.register_blueprint(app_logout)
 # app.register_blueprint(app_admin)
 # app.register_blueprint(app_admin_parse)
 # app.register_blueprint(app_admin_ibm)
