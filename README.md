@@ -1,13 +1,11 @@
 # Sensecourse
-Sensecourse connects you with classes that match your personality.
 
+Sensecourse connects you with classes that match your personality.
 
 ```
 pip install -r requirements.txt
 python app.py
 ```
-
-https://sensecourse.herokuapp.com
 
 ## Run the development server
 
